@@ -14,13 +14,24 @@ from langchain.utils.html import PREFIXES_TO_IGNORE_REGEX, SUFFIXES_TO_IGNORE_RE
 from langchain_community.vectorstores import Weaviate
 from langchain_core.embeddings import Embeddings
 from langchain_openai import OpenAIEmbeddings
+from langchain_huggingface import HuggingFaceBgeEmbeddings
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
 def get_embeddings_model() -> Embeddings:
-    return OpenAIEmbeddings(model="text-embedding-3-small", chunk_size=200)
+    model_name = "BAAI/bge-m3"
+    model_kwargs = {"device": "cpu"}
+    encode_kwargs = {
+        "normalize_embeddings": True,
+        "query_instruction": "" # bge-m3 需要空的 query_instruction
+    }
+    return HuggingFaceBgeEmbeddings(
+        model_name=model_name,
+        model_kwargs=model_kwargs, 
+        encode_kwargs=encode_kwargs
+    )
 
 
 def metadata_extractor(meta: dict, soup: BeautifulSoup) -> dict:
