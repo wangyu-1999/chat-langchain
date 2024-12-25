@@ -6,7 +6,7 @@ import { RemoteRunnable } from "@langchain/core/runnables/remote";
 import { applyPatch } from "@langchain/core/utils/json_patch";
 
 import { EmptyState } from "./EmptyState";
-import { ChatMessageBubble, Message } from "./ChatMessageBubble";
+import ChatMessageBubble, { Message } from "./ChatMessageBubble";
 import { AutoResizeTextarea } from "./AutoResizeTextarea";
 import { marked } from "marked";
 import { Renderer } from "marked";
@@ -38,19 +38,30 @@ const MODEL_TYPES = [
 const defaultLlmValue =
   MODEL_TYPES[Math.floor(Math.random() * MODEL_TYPES.length)];
 
+const models = [
+  {
+    id: 'zhipu_glm_4',
+    name: '智谱 GLM-4',
+    description: '智谱AI GLM-4 大语言模型'
+  }
+  // ... 其他模型选项
+];
+
 export function ChatWindow(props: { conversationId: string }) {
   const conversationId = props.conversationId;
 
   const searchParams = useSearchParams();
 
   const messageContainerRef = useRef<HTMLDivElement | null>(null);
-  const [messages, setMessages] = useState<Array<Message>>([]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [llm, setLlm] = useState(
     searchParams.get("llm") ?? "openai_gpt_3_5_turbo",
   );
   const [llmIsLoading, setLlmIsLoading] = useState(true);
+  const [selectedModel, setSelectedModel] = useState('zhipu_glm_4');
+
   useEffect(() => {
     setLlm(searchParams.get("llm") ?? defaultLlmValue);
     setLlmIsLoading(false);
@@ -61,130 +72,43 @@ export function ChatWindow(props: { conversationId: string }) {
   >([]);
 
   const sendMessage = async (message?: string) => {
-    if (messageContainerRef.current) {
-      messageContainerRef.current.classList.add("grow");
-    }
-    if (isLoading) {
-      return;
-    }
-    const messageValue = message ?? input;
-    if (messageValue === "") return;
-    setInput("");
-    setMessages((prevMessages) => [
-      ...prevMessages,
-      { id: Math.random().toString(), content: messageValue, role: "user" },
-    ]);
+    if (!message && !input) return;
+    
+    const messageToSend = message || input;
     setIsLoading(true);
-
-    let accumulatedMessage = "";
-    let runId: string | undefined = undefined;
-    let sources: Source[] | undefined = undefined;
-    let messageIndex: number | null = null;
-
-    let renderer = new Renderer();
-    renderer.paragraph = (text) => {
-      return text + "\n";
-    };
-    renderer.list = (text) => {
-      return `${text}\n\n`;
-    };
-    renderer.listitem = (text) => {
-      return `\n• ${text}`;
-    };
-    renderer.code = (code, language) => {
-      const validLanguage = hljs.getLanguage(language || "")
-        ? language
-        : "plaintext";
-      const highlightedCode = hljs.highlight(
-        validLanguage || "plaintext",
-        code,
-      ).value;
-      return `<pre class="highlight bg-gray-700" style="padding: 5px; border-radius: 5px; overflow: auto; overflow-wrap: anywhere; white-space: pre-wrap; max-width: 100%; display: block; line-height: 1.2"><code class="${language}" style="color: #d6e2ef; font-size: 12px; ">${highlightedCode}</code></pre>`;
-    };
-    marked.setOptions({ renderer });
+    
     try {
-      const sourceStepName = "FindDocs";
-      let streamedResponse: Record<string, any> = {};
-      const remoteChain = new RemoteRunnable({
-        url: apiBaseUrl + "/chat",
-        options: {
-          timeout: 60000,
-        },
-      });
-      const llmDisplayName = llm ?? "openai_gpt_3_5_turbo";
-      const streamLog = await remoteChain.streamLog(
-        {
-          question: messageValue,
-          chat_history: chatHistory,
-        },
-        {
-          configurable: {
-            llm: llmDisplayName,
-          },
-          tags: ["model:" + llmDisplayName],
-          metadata: {
-            conversation_id: conversationId,
-            llm: llmDisplayName,
-          },
-        },
-        {
-          includeNames: [sourceStepName],
-        },
-      );
-      for await (const chunk of streamLog) {
-        streamedResponse = applyPatch(streamedResponse, chunk.ops, undefined, false).newDocument;
-        if (
-          Array.isArray(
-            streamedResponse?.logs?.[sourceStepName]?.final_output?.output,
-          )
-        ) {
-          sources = streamedResponse.logs[
-            sourceStepName
-          ].final_output.output.map((doc: Record<string, any>) => ({
-            url: doc.metadata.source,
-            title: doc.metadata.title,
-          }));
-        }
-        if (streamedResponse.id !== undefined) {
-          runId = streamedResponse.id;
-        }
-        if (Array.isArray(streamedResponse?.streamed_output)) {
-          accumulatedMessage = streamedResponse.streamed_output.join("");
-        }
-        const parsedResult = marked.parse(accumulatedMessage);
+      setMessages(prev => [...prev, { 
+        id: Date.now().toString(),
+        role: "user", 
+        content: messageToSend 
+      }]);
+      setInput("");
 
-        setMessages((prevMessages) => {
-          let newMessages = [...prevMessages];
-          if (
-            messageIndex === null ||
-            newMessages[messageIndex] === undefined
-          ) {
-            messageIndex = newMessages.length;
-            newMessages.push({
-              id: Math.random().toString(),
-              content: parsedResult.trim(),
-              runId: runId,
-              sources: sources,
-              role: "assistant",
-            });
-          } else if (newMessages[messageIndex] !== undefined) {
-            newMessages[messageIndex].content = parsedResult.trim();
-            newMessages[messageIndex].runId = runId;
-            newMessages[messageIndex].sources = sources;
-          }
-          return newMessages;
-        });
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/chat`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ question: messageToSend }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Response error");
       }
-      setChatHistory((prevChatHistory) => [
-        ...prevChatHistory,
-        { human: messageValue, ai: accumulatedMessage },
-      ]);
+
+      const data = await response.json();
+      
+      setMessages(prev => [...prev, { 
+        id: Date.now().toString(),
+        role: "assistant", 
+        content: data.response || data.message || data
+      }]);
+
+    } catch (error) {
+      console.error('Error:', error);
+    } finally {
       setIsLoading(false);
-    } catch (e) {
-      setMessages((prevMessages) => prevMessages.slice(0, -1));
-      setIsLoading(false);
-      setInput(messageValue);
-      throw e;
     }
   };
 
@@ -247,20 +171,15 @@ export function ChatWindow(props: { conversationId: string }) {
               <Spinner className="my-2"></Spinner>
             ) : (
               <Select
-                value={llm}
-                onChange={(e) => {
-                  insertUrlParam("llm", e.target.value);
-                  setLlm(e.target.value);
-                }}
+                value={selectedModel}
+                onChange={(e) => setSelectedModel(e.target.value)}
                 width={"240px"}
               >
-                <option value="openai_gpt_3_5_turbo">GPT-3.5-Turbo</option>
-                <option value="anthropic_claude_3_haiku">Claude 3 Haiku</option>
-                <option value="google_gemini_pro">Google Gemini Pro</option>
-                <option value="fireworks_mixtral">
-                  Mixtral (via Fireworks.ai)
-                </option>
-                <option value="cohere_command">Cohere</option>
+                {models.map(model => (
+                  <option key={model.id} value={model.id}>
+                    {model.name}
+                  </option>
+                ))}
               </Select>
             )}
           </div>
@@ -298,7 +217,7 @@ export function ChatWindow(props: { conversationId: string }) {
           onKeyDown={(e) => {
             if (e.key === "Enter" && !e.shiftKey) {
               e.preventDefault();
-              sendMessage();
+              sendMessage(input);
             } else if (e.key === "Enter" && e.shiftKey) {
               e.preventDefault();
               setInput(input + "\n");
@@ -314,7 +233,7 @@ export function ChatWindow(props: { conversationId: string }) {
             type="submit"
             onClick={(e) => {
               e.preventDefault();
-              sendMessage();
+              sendMessage(input);
             }}
           />
         </InputRightElement>

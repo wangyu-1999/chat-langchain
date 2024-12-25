@@ -3,22 +3,47 @@ import logging
 import os
 import re
 from parser import langchain_docs_extractor
+from dotenv import load_dotenv
+from pydantic.v1 import BaseModel, ConfigDict
 
 import weaviate
 from bs4 import BeautifulSoup, SoupStrainer
 from constants import WEAVIATE_DOCS_INDEX_NAME
-from langchain.document_loaders import RecursiveUrlLoader, SitemapLoader
-from langchain.indexes import SQLRecordManager, index
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.utils.html import PREFIXES_TO_IGNORE_REGEX, SUFFIXES_TO_IGNORE_REGEX
+from langchain_community.document_loaders import RecursiveUrlLoader, SitemapLoader
+from langchain.indexes import SQLRecordManager
+from langchain.indexes import index
 from langchain_community.vectorstores import Weaviate
 from langchain_core.embeddings import Embeddings
-from langchain_openai import OpenAIEmbeddings
-from langchain_huggingface import HuggingFaceBgeEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+load_dotenv()
+
+PREFIXES_TO_IGNORE = [
+    "https://",
+    "http://",
+    "mailto:",
+    "javascript:",
+    "#",
+    "/"
+]
+PREFIXES_TO_IGNORE_REGEX = "|".join(map(re.escape, PREFIXES_TO_IGNORE))
+
+SUFFIXES_TO_IGNORE = [
+    ".jpg",
+    ".jpeg",
+    ".gif",
+    ".png",
+    ".svg",
+    ".pdf",
+    ".css",
+    ".js",
+    ".ico"
+]
+SUFFIXES_TO_IGNORE_REGEX = "|".join(map(re.escape, SUFFIXES_TO_IGNORE))
 
 def get_embeddings_model() -> Embeddings:
     model_name = "BAAI/bge-m3"
@@ -27,7 +52,7 @@ def get_embeddings_model() -> Embeddings:
         "normalize_embeddings": True,
         "query_instruction": "" # bge-m3 需要空的 query_instruction
     }
-    return HuggingFaceBgeEmbeddings(
+    return HuggingFaceEmbeddings(
         model_name=model_name,
         model_kwargs=model_kwargs, 
         encode_kwargs=encode_kwargs
@@ -131,15 +156,16 @@ def ingest_docs():
     )
     record_manager.create_schema()
 
-    docs_from_documentation = load_langchain_docs()
-    logger.info(f"Loaded {len(docs_from_documentation)} docs from documentation")
+    # docs_from_documentation = load_langchain_docs()
+    # logger.info(f"Loaded {len(docs_from_documentation)} docs from documentation")
     docs_from_api = load_api_docs()
     logger.info(f"Loaded {len(docs_from_api)} docs from API")
     docs_from_langsmith = load_langsmith_docs()
     logger.info(f"Loaded {len(docs_from_langsmith)} docs from Langsmith")
 
     docs_transformed = text_splitter.split_documents(
-        docs_from_documentation + docs_from_api + docs_from_langsmith
+        # docs_from_documentation + docs_from_api + docs_from_langsmith
+        docs_from_api + docs_from_langsmith
     )
     docs_transformed = [doc for doc in docs_transformed if len(doc.page_content) > 10]
 

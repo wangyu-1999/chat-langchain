@@ -2,7 +2,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { emojisplosion } from "emojisplosion";
 import { useState, useRef } from "react";
-import * as DOMPurify from "dompurify";
+import DOMPurify from 'dompurify';
 import { SourceBubble, Source } from "./SourceBubble";
 import {
   VStack,
@@ -112,261 +112,27 @@ const createAnswerElements = (
   return elements;
 };
 
-export function ChatMessageBubble(props: {
-  message: Message;
-  aiEmoji?: string;
-  isMostRecent: boolean;
-  messageCompleted: boolean;
-}) {
-  const { role, content, runId } = props.message;
-  const isUser = role === "user";
-  const [isLoading, setIsLoading] = useState(false);
-  const [traceIsLoading, setTraceIsLoading] = useState(false);
-  const [feedback, setFeedback] = useState<Feedback | null>(null);
-  const [comment, setComment] = useState("");
-  const [feedbackColor, setFeedbackColor] = useState("");
-  const upButtonRef = useRef(null);
-  const downButtonRef = useRef(null);
-
-  const cumulativeOffset = function (element: HTMLElement | null) {
-    var top = 0,
-      left = 0;
-    do {
-      top += element?.offsetTop || 0;
-      left += element?.offsetLeft || 0;
-      element = (element?.offsetParent as HTMLElement) || null;
-    } while (element);
-
-    return {
-      top: top,
-      left: left,
-    };
+interface ChatMessageBubbleProps {
+  message: {
+    role: string;
+    content: string;
   };
-
-  const sendUserFeedback = async (score: number, key: string) => {
-    let run_id = runId;
-    if (run_id === undefined) {
-      return;
-    }
-    if (isLoading) {
-      return;
-    }
-    setIsLoading(true);
-    try {
-      const data = await sendFeedback({
-        score,
-        runId: run_id,
-        key,
-        feedbackId: feedback?.feedback_id,
-        comment,
-        isExplicit: true,
-      });
-      if (data.code === 200) {
-        setFeedback({ run_id, score, key, feedback_id: data.feedbackId });
-        score == 1 ? animateButton("upButton") : animateButton("downButton");
-        if (comment) {
-          setComment("");
-        }
-      }
-    } catch (e: any) {
-      console.error("Error:", e);
-      toast.error(e.message);
-    }
-    setIsLoading(false);
-  };
-  const viewTrace = async () => {
-    try {
-      setTraceIsLoading(true);
-      const response = await fetch(apiBaseUrl + "/get_trace", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          run_id: runId,
-        }),
-      });
-
-      const data = await response.json();
-
-      if (data.code === 400) {
-        toast.error("Unable to view trace");
-        throw new Error("Unable to view trace");
-      } else {
-        const url = data.replace(/['"]+/g, "");
-        window.open(url, "_blank");
-        setTraceIsLoading(false);
-      }
-    } catch (e: any) {
-      console.error("Error:", e);
-      setTraceIsLoading(false);
-      toast.error(e.message);
-    }
-  };
-
-  const sources = props.message.sources ?? [];
-  const { filtered: filteredSources, indexMap: sourceIndexMap } =
-    filterSources(sources);
-
-  // Use an array of highlighted states as a state since React
-  // complains when creating states in a loop
-  const [highlighedSourceLinkStates, setHighlightedSourceLinkStates] = useState(
-    filteredSources.map(() => false),
-  );
-  const answerElements =
-    role === "assistant"
-      ? createAnswerElements(
-          content,
-          filteredSources,
-          sourceIndexMap,
-          highlighedSourceLinkStates,
-          setHighlightedSourceLinkStates,
-        )
-      : [];
-
-  const animateButton = (buttonId: string) => {
-    let button: HTMLButtonElement | null;
-    if (buttonId === "upButton") {
-      button = upButtonRef.current;
-    } else if (buttonId === "downButton") {
-      button = downButtonRef.current;
-    } else {
-      return;
-    }
-    if (!button) return;
-    let resolvedButton = button as HTMLButtonElement;
-    resolvedButton.classList.add("animate-ping");
-    setTimeout(() => {
-      resolvedButton.classList.remove("animate-ping");
-    }, 500);
-
-    emojisplosion({
-      emojiCount: 10,
-      uniqueness: 1,
-      position() {
-        const offset = cumulativeOffset(button);
-
-        return {
-          x: offset.left + resolvedButton.clientWidth / 2,
-          y: offset.top + resolvedButton.clientHeight / 2,
-        };
-      },
-      emojis: buttonId === "upButton" ? ["👍"] : ["👎"],
-    });
-  };
-
-  return (
-    <VStack align="start" spacing={5} pb={5}>
-      {!isUser && filteredSources.length > 0 && (
-        <>
-          <Flex direction={"column"} width={"100%"}>
-            <VStack spacing={"5px"} align={"start"} width={"100%"}>
-              <Heading
-                fontSize="lg"
-                fontWeight={"medium"}
-                mb={1}
-                color={"blue.300"}
-                paddingBottom={"10px"}
-              >
-                Sources
-              </Heading>
-              <HStack spacing={"10px"} maxWidth={"100%"} overflow={"auto"}>
-                {filteredSources.map((source, index) => (
-                  <Box key={index} alignSelf={"stretch"} width={40}>
-                    <SourceBubble
-                      source={source}
-                      highlighted={highlighedSourceLinkStates[index]}
-                      onMouseEnter={() =>
-                        setHighlightedSourceLinkStates(
-                          filteredSources.map((_, i) => i === index),
-                        )
-                      }
-                      onMouseLeave={() =>
-                        setHighlightedSourceLinkStates(
-                          filteredSources.map(() => false),
-                        )
-                      }
-                      runId={runId}
-                    />
-                  </Box>
-                ))}
-              </HStack>
-            </VStack>
-          </Flex>
-
-          <Heading size="lg" fontWeight="medium" color="blue.300">
-            Answer
-          </Heading>
-        </>
-      )}
-
-      {isUser ? (
-        <Heading size="lg" fontWeight="medium" color="white">
-          {content}
-        </Heading>
-      ) : (
-        <Box className="whitespace-pre-wrap" color="white">
-          {answerElements}
-        </Box>
-      )}
-
-      {props.message.role !== "user" &&
-        props.isMostRecent &&
-        props.messageCompleted && (
-          <HStack spacing={2}>
-            <Button
-              ref={upButtonRef}
-              size="sm"
-              variant="outline"
-              colorScheme={feedback === null ? "green" : "gray"}
-              onClick={() => {
-                if (feedback === null && props.message.runId) {
-                  sendUserFeedback(1, "user_score");
-                  animateButton("upButton");
-                  setFeedbackColor("border-4 border-green-300");
-                } else {
-                  toast.error("You have already provided your feedback.");
-                }
-              }}
-            >
-              👍
-            </Button>
-            <Button
-              ref={downButtonRef}
-              size="sm"
-              variant="outline"
-              colorScheme={feedback === null ? "red" : "gray"}
-              onClick={() => {
-                if (feedback === null && props.message.runId) {
-                  sendUserFeedback(0, "user_score");
-                  animateButton("downButton");
-                  setFeedbackColor("border-4 border-red-300");
-                } else {
-                  toast.error("You have already provided your feedback.");
-                }
-              }}
-            >
-              👎
-            </Button>
-            <Spacer />
-            <Button
-              size="sm"
-              variant="outline"
-              colorScheme={runId === null ? "blue" : "gray"}
-              onClick={(e) => {
-                e.preventDefault();
-                viewTrace();
-              }}
-              isLoading={traceIsLoading}
-              loadingText="🔄"
-              color="white"
-            >
-              🦜🛠️ View trace
-            </Button>
-          </HStack>
-        )}
-
-      {!isUser && <Divider mt={4} mb={4} />}
-    </VStack>
-  );
 }
+
+const ChatMessageBubble: React.FC<ChatMessageBubbleProps> = ({ message }) => {
+  const isUser = message.role === 'user';
+  
+  console.log('Rendering messages:', message);
+  
+  return (
+    <div className={`flex ${isUser ? 'justify-end' : 'justify-start'} mb-4`}>
+      <div className={`max-w-[70%] rounded-lg p-4 ${
+        isUser ? 'bg-blue-500 text-white' : 'bg-gray-200'
+      }`}>
+        {message.content}
+      </div>
+    </div>
+  );
+};
+
+export default ChatMessageBubble;
