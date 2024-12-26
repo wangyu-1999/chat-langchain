@@ -131,8 +131,7 @@ def load_api_docs():
 
 
 def ingest_docs():
-    WEAVIATE_URL = os.environ["WEAVIATE_URL"]
-    WEAVIATE_API_KEY = os.environ["WEAVIATE_API_KEY"]
+    WEAVIATE_URL = os.environ.get("WEAVIATE_URL", "http://localhost:8080")
     RECORD_MANAGER_DB_URL = os.environ["RECORD_MANAGER_DB_URL"]
 
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=4000, chunk_overlap=200)
@@ -140,7 +139,6 @@ def ingest_docs():
 
     client = weaviate.Client(
         url=WEAVIATE_URL,
-        auth_client_secret=weaviate.AuthApiKey(api_key=WEAVIATE_API_KEY),
     )
     vectorstore = Weaviate(
         client=client,

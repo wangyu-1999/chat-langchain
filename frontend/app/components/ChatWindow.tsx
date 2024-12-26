@@ -44,7 +44,6 @@ const models = [
     name: '智谱 GLM-4',
     description: '智谱AI GLM-4 大语言模型'
   }
-  // ... 其他模型选项
 ];
 
 export function ChatWindow(props: { conversationId: string }) {
