@@ -77,11 +77,12 @@ export function ChatWindow(props: { conversationId: string }) {
     setIsLoading(true);
     
     try {
-      setMessages(prev => [...prev, { 
+      const userMessage = { 
         id: Date.now().toString(),
-        role: "user", 
+        role: "user" as const, 
         content: messageToSend 
-      }]);
+      } satisfies Message;
+      setMessages(prev => [...prev, userMessage]);
       setInput("");
 
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/chat`, {
@@ -89,7 +90,10 @@ export function ChatWindow(props: { conversationId: string }) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ question: messageToSend }),
+        body: JSON.stringify({ 
+          question: messageToSend,
+          chat_history: chatHistory
+        }),
       });
 
       if (!response.ok) {
@@ -98,10 +102,16 @@ export function ChatWindow(props: { conversationId: string }) {
 
       const data = await response.json();
       
-      setMessages(prev => [...prev, { 
+      const aiMessage: Message = { 
         id: Date.now().toString(),
-        role: "assistant", 
+        role: "assistant" as const,
         content: data.response || data.message || data
+      };
+      setMessages(prev => [...prev, aiMessage]);
+
+      setChatHistory(prev => [...prev, {
+        human: messageToSend,
+        ai: data.response || data.message || data
       }]);
 
     } catch (error) {
@@ -195,9 +205,6 @@ export function ChatWindow(props: { conversationId: string }) {
               <ChatMessageBubble
                 key={m.id}
                 message={{ ...m }}
-                aiEmoji="🦜"
-                isMostRecent={index === 0}
-                messageCompleted={!isLoading}
               ></ChatMessageBubble>
             ))
         ) : (

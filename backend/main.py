@@ -20,8 +20,6 @@ app.add_middleware(
 
 @app.post("/api/chat")
 async def chat(request: ChatRequest):
-    print(request)
-    """处理聊天请求"""
     response = await answer_chain.ainvoke(
         {
             "question": request.question,
