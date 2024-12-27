@@ -148,11 +148,23 @@ def create_chain(llm: LanguageModelLike, retriever: BaseRetriever) -> Runnable:
         llm,
         retriever,
     ).with_config(run_name="FindDocs")
+    
+    # 添加调试信息来查看检索结果
+    def debug_context(x):
+        docs = x["docs"]
+        print("\n=== 向量检索结果 ===")
+        for i, doc in enumerate(docs):
+            print(f"\n文档 {i+1}:")
+            print(f"内容: {doc.page_content}")
+            print(f"来源: {doc.metadata.get('source', 'unknown')}")
+        return format_docs(docs)
+    
     context = (
         RunnablePassthrough.assign(docs=retriever_chain)
-        .assign(context=lambda x: format_docs(x["docs"]))
+        .assign(context=debug_context)  # 替换原来的 lambda
         .with_config(run_name="RetrieveDocs")
     )
+    
     prompt = ChatPromptTemplate.from_messages(
         [
             ("system", RESPONSE_TEMPLATE),
@@ -160,7 +172,20 @@ def create_chain(llm: LanguageModelLike, retriever: BaseRetriever) -> Runnable:
             ("human", "{question}"),
         ]
     )
-    default_response_synthesizer = prompt | llm
+    
+    # 添加调试信息来查看最终提示
+    def debug_prompt(inputs):
+        formatted_prompt = prompt.format_messages(**inputs)
+        print("\n=== 发送给模型的完整提示 ===")
+        for msg in formatted_prompt:
+            print(f"\n{msg.type}:")
+            print(msg.content)
+        return formatted_prompt
+    
+    default_response_synthesizer = (
+        RunnableLambda(debug_prompt) 
+        | llm
+    )
 
     response_synthesizer = (
         default_response_synthesizer.configurable_alternatives(
