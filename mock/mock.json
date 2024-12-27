@@ -1,0 +1,1971 @@
+{
+    "search_metadata": {
+      "id": "676edc4a8f7c66a2972a2dd8",
+      "status": "Success",
+      "json_endpoint": "https://serpapi.com/searches/b91fc7a91cf0045b/676edc4a8f7c66a2972a2dd8.json",
+      "created_at": "2024-12-27 16:56:42 UTC",
+      "processed_at": "2024-12-27 16:56:42 UTC",
+      "google_news_url": "https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGx1YlY4U0FtVnVHZ0pWVXlnQVAB?hl=en&gl=US",
+      "raw_html_file": "https://serpapi.com/searches/b91fc7a91cf0045b/676edc4a8f7c66a2972a2dd8.html",
+      "total_time_taken": 3.97
+    },
+    "search_parameters": {
+      "engine": "google_news",
+      "gl": "us",
+      "hl": "en",
+      "topic_token": "CAAqJggKIiBDQkFTRWdvSUwyMHZNRGx1YlY4U0FtVnVHZ0pWVXlnQVAB"
+    },
+    "title": "World",
+    "news_results": [
+      {
+        "position": 1,
+        "highlight": {
+          "title": "Azerbaijan Airlines says plane crash caused by ‘external’ interference",
+          "source": {
+            "name": "The Washington Post",
+            "icon": "https://lh3.googleusercontent.com/o6yPxQMQu9ofTcfOYO51BWEv7jK44QjB14DqTK_cl1N3LsWVEF3GUHd1byHOQ3n8L6ySZluEhZQ",
+            "authors": [
+              "Mary Ilyushina"
+            ]
+          },
+          "link": "https://www.washingtonpost.com/world/2024/12/27/azerbaijan-airlines-plane-crash-russia/",
+          "thumbnail": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/W7MXX2KIZ6HTBPGNVOWAMAFWYU.JPG&w=1200",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNW1OWHBHZFhkT1ExTnRYM2xEVFJDVUF4ajNCU2dLTWdhVlJKREpuUWM",
+          "date": "12/27/2024, 03:50 PM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "Azerbaijan Airlines blames deadly plane crash on 'external interference' as Russia speculation grows",
+            "source": {
+              "name": "Fox News",
+              "icon": "https://lh3.googleusercontent.com/sI1WB0Q5duO4KjZqNG5iwyb-5Rt-WYpF7YJjAde847yk_-mOpMueyEcXZgjU5dIMJNdPwe2ICg",
+              "authors": [
+                "Alex Nitzberg"
+              ]
+            },
+            "link": "https://www.foxnews.com/world/azerbaijan-airlines-blames-deadly-plane-crash-external-interference-russia-speculation-grows",
+            "thumbnail": "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2024/12/1200/675/azerbaijan-airlines-1.jpg?ve=1&tl=1",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iL0NnNWFjRXBWUTFaWVFWSm5hMmRWVFJDZkF4ampCU2dLTWdrSmc0d29QdVZqY3dF",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pZaHRyN0RCR2R5VVF4b09GZF9DZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pZaHRyN0RCR2R5VVF4b09GZF9DZ0FQAQ",
+            "date": "12/27/2024, 04:09 PM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "Passengers heard at least one loud bang before Kazakhstan plane crash",
+            "source": {
+              "name": "Yahoo! Voices",
+              "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.yahoo.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.yahoo.com/news/passengers-heard-least-one-loud-163118238.html",
+            "thumbnail": "https://media.zenfs.com/en/video.reutersnews.com/6de1b8870793c5bd643c05647dcb8781",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNTBhbEpYWDBGZldGTjNjV3hHVFJDZkF4ampCU2dLTWdZZEE0Uk1rUWc",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pZaHRyN0RCR2R5VVF4b09GZF9DZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pZaHRyN0RCR2R5VVF4b09GZF9DZ0FQAQ",
+            "date": "12/27/2024, 04:31 PM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "Black boxes of downed Azerbaijani jet recovered as questions mount over Russian involvement. Here’s what we know",
+            "source": {
+              "name": "CNN",
+              "icon": "https://lh3.googleusercontent.com/8zdvTbISHUn-4iHkauW-_yQSGPD9BMrx9EWfqTIhiVm2YMYqhHC1HJWNDQoSOkMk0MRPYKxjIg"
+            },
+            "link": "https://www.cnn.com/2024/12/26/asia/kazakhstan-plane-crash-questions-intl/index.html",
+            "thumbnail": "https://media.cnn.com/api/v1/images/stellar/prod/2024-12-25t093944z-537237801-rc25vbahtltv-rtrmadp-3-kazakhstan-crash.JPG?c=original",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNWxZbVl0UlZwcGFITTRaWFIzVFJDOEF4aXpCU2dLTWdZQmNJRHJ2UU0",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pZaHRyN0RCR2R5VVF4b09GZF9DZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pZaHRyN0RCR2R5VVF4b09GZF9DZ0FQAQ",
+            "date": "12/27/2024, 10:26 AM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pZaHRyN0RCR2R5VVF4b09GZF9DZ0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pZaHRyN0RCR2R5VVF4b09GZF9DZ0FQAQ"
+      },
+      {
+        "position": 2,
+        "highlight": {
+          "title": "South Korea's acting president impeached. And, how the 'Beyoncé Bowl' did on Netflix",
+          "source": {
+            "name": "NPR",
+            "icon": "https://lh3.googleusercontent.com/n1J5BgiRjTv0UA7P7ow6a4W1NsYEz8yc-Cbr539Q-le21-0uoqwGOIItzyalR8JOHXxwAL7eng",
+            "authors": [
+              "Brittney Melton"
+            ]
+          },
+          "link": "https://www.npr.org/2024/12/27/g-s1-40124/up-first-newsletter-south-korea-impeachment-acting-president-netflix-beyonce-bowl",
+          "thumbnail": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/5422x3615+0+0/resize/1100/quality/50/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F8b%2F7a%2F9da34fa24d889ab420244860e876%2Fap24361227800325.jpg",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNUZjR1JuZDFOUlJrZE1XbEExVFJERUF4aW1CU2dLTWdB",
+          "date": "12/27/2024, 01:04 PM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "South Korean Lawmakers Impeach Acting President as Crisis Deepens",
+            "source": {
+              "name": "The New York Times",
+              "icon": "https://lh3.googleusercontent.com/tDFSwtr61ZReDD_jw6kEPWegHMSqGEHx-ZS_t-e10We-GfWEPVYkn0uLk_Vn8XQHg8wcnhMWmug",
+              "authors": [
+                "Choe Sang-Hun",
+                "Jin Yu"
+              ]
+            },
+            "link": "https://www.nytimes.com/2024/12/26/world/asia/south-korea-impeach-president-han.html",
+            "thumbnail": "https://static01.nyt.com/images/2024/12/27/multimedia/27skorea-impeach-cover-kvcj/27skorea-impeach-cover-kvcj-videoSixteenByNine1050.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iJ0NnNWlSa1ZRY1RsYWVWbFNjbFpyVFJDZkF4amlCU2dLTWdNQkFCQQ",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p2NE83NkRCSEFSQ0pkRDNnZ19TZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p2NE83NkRCSEFSQ0pkRDNnZ19TZ0FQAQ",
+            "date": "12/27/2024, 01:39 PM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "South Korea Impeaches Acting President",
+            "source": {
+              "name": "The Wall Street Journal",
+              "icon": "https://lh3.googleusercontent.com/-Wo0rkJtT8uQ7BFow-YiRKzVlJNka-TbZM6_e2l3XQwNNqfPe1mR8Rc4_o_qAOJFb32YwQ4I1NM"
+            },
+            "link": "https://www.wsj.com/video/south-korea-impeaches-acting-president/BD28FCBE-44D4-49F3-860C-C1A5B077B8F3.html?mod=articletype_trending_now_video_pos4",
+            "thumbnail": "http://images.wsj.net/im-80317651?width=1280&height=720",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iJ0NnNVBabUZPTW5oRE5HTjVXRmR6VFJDZkF4ampCU2dLTWdNQlFBZw",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p2NE83NkRCSEFSQ0pkRDNnZ19TZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p2NE83NkRCSEFSQ0pkRDNnZ19TZ0FQAQ",
+            "date": "12/27/2024, 04:32 PM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "South Korea's acting president Han Duck-Soo impeached as Yoon goes on trial",
+            "source": {
+              "name": "Reuters",
+              "icon": "https://lh3.googleusercontent.com/OzNZmYwP-Zl3sTWa8dzzyws9hou0ZihOGJ_-qanon-1iB5KwyqcHOwPxYZj54cGMZwD5qXui",
+              "authors": [
+                "Joyce Lee",
+                "Hyunsu Yim"
+              ]
+            },
+            "link": "https://www.reuters.com/world/asia-pacific/south-koreas-acting-president-faces-impeachment-vote-court-meets-martial-law-2024-12-26/",
+            "thumbnail": "https://www.reuters.com/resizer/v2/4AP6I55OCZOVHFQ56IDAJZHQAM.jpg?auth=9a71a212be18a5f6b345921534fae42e1ff849089f25ea324c8a958ea8a0f602&height=2400&width=1920&quality=80&smart=true",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNXRTVFJvY1VWTVYwZHZWR2RrVFJEckJCanZBeWdLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p2NE83NkRCSEFSQ0pkRDNnZ19TZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p2NE83NkRCSEFSQ0pkRDNnZ19TZ0FQAQ",
+            "date": "12/27/2024, 02:42 PM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p2NE83NkRCSEFSQ0pkRDNnZ19TZ0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p2NE83NkRCSEFSQ0pkRDNnZ19TZ0FQAQ"
+      },
+      {
+        "position": 3,
+        "highlight": {
+          "title": "Italian journalist arrested in Iran",
+          "source": {
+            "name": "POLITICO Europe",
+            "icon": "https://lh3.googleusercontent.com/jIzBQZ5BrrRpSdArkVDbVdX9sySejIneiU-gCvjpQ0kheRMnYd1jM4U7YVNQKB_HjyyrnNBuVw",
+            "authors": [
+              "Carlo Martuscelli"
+            ]
+          },
+          "link": "https://www.politico.eu/article/italy-journalist-cecilia-sala-arrested-in-iran/",
+          "thumbnail": "https://www.politico.eu/cdn-cgi/image/width=1160,height=766,quality=80,onerror=redirect,format=auto/wp-content/uploads/2024/12/27/cecilia.png",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNDFTVzAzU0d0UGVYSTRjWGszVFJEQ0F4aXFCU2dLTWdB",
+          "date": "12/27/2024, 01:35 PM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "Italian journalist Cecilia Sala arrested in Tehran, Italy says",
+            "source": {
+              "name": "CNN",
+              "icon": "https://lh3.googleusercontent.com/8zdvTbISHUn-4iHkauW-_yQSGPD9BMrx9EWfqTIhiVm2YMYqhHC1HJWNDQoSOkMk0MRPYKxjIg",
+              "authors": [
+                "Sharon Braithwaite",
+                "Nadeen Ebrahim",
+                "Artemis Moshtaghian"
+              ]
+            },
+            "link": "https://www.cnn.com/2024/12/27/middleeast/italian-journalist-cecilia-sala-arrested-iran-intl/index.html",
+            "thumbnail": "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2067656934.jpg?c=16x9&q=h_833,w_1480,c_fill",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNXNNMVJKWkhwU09GWkVNQzFSVFJDZkF4amlCU2dLTWdhcE5ZYk5tUWs",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lsNTZiOURCRkpiTnJTLTdWUEZ5Z0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lsNTZiOURCRkpiTnJTLTdWUEZ5Z0FQAQ",
+            "date": "12/27/2024, 01:53 PM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "Italian Journalist Is Detained While Reporting in Iran",
+            "source": {
+              "name": "The New York Times",
+              "icon": "https://lh3.googleusercontent.com/tDFSwtr61ZReDD_jw6kEPWegHMSqGEHx-ZS_t-e10We-GfWEPVYkn0uLk_Vn8XQHg8wcnhMWmug",
+              "authors": [
+                "Emma Bubola"
+              ]
+            },
+            "link": "https://www.nytimes.com/2024/12/27/world/middleeast/cecilia-sala-italian-journalist-arrested-iran.html",
+            "thumbnail": "https://static01.nyt.com/images/2024/12/27/world/27iran-journalist-sala/27iran-journalist-sala-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNHliMlZOY2s1VmEwOTZMVFZOVFJDUUF4allCQ2dLTWdhcEpZN09GUW8",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lsNTZiOURCRkpiTnJTLTdWUEZ5Z0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lsNTZiOURCRkpiTnJTLTdWUEZ5Z0FQAQ",
+            "date": "12/27/2024, 03:26 PM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "Italy says working to free journalist under arrest in Iran for over a week",
+            "source": {
+              "name": "Al Jazeera English",
+              "icon": "https://lh3.googleusercontent.com/l-Ps9rkWuApN8G3MB5uZC_a5G7iKCTITjMdpZFhm2rQf3U2M2Yr_KTYpzpmOPxDiUKgb9yN9ha8"
+            },
+            "link": "https://www.aljazeera.com/news/2024/12/27/italy-says-working-to-free-journalist-under-arrest-in-iran-for-over-a-week",
+            "thumbnail": "https://www.aljazeera.com/wp-content/uploads/2024/12/2022-10-17T132103Z_138722462_RC2X2X98BVKP_RTRMADP_3_IRAN-WOMEN-1735312605.jpg?resize=1920%2C1440",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iL0NnNUdUMVI2Y0Y5akxXeHdNa2cwVFJEZ0F4aUFCU2dLTWdrQllJbzZTQ1NETEFJ",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lsNTZiOURCRkpiTnJTLTdWUEZ5Z0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lsNTZiOURCRkpiTnJTLTdWUEZ5Z0FQAQ",
+            "date": "12/27/2024, 04:25 PM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lsNTZiOURCRkpiTnJTLTdWUEZ5Z0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lsNTZiOURCRkpiTnJTLTdWUEZ5Z0FQAQ"
+      },
+      {
+        "position": 4,
+        "highlight": {
+          "title": "Damascus governor says new Syrian regime wants peace: ‘Our problem is not with Israel’",
+          "source": {
+            "name": "The Times of Israel",
+            "icon": "https://lh3.googleusercontent.com/KL7VFUdHpnRzWYFwHNMM0Mui8KZ2POO9h_bhISFR8jJpS5s8hImnur4ZeGoyeAEtfzrWvAkLBg"
+          },
+          "link": "https://www.timesofisrael.com/damascus-governor-says-new-syrian-regime-wants-peace-our-problem-is-not-with-israel/",
+          "thumbnail": "https://static-cdn.toi-media.com/www/uploads/2024/12/vlcsnap-2024-12-27-14h07m42s942-copy-5.jpg",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNHdOMVl3Wm5kQldUTkRiRFl0VFJDMkF4aThCU2dLTWdB",
+          "date": "12/27/2024, 12:39 PM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "New leaders in Damascus call for cordial Syria ties with a resistant Israel",
+            "source": {
+              "name": "NPR",
+              "icon": "https://lh3.googleusercontent.com/n1J5BgiRjTv0UA7P7ow6a4W1NsYEz8yc-Cbr539Q-le21-0uoqwGOIItzyalR8JOHXxwAL7eng",
+              "authors": [
+                "Hadeel Al-Shalchi"
+              ]
+            },
+            "link": "https://www.npr.org/2024/12/27/g-s1-40144/syria-israel-relations-hts-damascus-governor",
+            "thumbnail": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/1920x1280+0+0/resize/1100/quality/85/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fd8%2F6d%2F935ac7224aa8bdd5d9a801c8dbca%2Fgettyimages-2190823782.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNUlRbEZyYUhBMFFVOTNaV05zVFJERUF4aW1CU2dLTWdhWnBJcXZNUWM",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lOeWVfN0RCSHRVWU1EQW5JcnR5Z0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lOeWVfN0RCSHRVWU1EQW5JcnR5Z0FQAQ",
+            "date": "12/27/2024, 03:50 PM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "'We want peace': New Damascus gov. says Syria wants better relations with Israel",
+            "source": {
+              "name": "The Jerusalem Post",
+              "icon": "https://lh3.googleusercontent.com/TW_uvmveircXWTyroSLoydsTHhb2dG5daDv_1cLWab593SS_Zp_ky0Xf1Czw2Yb4CDOLRXjw",
+              "authors": [
+                "Post Staff"
+              ]
+            },
+            "link": "https://www.jpost.com/middle-east/article-835106",
+            "thumbnail": "https://images.jpost.com/image/upload/q_auto/c_fill,g_faces:center,h_537,w_822/641039",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNXZiM00yYkVwSWVUQlJWRm8yVFJDX0F4aXRCU2dLTWdZUkpaNnZsUW8",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lOeWVfN0RCSHRVWU1EQW5JcnR5Z0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lOeWVfN0RCSHRVWU1EQW5JcnR5Z0FQAQ",
+            "date": "12/27/2024, 08:42 AM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "When the new leader of Syria planned an attack on Israel",
+            "source": {
+              "name": "Israel Hayom",
+              "icon": "https://encrypted-tbn3.gstatic.com/faviconV2?url=https://www.israelhayom.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+              "authors": [
+                "Yoav Limor"
+              ]
+            },
+            "link": "https://www.israelhayom.com/2024/12/26/when-the-new-leader-of-syria-planned-an-attack-on-israel/",
+            "thumbnail": "https://www.israelhayom.com/wp-content/uploads/2024/12/AFP_36PU9B2-1920x960-1.webp",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNVRNR2RpU20xamRubDBURGhyVFJDSEF4aVBCaWdLTWdZaEY0d0xsZ28",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lOeWVfN0RCSHRVWU1EQW5JcnR5Z0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lOeWVfN0RCSHRVWU1EQW5JcnR5Z0FQAQ",
+            "date": "12/26/2024, 12:51 PM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lOeWVfN0RCSHRVWU1EQW5JcnR5Z0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lOeWVfN0RCSHRVWU1EQW5JcnR5Z0FQAQ"
+      },
+      {
+        "position": 5,
+        "highlight": {
+          "title": "Israeli forces raid Gaza hospital after staff reported killed in strike",
+          "source": {
+            "name": "The Guardian",
+            "icon": "https://lh3.googleusercontent.com/SU8FywVNtcrG-wgjvZ_0D1-3JR_pN9LNSgjULFH74N748KVyEdkF1jdbvP4Lr7_ClbPZxL-iPw",
+            "authors": [
+              "Kaamil Ahmed"
+            ]
+          },
+          "link": "https://www.theguardian.com/global-development/2024/dec/27/israeli-forces-raid-gaza-hospital-after-staff-reported-killed-in-strike",
+          "thumbnail": "https://i.guim.co.uk/img/media/009ae5e24bc803f573c8f234089ba5e0dc2a4fd8/0_351_3554_2133/master/3554.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=76fbba0bc56528fe7292f51f8f0abb79",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNXJVSGN4ZURaQk1UUXhZbTVYVFJDUkF4ajhCU2dLTWdB",
+          "date": "12/27/2024, 02:04 PM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "LIVE: North Gaza’s last hospital burns after Israel removes patients, staff",
+            "source": {
+              "name": "Al Jazeera English",
+              "icon": "https://lh3.googleusercontent.com/l-Ps9rkWuApN8G3MB5uZC_a5G7iKCTITjMdpZFhm2rQf3U2M2Yr_KTYpzpmOPxDiUKgb9yN9ha8",
+              "authors": [
+                "Edna Mohamed",
+                "Nils Adler"
+              ]
+            },
+            "link": "https://www.aljazeera.com/news/liveblog/2024/12/27/live-israel-bombs-yemen-kills-about-50-people-near-northern-gaza-hospital",
+            "thumbnail": "https://www.aljazeera.com/wp-content/uploads/2024/12/AA-20241225-36584036-36584033-ISRAELI_ATTACKS_ON_GAZA_CONTINUE-1735296667.jpg?resize=1920%2C1440",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNXlOREkxVXpjNE9URmhkRGxWVFJEZ0F4aUFCU2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2o2d0t2ekRCRlZPbDVodEExUlhpZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2o2d0t2ekRCRlZPbDVodEExUlhpZ0FQAQ",
+            "date": "12/27/2024, 03:00 PM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "Israeli forces raid northern Gaza hospital",
+            "source": {
+              "name": "VOA Asia",
+              "icon": "https://encrypted-tbn0.gstatic.com/faviconV2?url=https://www.voanews.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.voanews.com/a/israeli-forces-raid-northern-gaza-hospital-/7916008.html",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2o2d0t2ekRCRlZPbDVodEExUlhpZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2o2d0t2ekRCRlZPbDVodEExUlhpZ0FQAQ",
+            "date": "12/27/2024, 04:42 PM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "Israeli forces surround Gaza hospital and order evacuation: hospital director",
+            "source": {
+              "name": "CNN",
+              "icon": "https://lh3.googleusercontent.com/8zdvTbISHUn-4iHkauW-_yQSGPD9BMrx9EWfqTIhiVm2YMYqhHC1HJWNDQoSOkMk0MRPYKxjIg",
+              "authors": [
+                "Irene Nasser",
+                "Abeer Salman"
+              ]
+            },
+            "link": "https://www.cnn.com/2024/12/27/middleeast/israeli-forces-order-staff-and-patients-evacuate-gaza-intl-hnk/index.html",
+            "thumbnail": "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2190765657.jpg?c=16x9&q=h_833,w_1480,c_fill",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNWxiMUZvVm5aSE5GWmFUQzB0VFJDZkF4amlCU2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2o2d0t2ekRCRlZPbDVodEExUlhpZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2o2d0t2ekRCRlZPbDVodEExUlhpZ0FQAQ",
+            "date": "12/27/2024, 08:26 AM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2o2d0t2ekRCRlZPbDVodEExUlhpZ0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2o2d0t2ekRCRlZPbDVodEExUlhpZ0FQAQ"
+      },
+      {
+        "position": 6,
+        "highlight": {
+          "title": "WHO chief and UN team caught up in Israeli strikes that killed 6 in Yemen",
+          "source": {
+            "name": "CNN",
+            "icon": "https://lh3.googleusercontent.com/8zdvTbISHUn-4iHkauW-_yQSGPD9BMrx9EWfqTIhiVm2YMYqhHC1HJWNDQoSOkMk0MRPYKxjIg",
+            "authors": [
+              "Mohammed Tawfeeq",
+              "Mostafa Salem",
+              "Irene Nasser"
+            ]
+          },
+          "link": "https://www.cnn.com/2024/12/26/middleeast/israeli-strikes-yemen-sanaa-houthis-intl/index.html",
+          "thumbnail": "https://media.cnn.com/api/v1/images/stellar/prod/2024-12-26t143823z-420106487-rc22xba5vnh4-rtrmadp-3-israel-palestinians-yemen-strikes.jpg?c=16x9&q=h_833,w_1480,c_fill",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNDROa1poT1VSdGNIcDBOV1pKVFJDZkF4amlCU2dLTWdB",
+          "date": "12/27/2024, 11:53 AM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "Israel Strikes Houthi Targets in Yemen, Hitting Airport and Ports",
+            "source": {
+              "name": "The New York Times",
+              "icon": "https://lh3.googleusercontent.com/tDFSwtr61ZReDD_jw6kEPWegHMSqGEHx-ZS_t-e10We-GfWEPVYkn0uLk_Vn8XQHg8wcnhMWmug",
+              "authors": [
+                "Isabel Kershner",
+                "Ismaeel Naar"
+              ]
+            },
+            "link": "https://www.nytimes.com/2024/12/26/world/middleeast/israel-yemen-bombs-houthis.html",
+            "thumbnail": "https://static01.nyt.com/images/2024/12/26/multimedia/26yemen-1-wzbh/26yemen-1-wzbh-square640.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNUpRVkpqUkhsU0xXOXVZamRCVFJDcUJCaXFCQ2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2l5OHJ6eERCSHBRVDNDOXBJeTNTZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2l5OHJ6eERCSHBRVDNDOXBJeTNTZ0FQAQ",
+            "date": "12/26/2024, 03:42 PM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "Israel prepares for a new battlefront against the Houthis in Yemen",
+            "source": {
+              "name": "The Washington Post",
+              "icon": "https://lh3.googleusercontent.com/o6yPxQMQu9ofTcfOYO51BWEv7jK44QjB14DqTK_cl1N3LsWVEF3GUHd1byHOQ3n8L6ySZluEhZQ",
+              "authors": [
+                "Shira Rubin"
+              ]
+            },
+            "link": "https://www.washingtonpost.com/world/2024/12/27/israel-war-houthis-yemen/",
+            "thumbnail": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/ICPLKOMSRXCCD76CMP6RNDZEVU_size-normalized.JPG&w=1200",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNUpaaTF4Y1VoNFREUkJSVmRJVFJERUF4aW1CU2dLTWdZQk1JU0NuZ2c",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2l5OHJ6eERCSHBRVDNDOXBJeTNTZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2l5OHJ6eERCSHBRVDNDOXBJeTNTZ0FQAQ",
+            "date": "12/27/2024, 04:19 PM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "World Health Organization chief caught in Israeli bombing of Yemen",
+            "source": {
+              "name": "NBC News",
+              "icon": "https://lh3.googleusercontent.com/qQgvCbPniYSaGbEdmp0fsD9Te7E2jE7TTCuy1h6h71QDEMnN-xVVrPE5xN5k5a6MF0XkOaNN-w",
+              "authors": [
+                "Chantal Da Silva"
+              ]
+            },
+            "link": "https://www.nbcnews.com/news/world/yemen-israel-bombing-airport-sanaa-world-health-organization-rcna185517",
+            "thumbnail": "https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2024-12/241227-yemen-airport-wc-1140-bb1956.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNXhWa0ZMWDNoZmVrOTBSMGhxVFJERUF4aW1CU2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2l5OHJ6eERCSHBRVDNDOXBJeTNTZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2l5OHJ6eERCSHBRVDNDOXBJeTNTZ0FQAQ",
+            "date": "12/27/2024, 03:50 PM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2l5OHJ6eERCSHBRVDNDOXBJeTNTZ0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2l5OHJ6eERCSHBRVDNDOXBJeTNTZ0FQAQ"
+      },
+      {
+        "position": 7,
+        "highlight": {
+          "title": "Estonia navy to protect undersea power link after main cable damaged",
+          "source": {
+            "name": "BBC.com",
+            "icon": "https://lh3.googleusercontent.com/_XS8V0jvDj-pe4NDxsc_8_YEk38hNH30ocGDk7oEwtRZNw-kUUuQouAYLFO0uIPFLX05QCKyoSo",
+            "authors": [
+              "Paul Kirby"
+            ]
+          },
+          "link": "https://www.bbc.com/news/articles/c1elq7lx9qdo",
+          "thumbnail": "https://ichef.bbci.co.uk/news/1024/branded_news/b57d/live/e0ef6910-c432-11ef-895e-b1d759fc74a3.jpg",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNXBjVkF6YzBoR2RtOUxNblF3VFJDZkF4ampCU2dLTWdB",
+          "date": "12/27/2024, 07:58 AM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "Finland Seizes Ship After Undersea Power Cable to Estonia Is Cut",
+            "source": {
+              "name": "The New York Times",
+              "icon": "https://lh3.googleusercontent.com/tDFSwtr61ZReDD_jw6kEPWegHMSqGEHx-ZS_t-e10We-GfWEPVYkn0uLk_Vn8XQHg8wcnhMWmug",
+              "authors": [
+                "Johanna Lemola",
+                "Lynsey Ebony Chutel"
+              ]
+            },
+            "link": "https://www.nytimes.com/2024/12/26/world/europe/finland-estonia-cables-russia.html",
+            "thumbnail": "https://static01.nyt.com/images/2024/12/26/multimedia/26finland-cables-jwhp/26finland-cables-jwhp-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNDFWbmhNVmtwblpGUjZSalJLVFJDUUF4allCQ2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2luX2ZEN0RCR2NJMVRPVmRiakhDZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2luX2ZEN0RCR2NJMVRPVmRiakhDZ0FQAQ",
+            "date": "12/26/2024, 10:06 PM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "NATO will step up Baltic Sea patrols as Finland probes the possible sabotage of undersea cables",
+            "source": {
+              "name": "The Hill",
+              "icon": "https://lh3.googleusercontent.com/4GIV6VDGgeRBBo20kfZHEFjDrgPr1lxJmvxB32KUmZWsAU54y7SD2dfT385jXBnmdBoBMaM29A",
+              "authors": [
+                "Lorne Cook"
+              ]
+            },
+            "link": "https://thehill.com/homenews/ap/ap-international/ap-nato-will-step-up-baltic-sea-patrols-as-finland-probes-the-possible-sabotage-of-undersea-cables/",
+            "thumbnail": "https://thehill.com/wp-content/uploads/sites/2/2024/12/676ed492588d79.47775792.jpeg?strip=1",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNTRSMUJ5UkZkU1NqTmlRMWhzVFJERUF4aW1CU2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2luX2ZEN0RCR2NJMVRPVmRiakhDZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2luX2ZEN0RCR2NJMVRPVmRiakhDZ0FQAQ",
+            "date": "12/27/2024, 04:22 PM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "Finland seizes Russia-linked tanker suspected of cutting vital undersea cables",
+            "source": {
+              "name": "NBC News",
+              "icon": "https://lh3.googleusercontent.com/qQgvCbPniYSaGbEdmp0fsD9Te7E2jE7TTCuy1h6h71QDEMnN-xVVrPE5xN5k5a6MF0XkOaNN-w",
+              "authors": [
+                "Chantal Da Silva"
+              ]
+            },
+            "link": "https://www.nbcnews.com/news/world/finland-russia-tanker-undersea-cut-nato-baltics-rcna185530",
+            "thumbnail": "https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2024-12/241217-finland-coast-guard-wc-1410-da5b64.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNHpaVFZhZDA5dVFVNW1hRnBHVFJERUF4aW1CU2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2luX2ZEN0RCR2NJMVRPVmRiakhDZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2luX2ZEN0RCR2NJMVRPVmRiakhDZ0FQAQ",
+            "date": "12/27/2024, 02:39 PM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2luX2ZEN0RCR2NJMVRPVmRiakhDZ0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2luX2ZEN0RCR2NJMVRPVmRiakhDZ0FQAQ"
+      },
+      {
+        "position": 8,
+        "highlight": {
+          "title": "2024 was alarmingly hot all over the world",
+          "source": {
+            "name": "Axios",
+            "icon": "https://lh3.googleusercontent.com/l85lUZ33FMIg2XGtWUFSQsRjWkxTQE_JPUVzDezzc7JDHPJO0PZgRCyNWe67UZZCQaNx6K97",
+            "authors": [
+              "Andrew E. Freedman"
+            ]
+          },
+          "link": "https://www.axios.com/2024/12/27/hottest-year-temperature-record-climate-change",
+          "thumbnail": "https://images.axios.com/c_Sh85hGERQFRWsJYDu0pkofrkY=/0x0:2874x1617/1920x1080/2024/12/27/1735309827227.png",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNVdOR1IzTVU1elRFWXhYM0ZDVFJDZkF4ampCU2dLTWdhWklvNk1JUWc",
+          "date": "12/27/2024, 02:41 PM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "Climate crisis exposed people to extra six weeks of dangerous heat in 2024",
+            "source": {
+              "name": "The Guardian",
+              "icon": "https://lh3.googleusercontent.com/SU8FywVNtcrG-wgjvZ_0D1-3JR_pN9LNSgjULFH74N748KVyEdkF1jdbvP4Lr7_ClbPZxL-iPw",
+              "authors": [
+                "Damian Carrington"
+              ]
+            },
+            "link": "https://www.theguardian.com/environment/2024/dec/27/climate-crisis-dangerous-heat-2024",
+            "thumbnail": "https://i.guim.co.uk/img/media/6691351852999f8c7f07fa3770845564d593ee31/0_186_3543_2126/master/3543.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=b42e8dc1fb38633b2bcb8f8f74519af5",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNUpZbm81WjNwSlVDMXhiMVp0VFJDUkF4ajhCU2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p4cUlQOERCRXNVZ25EeERxVFRpZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p4cUlQOERCRXNVZ25EeERxVFRpZ0FQAQ",
+            "date": "12/27/2024, 05:00 AM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "Climate change led to 41 extra days of extreme heat this year on average: Analysis",
+            "source": {
+              "name": "The Hill",
+              "icon": "https://lh3.googleusercontent.com/4GIV6VDGgeRBBo20kfZHEFjDrgPr1lxJmvxB32KUmZWsAU54y7SD2dfT385jXBnmdBoBMaM29A",
+              "authors": [
+                "Zack Budryk"
+              ]
+            },
+            "link": "https://thehill.com/policy/energy-environment/5057573-climate-change-extreme-heat-study/",
+            "thumbnail": "https://thehill.com/wp-content/uploads/sites/2/2024/12/AP24197084976854-e1734120914117.jpg?strip=1",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNTFSMlJ0UjNaU1YyNVZWekppVFJDZkF4ampCU2dLTWdZaFpJNk5QUVU",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p4cUlQOERCRXNVZ25EeERxVFRpZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p4cUlQOERCRXNVZ25EeERxVFRpZ0FQAQ",
+            "date": "12/27/2024, 04:44 PM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "2023 was extremely hot. Then came 2024",
+            "source": {
+              "name": "NPR",
+              "icon": "https://lh3.googleusercontent.com/n1J5BgiRjTv0UA7P7ow6a4W1NsYEz8yc-Cbr539Q-le21-0uoqwGOIItzyalR8JOHXxwAL7eng",
+              "authors": [
+                "Lauren Sommer"
+              ]
+            },
+            "link": "https://www.npr.org/2024/12/24/nx-s1-5230783/2024-hottest-year-record-heat-climate-change-el-nino",
+            "thumbnail": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/1024x683+0+0/resize/1100/quality/85/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F2c%2Fa1%2Faaac788a40faa79f5c3dd6f2e4c5%2Fgettyimages-1541245269.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNXNabGxyZW5kU1NYSkRNRmxZVFJERUF4aW1CU2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p4cUlQOERCRXNVZ25EeERxVFRpZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p4cUlQOERCRXNVZ25EeERxVFRpZ0FQAQ",
+            "date": "12/24/2024, 10:00 AM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p4cUlQOERCRXNVZ25EeERxVFRpZ0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p4cUlQOERCRXNVZ25EeERxVFRpZ0FQAQ"
+      },
+      {
+        "position": 9,
+        "highlight": {
+          "title": "20 Years After The Indian Ocean Tsunami",
+          "source": {
+            "name": "Forbes",
+            "icon": "https://lh3.googleusercontent.com/NIjzR9QHtZJllEvJIVkODXFQ7_rbx1BMBXx2rNUbttjuu9YWLIp2_juQaI9jJ2rDtzi6snbZ",
+            "authors": [
+              "David Bressan"
+            ]
+          },
+          "link": "https://www.forbes.com/sites/davidbressan/2024/12/26/20-years-after-the-indian-ocean-tsunami/",
+          "thumbnail": "https://imageio.forbes.com/specials-images/imageserve/676d9cb159f823f14f6b9afc/-FILES--File-photo-dated-26-December-200/960x0.jpg?format=jpg&width=960",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNUpTR2gzVERWVFRWUnNMVXhvVFJEWEF4aUxCU2dLTWdB",
+          "date": "12/26/2024, 07:08 PM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "AP PHOTOS: Scenes of devastation from the aftermath of the 2004 Indian Ocean tsunami",
+            "source": {
+              "name": "The Associated Press",
+              "icon": "https://lh3.googleusercontent.com/M087pJgRw3PLf4gl-Y7U-tJn6uaN99AUbFIuX7fmMnhq5QeNylJQMq_UeYPPVaEPk-5jL9I3QA"
+            },
+            "link": "https://apnews.com/article/indian-ocean-tsunami-anniversary-photo-gallery-65a5fdaeed08d68336523e7e4a4835a2",
+            "thumbnail": "https://dims.apnews.com/dims4/default/501f392/2147483647/strip/true/crop/2000x1311+0+0/resize/599x393!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F58%2Fa5%2Fa682a240329546c38502454b6efa%2F45a5f67b2c2a4a19b96c307f1c4f9469",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNHhYMGRSYVRKRFZtNHlWelZwVFJDSkF4alhCQ2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pzNjhmeERCSEI1YldXY0twT1l5Z0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pzNjhmeERCSEI1YldXY0twT1l5Z0FQAQ",
+            "date": "12/21/2024, 05:29 PM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "20 years later: A look at the deadliest disaster to strike Earth in modern history",
+            "source": {
+              "name": "Fox Weather ",
+              "icon": "https://lh3.googleusercontent.com/U-WnHs7OkphkboLFftbovYWJjohUkG_U6YcnX8UqWnQP-OoGliS-19F16KD2zZPE_elkXUkupQ",
+              "authors": [
+                "Andrew Wulfeck"
+              ]
+            },
+            "link": "https://www.foxweather.com/extreme-weather/indian-ocean-tsunami-earthquake-20-years-later",
+            "thumbnail": "https://images.foxweather.com/static.foxweather.com/www.foxweather.com/content/uploads/2024/12/1024/512/gettyimages-52487523.jpg?ve=1&tl=1",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNDVMVkpZWnpkYVdGZDJUazUzVFJDSEF4aVBCaWdLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pzNjhmeERCSEI1YldXY0twT1l5Z0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pzNjhmeERCSEI1YldXY0twT1l5Z0FQAQ",
+            "date": "12/26/2024, 11:00 AM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "On 20th anniversary of world’s worst tsunami, experts warn of complacency",
+            "source": {
+              "name": "Al Jazeera English",
+              "icon": "https://lh3.googleusercontent.com/l-Ps9rkWuApN8G3MB5uZC_a5G7iKCTITjMdpZFhm2rQf3U2M2Yr_KTYpzpmOPxDiUKgb9yN9ha8",
+              "authors": [
+                "Alastair Mccready"
+              ]
+            },
+            "link": "https://www.aljazeera.com/news/2024/12/25/on-20th-anniversary-of-worlds-worst-tsunami-experts-warn-of-complacency",
+            "thumbnail": "https://www.aljazeera.com/wp-content/uploads/2024/12/AFP__20051215__ARP1249362__v6__HighRes__IndonesiaAsiaQuake-1734766346.jpg?resize=1920%2C1440",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNUpSV3BXVGxGU05tbG1hRFZmVFJEZ0F4aUFCU2dLTWdZQm9Jb0F2d1U",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pzNjhmeERCSEI1YldXY0twT1l5Z0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pzNjhmeERCSEI1YldXY0twT1l5Z0FQAQ",
+            "date": "12/25/2024, 10:53 PM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pzNjhmeERCSEI1YldXY0twT1l5Z0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pzNjhmeERCSEI1YldXY0twT1l5Z0FQAQ"
+      },
+      {
+        "position": 10,
+        "highlight": {
+          "title": "Germany’s president dissolves parliament, sets national election for Feb. 23",
+          "source": {
+            "name": "The Associated Press",
+            "icon": "https://lh3.googleusercontent.com/M087pJgRw3PLf4gl-Y7U-tJn6uaN99AUbFIuX7fmMnhq5QeNylJQMq_UeYPPVaEPk-5jL9I3QA",
+            "authors": [
+              "David Mchugh"
+            ]
+          },
+          "link": "https://apnews.com/article/germany-election-steinmeier-32a9c393067faac264fae7bb29b3e4ef",
+          "thumbnail": "https://dims.apnews.com/dims4/default/46553b8/2147483647/strip/true/crop/5616x3744+0+0/resize/599x399!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Fcc%2Fb0%2Fab9029af38909e77efc419835a79%2Fecddc069360b4f9ab2d838113d817634",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNHhaWEJaZUdka1R5MTZNWGRZVFJDUEF4alhCQ2dLTWdB",
+          "date": "12/27/2024, 11:13 AM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "Germany’s president dissolves parliament ahead of snap election",
+            "source": {
+              "name": "The Guardian",
+              "icon": "https://lh3.googleusercontent.com/SU8FywVNtcrG-wgjvZ_0D1-3JR_pN9LNSgjULFH74N748KVyEdkF1jdbvP4Lr7_ClbPZxL-iPw",
+              "authors": [
+                "Deborah Cole"
+              ]
+            },
+            "link": "https://www.theguardian.com/world/2024/dec/27/germany-president-dissolves-parliament-snap-election",
+            "thumbnail": "https://i.guim.co.uk/img/media/5ac730217a96cc749e04d2bf93c5e4d9a00b0765/0_0_3543_2126/master/3543.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=4d7a9627563b0a89d422c443f8d13bb0",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNUxSR1prVUZGdVpUZEhSVkowVFJDUkF4ajhCU2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2o3bVo3N0RCRXMzbkpFVk1YQmVDZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2o3bVo3N0RCRXMzbkpFVk1YQmVDZ0FQAQ",
+            "date": "12/27/2024, 12:55 PM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "Germany braces for elections as parliament dissolved",
+            "source": {
+              "name": "DW (English)",
+              "icon": "https://lh3.googleusercontent.com/7XapzgFjx4i8nazdMN49OvVmgOWoxa2SKwptZ3NrDZNh1R9oNBlrFOru-eGg1TT9sDKy-jOv"
+            },
+            "link": "https://www.dw.com/en/germany-braces-for-elections-as-parliament-dissolved/a-71166875",
+            "thumbnail": "https://static.dw.com/image/71146185_804.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iMkNnNWxUbVUwZUhrNVZEVmpRVXhuVFJDcUJCaXFCQ2dLTWdzQkVwWUtsbW85elNsMHlR",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2o3bVo3N0RCRXMzbkpFVk1YQmVDZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2o3bVo3N0RCRXMzbkpFVk1YQmVDZ0FQAQ",
+            "date": "12/27/2024, 10:26 AM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "While extremists rise, German Jews expect pro-Israel voices to prevail in Feb. election",
+            "source": {
+              "name": "The Times of Israel",
+              "icon": "https://lh3.googleusercontent.com/KL7VFUdHpnRzWYFwHNMM0Mui8KZ2POO9h_bhISFR8jJpS5s8hImnur4ZeGoyeAEtfzrWvAkLBg",
+              "authors": [
+                "Bart Schut"
+              ]
+            },
+            "link": "https://www.timesofisrael.com/while-extremists-rise-german-jews-expect-pro-israel-voices-to-prevail-in-feb-election/",
+            "thumbnail": "https://static-cdn.toi-media.com/www/uploads/2024/12/AFP__20240529__34U78Z9__v1__HighRes__GermanyEuPoliticsVoteBsw.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNHhTVnBVWW5OTFlWaFlUVnBCVFJERUF4aW1CU2dLTWdZQmVZVEV0Z1E",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2o3bVo3N0RCRXMzbkpFVk1YQmVDZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2o3bVo3N0RCRXMzbkpFVk1YQmVDZ0FQAQ",
+            "date": "12/26/2024, 06:58 AM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2o3bVo3N0RCRXMzbkpFVk1YQmVDZ0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2o3bVo3N0RCRXMzbkpFVk1YQmVDZ0FQAQ"
+      },
+      {
+        "position": 11,
+        "highlight": {
+          "title": "Window closing for Gaza hostage-ceasefire deal before Trump takes office",
+          "source": {
+            "name": "Axios",
+            "icon": "https://lh3.googleusercontent.com/l85lUZ33FMIg2XGtWUFSQsRjWkxTQE_JPUVzDezzc7JDHPJO0PZgRCyNWe67UZZCQaNx6K97",
+            "authors": [
+              "Barak Ravid"
+            ]
+          },
+          "link": "https://www.axios.com/2024/12/27/gaza-hostage-ceasefire-talks-trump-netanyahu",
+          "thumbnail": "https://images.axios.com/ZC2xOkIecRXwnMvFgVC_s4c-KLs=/0x860:8256x5504/1920x1080/2024/12/26/1735237008296.jpg",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iMkNnNXBXRkEwYlRkUGVrUnhjazQ0VFJDZkF4ampCU2dLTWdzTkFJUUlDcVhCamdtZGVn",
+          "date": "12/27/2024, 10:45 AM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "Updates: Israel kills 23 in Gaza, trades blame with Hamas over truce delay",
+            "source": {
+              "name": "Al Jazeera English",
+              "icon": "https://lh3.googleusercontent.com/l-Ps9rkWuApN8G3MB5uZC_a5G7iKCTITjMdpZFhm2rQf3U2M2Yr_KTYpzpmOPxDiUKgb9yN9ha8",
+              "authors": [
+                "Edna Mohamed",
+                "Mersiha Gadzo",
+                "Nils Adler"
+              ]
+            },
+            "link": "https://www.aljazeera.com/news/liveblog/2024/12/25/live-christians-in-gaza-pray-for-an-end-to-israels-death-and-destruction",
+            "thumbnail": "https://www.aljazeera.com/wp-content/uploads/2024/12/AFP__20241225__36RE64L__v1__HighRes__PalestinianIsraelConflict-1735122977.jpg?resize=1920%2C1440",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNXVjbFZVTlhrMmQyMHhVVFYwVFJEZ0F4aUFCU2dLTWdZVmNJb3BTZ1E",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p3OHVqN0RCR0lGR1lZQUpHZF9pZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p3OHVqN0RCR0lGR1lZQUpHZF9pZ0FQAQ",
+            "date": "12/25/2024, 07:18 PM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "Report: Israeli, US officials say low odds of a hostage deal before Trump’s return",
+            "source": {
+              "name": "The Times of Israel",
+              "icon": "https://lh3.googleusercontent.com/KL7VFUdHpnRzWYFwHNMM0Mui8KZ2POO9h_bhISFR8jJpS5s8hImnur4ZeGoyeAEtfzrWvAkLBg"
+            },
+            "link": "https://www.timesofisrael.com/report-israeli-us-officials-say-low-odds-of-a-hostage-deal-before-trumps-return/",
+            "thumbnail": "https://static-cdn.toi-media.com/www/uploads/2024/12/F241226TN64.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNVRNM3B2WW14QlJrTkJWRFpGVFJERUF4aW1CU2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p3OHVqN0RCR0lGR1lZQUpHZF9pZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p3OHVqN0RCR0lGR1lZQUpHZF9pZ0FQAQ",
+            "date": "12/27/2024, 06:55 AM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "Netanyahu Signals Progress on Hostage Deal but Gives No Timeline",
+            "source": {
+              "name": "The New York Times",
+              "icon": "https://lh3.googleusercontent.com/tDFSwtr61ZReDD_jw6kEPWegHMSqGEHx-ZS_t-e10We-GfWEPVYkn0uLk_Vn8XQHg8wcnhMWmug",
+              "authors": [
+                "Ephrat Livni"
+              ]
+            },
+            "link": "https://www.nytimes.com/2024/12/23/world/middleeast/netanyahu-hostage-deal.html",
+            "thumbnail": "https://static01.nyt.com/images/2024/12/23/multimedia/23Netanyahu-Hostage-Progress-cgkm/23Netanyahu-Hostage-Progress-cgkm-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNXdkSE4zWkRSa1RXNWlMVTVZVFJDUUF4allCQ2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p3OHVqN0RCR0lGR1lZQUpHZF9pZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p3OHVqN0RCR0lGR1lZQUpHZF9pZ0FQAQ",
+            "date": "12/23/2024, 08:22 PM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p3OHVqN0RCR0lGR1lZQUpHZF9pZ0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p3OHVqN0RCR0lGR1lZQUpHZF9pZ0FQAQ"
+      },
+      {
+        "position": 12,
+        "highlight": {
+          "title": "Political leaders and industry titans pay tribute to former Indian Prime Minister Manmohan Singh",
+          "source": {
+            "name": "CNBC",
+            "icon": "https://lh3.googleusercontent.com/x6yA8OWeMmbiC9XXY4qz7R-sjJwLGs7d04RUeu6hxzPJw2myDjIdJnhBxKzvik9DbC3_J3tm",
+            "authors": [
+              "Yeo Boon"
+            ]
+          },
+          "link": "https://www.cnbc.com/2024/12/27/manmohan-singh-death-draws-tributes-from-political-industry-leaders-.html",
+          "date": "12/27/2024, 04:13 AM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "That is where my grandfather was killed: What Manmohan Singh said about visiting his ancestral village in",
+            "source": {
+              "name": "The Times of India",
+              "icon": "https://lh3.googleusercontent.com/d9mz-OKghOQPsgxRv1BQzQAI44ifiA_6aAk-gRwo4_32mZXM-TSd5vIY1rL1P2LUH9mFQPnUSRE"
+            },
+            "link": "https://timesofindia.indiatimes.com/india/that-is-where-my-grandfather-was-killed-what-manmohan-singh-said-about-visiting-his-ancestral-village-in-pakistan/articleshow/116720352.cms",
+            "thumbnail": "https://static.toiimg.com/thumb/msid-116720368,width-1280,height-720,resizemode-4/116720368.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNWZaRkJJTW0xS1ZYSTRVREp1VFJDZkF4ampCU2dLTWdZbGhvSU1QZ1E",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lsMGRUOERCR2thNHhzYk1ETTVTZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lsMGRUOERCR2thNHhzYk1ETTVTZ0FQAQ",
+            "date": "12/27/2024, 04:01 PM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "\"Amritsar Breakfast, Lunch In Lahore\": Pak Leader On Manmohan Singh's Dream",
+            "source": {
+              "name": "NDTV",
+              "icon": "https://lh3.googleusercontent.com/tdxgqIuMCdYXjnxBEi-22G1al2_n0slQR4vppoxUyB3fupq2sPqxL3okZNKW_QWJrymCWx6k_g"
+            },
+            "link": "https://www.ndtv.com/world-news/pakistans-ex-foreign-minister-khurshid-mahmud-kasuri-recalls-fond-memories-of-manmohan-singh-7345741",
+            "thumbnail": "https://c.ndtvimg.com/2024-12/g0cvljq_dr-manmohan-singh-the-former-prime-minister-_625x300_27_December_24.jpeg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNXpabkJaWmpCWFRVZFZTekJUVFJDeUF4akNCU2dLTWdZdFJaYXVJUWc",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lsMGRUOERCR2thNHhzYk1ETTVTZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lsMGRUOERCR2thNHhzYk1ETTVTZ0FQAQ",
+            "date": "12/27/2024, 03:49 PM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "India’s former prime minister Manmohan Singh dies at 92",
+            "source": {
+              "name": "NBC News",
+              "icon": "https://lh3.googleusercontent.com/qQgvCbPniYSaGbEdmp0fsD9Te7E2jE7TTCuy1h6h71QDEMnN-xVVrPE5xN5k5a6MF0XkOaNN-w"
+            },
+            "link": "https://www.nbcnews.com/news/world/india-manmohan-singh-former-prime-minister-dies-rcna185522",
+            "thumbnail": "https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2024-12/241227-singh-wc-0927-8f1d00.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNUhTWFV3ZUZoTVpVSTVibGxUVFJERUF4aW1CU2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lsMGRUOERCR2thNHhzYk1ETTVTZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lsMGRUOERCR2thNHhzYk1ETTVTZ0FQAQ",
+            "date": "12/27/2024, 12:37 PM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lsMGRUOERCR2thNHhzYk1ETTVTZ0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lsMGRUOERCR2thNHhzYk1ETTVTZ0FQAQ"
+      },
+      {
+        "position": 13,
+        "highlight": {
+          "title": "North Korean soldier captured in Ukraine dies: reports",
+          "source": {
+            "name": "BBC.com",
+            "icon": "https://lh3.googleusercontent.com/_XS8V0jvDj-pe4NDxsc_8_YEk38hNH30ocGDk7oEwtRZNw-kUUuQouAYLFO0uIPFLX05QCKyoSo"
+          },
+          "link": "https://www.bbc.com/news/articles/cq62qe131d7o",
+          "thumbnail": "https://ichef.bbci.co.uk/news/1024/branded_news/3fde/live/1014da40-c429-11ef-acfe-e5ecbb2678a4.jpg",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNWtRbTFrVmxOWGVIQnRVbkp0VFJDZkF4ampCU2dLTWdB",
+          "date": "12/27/2024, 09:05 AM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "Injured North Korean soldier captured by Ukraine has died, says South Korea",
+            "source": {
+              "name": "The Guardian",
+              "icon": "https://lh3.googleusercontent.com/SU8FywVNtcrG-wgjvZ_0D1-3JR_pN9LNSgjULFH74N748KVyEdkF1jdbvP4Lr7_ClbPZxL-iPw",
+              "authors": [
+                "Justin Mccurry",
+                "Pjotr Sauer"
+              ]
+            },
+            "link": "https://www.theguardian.com/world/2024/dec/27/north-korean-soldier-captured-ukraine-injured-south-korea",
+            "thumbnail": "https://i.guim.co.uk/img/media/25743ee3fc336db21bb5bff536ac2d46018d534e/519_516_3444_2067/master/3444.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=2736684b6b5a6614e02236c5d5284661",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNURhRkF6UWxKa1IwZG5ibmhYVFJDUkF4ajhCU2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2k0dHY3OERCR0YxWTA1VjNrTTNTZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2k0dHY3OERCR0YxWTA1VjNrTTNTZ0FQAQ",
+            "date": "12/27/2024, 03:07 AM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "Ukraine updates: North Korean soldier captured in Kursk",
+            "source": {
+              "name": "DW (English)",
+              "icon": "https://lh3.googleusercontent.com/7XapzgFjx4i8nazdMN49OvVmgOWoxa2SKwptZ3NrDZNh1R9oNBlrFOru-eGg1TT9sDKy-jOv"
+            },
+            "link": "https://www.dw.com/en/ukraine-updates-north-korean-soldier-captured-in-kursk/live-71167620",
+            "thumbnail": "https://static.dw.com/image/71167950_604.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNVJTR3R3WkdOUWJXbGFiMmxqVFJDZkF4amlCU2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2k0dHY3OERCR0YxWTA1VjNrTTNTZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2k0dHY3OERCR0YxWTA1VjNrTTNTZ0FQAQ",
+            "date": "12/27/2024, 09:22 AM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "Russia-Ukraine war: List of key events, day 1,037",
+            "source": {
+              "name": "Al Jazeera English",
+              "icon": "https://lh3.googleusercontent.com/l-Ps9rkWuApN8G3MB5uZC_a5G7iKCTITjMdpZFhm2rQf3U2M2Yr_KTYpzpmOPxDiUKgb9yN9ha8"
+            },
+            "link": "https://www.aljazeera.com/news/2024/12/27/russia-ukraine-war-list-of-key-events-day-1037",
+            "thumbnail": "https://www.aljazeera.com/wp-content/uploads/2024/12/2024-12-26T094128Z_625049769_RC26WBAKUEJP_RTRMADP_3_UKRAINE-CRISIS-SOUTH-FRONTLINE-1735280773.jpg?resize=1920%2C1440",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNUdSMWhKWDA5SWJISklObEZCVFJEZ0F4aUFCU2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2k0dHY3OERCR0YxWTA1VjNrTTNTZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2k0dHY3OERCR0YxWTA1VjNrTTNTZ0FQAQ",
+            "date": "12/27/2024, 07:28 AM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2k0dHY3OERCR0YxWTA1VjNrTTNTZ0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2k0dHY3OERCR0YxWTA1VjNrTTNTZ0FQAQ"
+      },
+      {
+        "position": 14,
+        "highlight": {
+          "title": "Chinese man sentenced to death for killing 35 people after driving into a crowd",
+          "source": {
+            "name": "The Associated Press",
+            "icon": "https://lh3.googleusercontent.com/M087pJgRw3PLf4gl-Y7U-tJn6uaN99AUbFIuX7fmMnhq5QeNylJQMq_UeYPPVaEPk-5jL9I3QA",
+            "authors": [
+              "Ken Moritsugu"
+            ]
+          },
+          "link": "https://apnews.com/article/china-crowd-mass-killing-death-sentence-532cf8651cc13a036771b83da03f0e44",
+          "thumbnail": "https://dims.apnews.com/dims4/default/e705701/2147483647/strip/true/crop/3915x2610+0+0/resize/599x399!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F01%2Fa2%2Ff2a678154774a6959d3cb615ac2d%2F87af8c329d454fcf9aca588475a805c8",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNHdZVmRTT1dkb1N6TnRUMWhsVFJDUEF4alhCQ2dLTWdZQk1ZZ1NzUVE",
+          "date": "12/27/2024, 03:48 PM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "Driver in China Car-Ramming Attack Sentenced to Death",
+            "source": {
+              "name": "The Wall Street Journal",
+              "icon": "https://lh3.googleusercontent.com/-Wo0rkJtT8uQ7BFow-YiRKzVlJNka-TbZM6_e2l3XQwNNqfPe1mR8Rc4_o_qAOJFb32YwQ4I1NM",
+              "authors": [
+                "Chun Han Wong"
+              ]
+            },
+            "link": "https://www.wsj.com/world/china/driver-in-china-car-ramming-attack-sentenced-to-death-94746b26",
+            "thumbnail": "https://images.wsj.net/im-67129916?width=700&height=466",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNXNUVWxHZGxaalpsSmZVMEZzVFJERUF4aW5CU2dLTWdhTkVJYnJMUU0",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pwcktQNkRCRkpIUHVDS2NiQlNpZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pwcktQNkRCRkpIUHVDS2NiQlNpZ0FQAQ",
+            "date": "12/27/2024, 01:14 PM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "Man Sentenced to Death for Killing 35 People with Car: Reports",
+            "source": {
+              "name": "PEOPLE",
+              "icon": "https://lh3.googleusercontent.com/HL7Lub1zLCotJLKEYDswsz9hiX9BU3JdNAHR5f4vY6J45lPGIGPnwTlmrbIRqmGfnU_Ifb_bZg",
+              "authors": [
+                "Ben Brachfeld"
+              ]
+            },
+            "link": "https://people.com/man-sentenced-death-killing-35-people-car-8766952",
+            "thumbnail": "https://people.com/thmb/LMdG_BCI9noL5u2HLpQutwkE1qk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(985x409:987x411)/zuhai-peoples-fitness-plaza-sports-center-sentencing-zhuhai-122724-1e07689164a04974ae1e6ef8a54002d5.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNDNaVGxTYzI0d2Fub3RjMUJzVFJERUF4aW1CU2dLTWdZQk1ZZ1NzUVE",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pwcktQNkRCRkpIUHVDS2NiQlNpZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pwcktQNkRCRkpIUHVDS2NiQlNpZ0FQAQ",
+            "date": "12/27/2024, 04:26 PM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "Zhuhai: Driver Fan Weiqiu sentenced to death after car attack",
+            "source": {
+              "name": "BBC.com",
+              "icon": "https://lh3.googleusercontent.com/_XS8V0jvDj-pe4NDxsc_8_YEk38hNH30ocGDk7oEwtRZNw-kUUuQouAYLFO0uIPFLX05QCKyoSo",
+              "authors": [
+                "Flora Drury"
+              ]
+            },
+            "link": "https://www.bbc.com/news/articles/cjdn8el0lpyo",
+            "thumbnail": "https://ichef.bbci.co.uk/news/480/cpsprodpb/29dc/live/29d0aaa0-c455-11ef-a0f2-fd81ae5962f4.jpg.webp",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iMkNnNXBZa2hTU1VreldFSktWRkV3VFJDb0FSaXNBaWdCTWd1Tk1ZeEpuYWN0cHFwaVpB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pwcktQNkRCRkpIUHVDS2NiQlNpZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pwcktQNkRCRkpIUHVDS2NiQlNpZ0FQAQ",
+            "date": "12/25/2024, 01:54 PM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pwcktQNkRCRkpIUHVDS2NiQlNpZ0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pwcktQNkRCRkpIUHVDS2NiQlNpZ0FQAQ"
+      },
+      {
+        "position": 15,
+        "highlight": {
+          "title": "China Launches Largest Amphibious Warship in Show of Naval Power",
+          "source": {
+            "name": "Bloomberg",
+            "icon": "https://lh3.googleusercontent.com/NGEszdY4BPKjXpMWL2fgAHQasyKjNgr-yPt6p2ELILT6x6SV6gjNxJgplAAFTRD6-UhwMebPlA",
+            "authors": [
+              "Josh Xiao"
+            ]
+          },
+          "link": "https://www.bloomberg.com/news/articles/2024-12-27/china-launches-largest-amphibious-warship-in-show-of-naval-power",
+          "thumbnail": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iChpisy_uJtA/v1/-1x-1.webp",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNUVhRXhyZFd0S2RtOVpTVWxTVFJEREF4aW5CU2dLTWdB",
+          "date": "12/27/2024, 06:23 AM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "China launches new amphibious assault ship in a race to rival US military",
+            "source": {
+              "name": "CNN",
+              "icon": "https://lh3.googleusercontent.com/8zdvTbISHUn-4iHkauW-_yQSGPD9BMrx9EWfqTIhiVm2YMYqhHC1HJWNDQoSOkMk0MRPYKxjIg",
+              "authors": [
+                "Brad Lendon"
+              ]
+            },
+            "link": "https://www.cnn.com/2024/12/27/china/china-type-076-amphibious-assault-ship-intl-hnk/index.html",
+            "thumbnail": "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2191533762.jpg?c=16x9&q=h_833,w_1480,c_fill",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNVlVVFpaYnpSVFNHdFFjbEV3VFJDZkF4amlCU2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lrcFA3OERCRldQRmJIam9XOTdTZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lrcFA3OERCRldQRmJIam9XOTdTZ0FQAQ",
+            "date": "12/27/2024, 09:05 AM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "China unveils world's largest amphibious warship",
+            "source": {
+              "name": "Fox News",
+              "icon": "https://lh3.googleusercontent.com/sI1WB0Q5duO4KjZqNG5iwyb-5Rt-WYpF7YJjAde847yk_-mOpMueyEcXZgjU5dIMJNdPwe2ICg",
+              "authors": [
+                "Chris Pandolfo"
+              ]
+            },
+            "link": "https://www.foxnews.com/world/china-unveils-worlds-largest-amphibious-warship",
+            "thumbnail": "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2024/12/1200/675/china-amphibious-warship-1.jpg?ve=1&tl=1",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iOkNnNVNlSGMwUzNBd2MyVkViV0pKVFJDZkF4ampCU2dLTWhFQkFJanJEQ2VwREpsSm9hNG9sWUM3Qnc",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lrcFA3OERCRldQRmJIam9XOTdTZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lrcFA3OERCRldQRmJIam9XOTdTZ0FQAQ",
+            "date": "12/27/2024, 01:33 PM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "China launches biggest amphibious assault ship in projection of military power",
+            "source": {
+              "name": "Financial Times",
+              "icon": "https://lh3.googleusercontent.com/281oPpXmEcGU9cV4N2LudyLEG2aBqbqG2iDoMoXUXKl-SWD4AUdO5652KVTGNmcduSWZB_7j",
+              "authors": [
+                "Kathrin Hille"
+              ]
+            },
+            "link": "https://www.ft.com/content/147f4b4b-4bcf-41d5-85dc-cca16c4883ec",
+            "thumbnail": "https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fd1e00ek4ebabms.cloudfront.net%2Fproduction%2F50a52161-18be-48d5-a5e7-c2851298ac4c.jpg?source=next-article&fit=scale-down&quality=highest&width=700&dpr=1",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNVBRMk52Ym5SRlMyOHdXbW81VFJDS0F4aThCU2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lrcFA3OERCRldQRmJIam9XOTdTZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lrcFA3OERCRldQRmJIam9XOTdTZ0FQAQ",
+            "date": "12/27/2024, 09:25 AM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lrcFA3OERCRldQRmJIam9XOTdTZ0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lrcFA3OERCRldQRmJIam9XOTdTZ0FQAQ"
+      },
+      {
+        "position": 16,
+        "highlight": {
+          "title": "Biden pledges more U.S. arms to Ukraine after Russia's Christmas attack",
+          "source": {
+            "name": "Axios",
+            "icon": "https://lh3.googleusercontent.com/l85lUZ33FMIg2XGtWUFSQsRjWkxTQE_JPUVzDezzc7JDHPJO0PZgRCyNWe67UZZCQaNx6K97",
+            "authors": [
+              "Rebecca Falconer"
+            ]
+          },
+          "link": "https://www.axios.com/2024/12/26/russia-christmas-attack-ukraine-biden-us-weapons",
+          "thumbnail": "https://images.axios.com/8Kbb9O6JvkMnOlstKkgIRjguWws=/0x0:4648x2615/1920x1080/2024/12/25/1735170625667.jpg",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iL0NnNDRjbDlyZFc0NGFXVndWVk56VFJDZkF4ampCU2dLTWdrTklvcmxFcXMxU0FJ",
+          "date": "12/26/2024, 12:56 PM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "Putin ‘inhumane,’ Zelensky says, as Russia pounds Ukrainian power grid on Christmas Day",
+            "source": {
+              "name": "CNN",
+              "icon": "https://lh3.googleusercontent.com/8zdvTbISHUn-4iHkauW-_yQSGPD9BMrx9EWfqTIhiVm2YMYqhHC1HJWNDQoSOkMk0MRPYKxjIg",
+              "authors": [
+                "Svitlana Vlasova",
+                "Edward Jozef Szekeres"
+              ]
+            },
+            "link": "https://www.cnn.com/2024/12/25/europe/russia-aerial-attack-ukraine-christmas-intl-hnk/index.html",
+            "thumbnail": "https://media.cnn.com/api/v1/images/stellar/prod/2024-12-25t093346z-811840921-rc28wbanm5u7-rtrmadp-3-ukraine-crisis-attack-kharkiv.jpg?c=16x9&q=w_800,c_fill",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iMkNnNVRNRkJtVjJwcVVIbzNOV2xoVFJDZkF4ampCU2dLTWdzQllJcUNybVFOeThrQnFn",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2llN0lqNURCSHFIZHFncW1mMjRpZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2llN0lqNURCSHFIZHFncW1mMjRpZ0FQAQ",
+            "date": "12/25/2024, 03:42 PM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "‘Surge of weapons’: How much Ukraine aid did Biden approve after Trump win?",
+            "source": {
+              "name": "Al Jazeera English",
+              "icon": "https://lh3.googleusercontent.com/l-Ps9rkWuApN8G3MB5uZC_a5G7iKCTITjMdpZFhm2rQf3U2M2Yr_KTYpzpmOPxDiUKgb9yN9ha8",
+              "authors": [
+                "Sarah Shamim"
+              ]
+            },
+            "link": "https://www.aljazeera.com/news/2024/12/26/surge-of-weapons-how-much-ukraine-aid-did-biden-approve-after-trump-win",
+            "thumbnail": "https://www.aljazeera.com/wp-content/uploads/2024/12/2024-07-11T222452Z_2137894406_RC24T8A6BDDO_RTRMADP_3_NATO-SUMMIT-1735208371_20f767-1735211510.jpg?resize=1200%2C630&quality=80",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNXBWa0pZUmpsbVIzbFpOMEpFVFJDUkF4ajhCU2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2llN0lqNURCSHFIZHFncW1mMjRpZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2llN0lqNURCSHFIZHFncW1mMjRpZ0FQAQ",
+            "date": "12/27/2024, 04:58 AM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "Russia Strikes Ukraine’s Energy Infrastructure on Christmas Day",
+            "source": {
+              "name": "The New York Times",
+              "icon": "https://lh3.googleusercontent.com/tDFSwtr61ZReDD_jw6kEPWegHMSqGEHx-ZS_t-e10We-GfWEPVYkn0uLk_Vn8XQHg8wcnhMWmug",
+              "authors": [
+                "Marc Santora",
+                "Liubov Sholudko"
+              ]
+            },
+            "link": "https://www.nytimes.com/2024/12/25/world/europe/russia-ukraine-strikes-energy-system.html",
+            "thumbnail": "https://static01.nyt.com/images/2024/12/25/multimedia/25ukraine-strikes-01-fbpj/25ukraine-strikes-01-fbpj-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iL0NnNUJXbE5UZVZKUFVISkNaM1I1VFJDUEF4allCQ2dLTWdrQmNJaUhOU1ZjYWdJ",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2llN0lqNURCSHFIZHFncW1mMjRpZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2llN0lqNURCSHFIZHFncW1mMjRpZ0FQAQ",
+            "date": "12/26/2024, 08:08 AM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2llN0lqNURCSHFIZHFncW1mMjRpZ0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2llN0lqNURCSHFIZHFncW1mMjRpZ0FQAQ"
+      },
+      {
+        "position": 17,
+        "highlight": {
+          "title": "6,000 inmates escape from a high-security prison in Mozambique amid post-election violence",
+          "source": {
+            "name": "ABC News",
+            "icon": "https://lh3.googleusercontent.com/X8gOYJVMpwt5Rdxa-TEs1Av4_oZNCCtQN-1abkvvfNdvy3JvVhT1mERLPhFXBI6xsCV4K_lQpJI",
+            "authors": [
+              "Charles Mangwiro"
+            ]
+          },
+          "link": "https://abcnews.go.com/International/wireStory/6000-inmates-escape-high-security-prison-mozambique-amid-117114512",
+          "thumbnail": "https://i.abcnewsfe.com/a/a464fa36-c77c-4236-bd1b-e79d0dcbd8da/241226_vod_int_headlines_hpMain_4x5.jpg",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iL0NnNURVR1p5TFRJM1RISTVNR3BIVFJEN0FSakpBU2dCTWdrQmdJYVROT05yN0FF",
+          "date": "12/26/2024, 01:29 PM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "Fear And Chaos Grip Maputo After Post-election Violence",
+            "source": {
+              "name": "Barron's",
+              "icon": "https://lh3.googleusercontent.com/m-X2HbycVv69bHaPPRLUQqHewFp6sKnZimopA8xL-eSV3xctI-mCZIEJex6XBinCC54ucwYS"
+            },
+            "link": "https://www.barrons.com/articles/fear-and-chaos-grip-maputo-after-post-election-violence-bae5e889",
+            "thumbnail": "https://www.barrons.com/asset/barrons/images/Barrons-Logo-AMP.png",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iJkNnNTZkRVE1UkhWdFkzY3RTVmx2VFJBOEdOZ0VLQW95QXdGSkVB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p1elB2MkRCR1dtTEJ5UVd0R0JpZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p1elB2MkRCR1dtTEJ5UVd0R0JpZ0FQAQ",
+            "date": "12/27/2024, 03:21 PM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "Mozambique Unrest: What to Know",
+            "source": {
+              "name": "The New York Times",
+              "icon": "https://lh3.googleusercontent.com/tDFSwtr61ZReDD_jw6kEPWegHMSqGEHx-ZS_t-e10We-GfWEPVYkn0uLk_Vn8XQHg8wcnhMWmug",
+              "authors": [
+                "John Eligon",
+                "Tavares Cebola"
+              ]
+            },
+            "link": "https://www.nytimes.com/2024/12/26/world/africa/mozambique-unrest-news.html",
+            "thumbnail": "https://static01.nyt.com/images/2024/12/26/multimedia/26mozambique-exolainer-1-jfcl/26mozambique-exolainer-1-jfcl-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNU5aa0owVFVkd2JGSmZRbmRXVFJDUUF4allCQ2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p1elB2MkRCR1dtTEJ5UVd0R0JpZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p1elB2MkRCR1dtTEJ5UVd0R0JpZ0FQAQ",
+            "date": "12/26/2024, 07:12 PM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "Venâncio Mondlane: Mozambique's opposition leader vows to install himself as president",
+            "source": {
+              "name": "BBC.com",
+              "icon": "https://lh3.googleusercontent.com/_XS8V0jvDj-pe4NDxsc_8_YEk38hNH30ocGDk7oEwtRZNw-kUUuQouAYLFO0uIPFLX05QCKyoSo",
+              "authors": [
+                "José Tembe"
+              ]
+            },
+            "link": "https://www.bbc.com/news/articles/cq5lyj6l6v6o",
+            "thumbnail": "https://ichef.bbci.co.uk/news/480/cpsprodpb/21c3/live/ce1ea750-c212-11ef-8a89-27b3f287e995.jpg.webp",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNUxSbk41VmkxWVJISlJkRlI0VFJDb0FSaXNBaWdCTWdhbE5aRHRLUWM",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p1elB2MkRCR1dtTEJ5UVd0R0JpZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p1elB2MkRCR1dtTEJ5UVd0R0JpZ0FQAQ",
+            "date": "12/24/2024, 04:53 PM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p1elB2MkRCR1dtTEJ5UVd0R0JpZ0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p1elB2MkRCR1dtTEJ5UVd0R0JpZ0FQAQ"
+      },
+      {
+        "position": 18,
+        "highlight": {
+          "title": "Pope Opens 'Holy Door' at Prison in Italy",
+          "source": {
+            "name": "Newser",
+            "icon": "https://lh3.googleusercontent.com/gc-NWQyvjynMzjVxP0LFP2JuSWCBlikBaF2Dsw5GyorE7QCVmJ1rVl6VyhU0pUZe2FB-ZILELw"
+          },
+          "link": "https://www.newser.com/story/361595/pope-opens-holy-door-at-prison-in-italy.html",
+          "thumbnail": "https://img2-azrcdn.newser.com/image/1581001-11-20241226113641.jpeg",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNU9jVFJhTTJzdFFtdFBXSGhHVFJDM0FSaVRBaWdCTWdB",
+          "date": "12/26/2024, 04:26 PM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "Pope Francis opens ‘holy door’ at one of largest prisons in Italy",
+            "source": {
+              "name": "The Guardian",
+              "icon": "https://lh3.googleusercontent.com/SU8FywVNtcrG-wgjvZ_0D1-3JR_pN9LNSgjULFH74N748KVyEdkF1jdbvP4Lr7_ClbPZxL-iPw",
+              "authors": [
+                "Lorenzo Tondo"
+              ]
+            },
+            "link": "https://www.theguardian.com/world/2024/dec/26/pope-francis-opens-holy-door-rebibbia-prison-jail",
+            "thumbnail": "https://i.guim.co.uk/img/media/478871a3bc207fb6295839cc9e2345ed160b1c89/0_165_5000_3001/master/5000.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=90e2fbe4eacfa3ec6d1fc83f7914c3a1",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNDRieTFoZVRocU1GTkhibkF5VFJDUkF4ajhCU2dLTWdaSmtZQzIzQUU",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lqNFo3M0RCR3MyVmdfdFRQMEVDZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lqNFo3M0RCR3MyVmdfdFRQMEVDZ0FQAQ",
+            "date": "12/26/2024, 01:23 PM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "Pope Francis opens Holy Door inaugurating 2025 Jubilee",
+            "source": {
+              "name": "Vatican News",
+              "icon": "https://encrypted-tbn3.gstatic.com/faviconV2?url=https://www.vaticannews.va&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+              "authors": [
+                "Deborah Castellano Lubov"
+              ]
+            },
+            "link": "https://www.vaticannews.va/en/pope/news/2024-12/pope-francis-opens-holy-door-ushering-in-the-jubilee-of-hope.html",
+            "thumbnail": "https://www.vaticannews.va/content/dam/vaticannews/agenzie/images/srv/2024/12/24/2024-12-24-rito-apertura-porta-santa-basilica-di-san-pietro/1735066106753.jpg/_jcr_content/renditions/cq5dam.thumbnail.cropped.1500.844.jpeg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNUpUM2R6VEhCS2IwdzVRM2RsVFJDb0FSaXJBaWdCTWdhcHBZck9OUVk",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lqNFo3M0RCR3MyVmdfdFRQMEVDZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lqNFo3M0RCR3MyVmdfdFRQMEVDZ0FQAQ",
+            "date": "12/24/2024, 07:50 PM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "New restoration brings fresh light to St. Peter's Basilica for Christmas Eve Mass",
+            "source": {
+              "name": "CBS News",
+              "icon": "https://lh3.googleusercontent.com/dXy0k7AMf-wXfnj2AtaLk3rZcPGjClkFvKSAQnjoLp9wa_ggxST_WSGqovh984zY8mf3vDmt",
+              "authors": [
+                "Analisa Novak",
+                "Chris Livesay"
+              ]
+            },
+            "link": "https://www.cbsnews.com/news/new-restoration-st-peters-basilica-christmas-eve-mass-2025-jubilee/",
+            "thumbnail": "https://assets1.cbsnewsstatic.com/hub/i/r/2024/12/24/58d1e1b7-a0c7-49c1-b70e-f00850702cf1/thumbnail/1200x630/8efddd2a4177b5de0c19b3b479538cd3/gettyimages-2190720195.jpg?v=fa9977353833f46f40b07abcd9d5240b",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iL0NnNWlYM05PWkY4elVtRnZXREF5VFJDUkF4ajhCU2dLTWdtMUlZaFFtYWMxcHdJ",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lqNFo3M0RCR3MyVmdfdFRQMEVDZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lqNFo3M0RCR3MyVmdfdFRQMEVDZ0FQAQ",
+            "date": "12/24/2024, 06:55 PM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lqNFo3M0RCR3MyVmdfdFRQMEVDZ0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lqNFo3M0RCR3MyVmdfdFRQMEVDZ0FQAQ"
+      },
+      {
+        "position": 19,
+        "title": "Taiwan Is Preparing More Than Just the Military for a China Invasion",
+        "source": {
+          "name": "Business Insider",
+          "icon": "https://lh3.googleusercontent.com/MD0yHuvt1mX8YyHUcdTCsQqMKGubFCwbWmpxzkT1xnE5wZ4aDRmb2zvkgfgG_b0mHNhaSxqO2A",
+          "authors": [
+            "Huileng Tan"
+          ]
+        },
+        "link": "https://www.businessinsider.com/taiwan-china-tensions-invasion-war-military-escalation-simulation-wargame-defense-2024-12",
+        "thumbnail": "https://i.insider.com/676e2521bec2d3fdefeb2702?width=700",
+        "thumbnail_small": "https://news.google.com/api/attachments/CC8iL0NnNTRTRlpLTFRCcFJtazBWbEJxVFJEUkF4aVVCU2dLTWdrRlFKem5JU2tIWndJ",
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lCbzRINkRCSEN2TDUzV3V6RjJpZ0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lCbzRINkRCSEN2TDUzV3V6RjJpZ0FQAQ",
+        "date": "12/27/2024, 07:23 AM, +0000 UTC"
+      },
+      {
+        "position": 20,
+        "highlight": {
+          "title": "Israeli strike kills 5 Palestinian journalists in Gaza, officials say",
+          "source": {
+            "name": "NPR",
+            "icon": "https://lh3.googleusercontent.com/n1J5BgiRjTv0UA7P7ow6a4W1NsYEz8yc-Cbr539Q-le21-0uoqwGOIItzyalR8JOHXxwAL7eng"
+          },
+          "link": "https://www.npr.org/2024/12/26/g-s1-40026/israeli-strike-kills-5-palestinian-journalists-gaza",
+          "thumbnail": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/7924x5283+0+0/resize/1100/quality/85/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F36%2F5e%2Fdd8c2f69499a8bd262c54e3a3a87%2Fap24361345207029.jpg",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNTZRMXBRYnpWS2VqSmtja3BNVFJERUF4aW1CU2dLTWdB",
+          "date": "12/26/2024, 11:06 AM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "Five Palestinian journalists killed in Gaza as Israel also strikes Yemen",
+            "source": {
+              "name": "The Guardian",
+              "icon": "https://lh3.googleusercontent.com/SU8FywVNtcrG-wgjvZ_0D1-3JR_pN9LNSgjULFH74N748KVyEdkF1jdbvP4Lr7_ClbPZxL-iPw",
+              "authors": [
+                "Bethan Mckernan"
+              ]
+            },
+            "link": "https://www.theguardian.com/world/2024/dec/26/five-palestinian-journalists-killed-israeli-strike-gaza",
+            "thumbnail": "https://i.guim.co.uk/img/media/953ec676627ec53890fa60ccb07d79574ee04587/0_224_6720_4032/master/6720.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=2c94bccd12b2f569b14f6a26d568d64d",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNWpMVUZhTlZsRWJtWldhVmQxVFJDUkF4ajhCU2dLTWdZQllvUzE0QUU",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pSZ3FQOERCSE1kQzQzWUpyZFNTZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pSZ3FQOERCSE1kQzQzWUpyZFNTZ0FQAQ",
+            "date": "12/26/2024, 12:32 PM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "Press Vest ‘Doesn’t Turn a Terrorist into a Journalist’: IDF Strikes Islamic Jihad Terrorists in Gaza Posing as Journalists",
+            "source": {
+              "name": "Foundation for Defense of Democracies",
+              "icon": "https://lh3.googleusercontent.com/NurSHaZZ7_79HyH9_qsVUBUcZymbzTxREjhk62rJPvgEUAbyElSzHYnIXSUP0gAfLBKKiHlwsg"
+            },
+            "link": "https://www.fdd.org/analysis/2024/12/26/press-vest-doesnt-turn-a-terrorist-into-a-journalist-idf-strikes-islamic-jihad-terrorists-in-gaza-posing-as-journalists/",
+            "thumbnail": "https://www.fdd.org/wp-content/uploads/2024/12/GettyImages-2190787441-800x800.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iJ0NnNUVMVzlFTUdSaGRXWlJSMjFzVFJDcUJCaXFCQ2dLTWdNRlVBNA",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pSZ3FQOERCSE1kQzQzWUpyZFNTZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pSZ3FQOERCSE1kQzQzWUpyZFNTZ0FQAQ",
+            "date": "12/26/2024, 11:05 PM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "December 26, 2024",
+            "source": {
+              "name": "VOA Asia",
+              "icon": "https://encrypted-tbn0.gstatic.com/faviconV2?url=https://www.voanews.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.voanews.com/a/december-26-2024-day-in-photos/7914942.html",
+            "thumbnail": "https://gdb.voanews.com/54040f3b-45fb-4279-88d3-b4891f1d9f81_w1080_h608_s.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iL0NnNXNha0pPWTNoWldISjJjR2x5VFJDZkF4amlCU2dLTWdtQkFJVExGS093OEFB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pSZ3FQOERCSE1kQzQzWUpyZFNTZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pSZ3FQOERCSE1kQzQzWUpyZFNTZ0FQAQ",
+            "date": "12/26/2024, 06:22 PM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pSZ3FQOERCSE1kQzQzWUpyZFNTZ0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pSZ3FQOERCSE1kQzQzWUpyZFNTZ0FQAQ"
+      },
+      {
+        "position": 21,
+        "highlight": {
+          "title": "Chinese Students in U.S. Warned to Stay Put Ahead of Second Trump Term",
+          "source": {
+            "name": "The Wall Street Journal",
+            "icon": "https://lh3.googleusercontent.com/-Wo0rkJtT8uQ7BFow-YiRKzVlJNka-TbZM6_e2l3XQwNNqfPe1mR8Rc4_o_qAOJFb32YwQ4I1NM",
+            "authors": [
+              "Liyan Qi"
+            ]
+          },
+          "link": "https://www.wsj.com/world/china/china-international-students-trump-visa-access-89e0ca96",
+          "thumbnail": "https://images.wsj.net/im-21642059?width=1280&size=1.77777778",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNDBaM1JaZVROVk1tUlpNamRsVFJDZkF4ampCU2dLTWdB",
+          "date": "12/26/2024, 01:00 PM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "Cornell urges international students to return early",
+            "source": {
+              "name": "CNYcentral.com",
+              "icon": "https://encrypted-tbn3.gstatic.com/faviconV2?url=https://cnycentral.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://cnycentral.com/news/local/cornell-urges-international-students-to-return-early",
+            "thumbnail": "https://cnycentral.com/resources/media2/16x9/146/986/0x34/90/768abae0-534b-471e-b413-5a0d9db03799-CornellEmblem.png",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNVpiMlZuY0VOd2NEbFNXV05ZVFJDZkF4amlCU2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2prcXR2eERCR09LWjRoZDNuTVBpZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2prcXR2eERCR09LWjRoZDNuTVBpZ0FQAQ",
+            "date": "12/27/2024, 01:25 PM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "International students urged to return to US campuses before Trump inauguration",
+            "source": {
+              "name": "The Associated Press",
+              "icon": "https://lh3.googleusercontent.com/M087pJgRw3PLf4gl-Y7U-tJn6uaN99AUbFIuX7fmMnhq5QeNylJQMq_UeYPPVaEPk-5jL9I3QA",
+              "authors": [
+                "Holly Ramer"
+              ]
+            },
+            "link": "https://apnews.com/article/trump-foreign-college-students-travel-bans-bc0fedb4be66ef509629d4dbfedd904d",
+            "thumbnail": "https://dims.apnews.com/dims4/default/5956a18/2147483647/strip/true/crop/6000x4000+0+0/resize/599x399!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Ffa%2Fa6%2F12f68db717a1974f4bf918c93a9c%2F8d7f96feb85442da86adc0415f0bbef6",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNXFiMkZYWTE4MFQyUnJjVkp6VFJDUEF4alhCQ2dLTWdhWlo1SkpxZ2M",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2prcXR2eERCR09LWjRoZDNuTVBpZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2prcXR2eERCR09LWjRoZDNuTVBpZ0FQAQ",
+            "date": "12/20/2024, 01:33 PM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "Chinese Authorities Issue Trump-Focused Warning to Students in U.S.",
+            "source": {
+              "name": "The Daily Beast",
+              "icon": "https://encrypted-tbn0.gstatic.com/faviconV2?url=https://www.thedailybeast.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+              "authors": [
+                "David Gardner"
+              ]
+            },
+            "link": "https://www.thedailybeast.com/chinese-authorities-issue-trump-focused-warning-to-students-in-us/",
+            "thumbnail": "https://www.thedailybeast.com/resizer/v2/YDXYP45XRFG7TMDFEXCWI3JCMQ.jpg?smart=true&auth=ef27d387c955150c0d9ee08dea7b4c4c419db82df3471f90cff1654e6b99e094&width=3012&height=1694",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iJ0NnNHhiRFJUZW5CWlFUVTJaVEJPVFJDZkF4ampCU2dLTWdNbEFBQQ",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2prcXR2eERCR09LWjRoZDNuTVBpZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2prcXR2eERCR09LWjRoZDNuTVBpZ0FQAQ",
+            "date": "12/26/2024, 03:39 PM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2prcXR2eERCR09LWjRoZDNuTVBpZ0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2prcXR2eERCR09LWjRoZDNuTVBpZ0FQAQ"
+      },
+      {
+        "position": 22,
+        "highlight": {
+          "title": "Israel’s attorney general orders probe into Netanyahu’s wife on suspicion of witness harassment",
+          "source": {
+            "name": "CNN",
+            "icon": "https://lh3.googleusercontent.com/8zdvTbISHUn-4iHkauW-_yQSGPD9BMrx9EWfqTIhiVm2YMYqhHC1HJWNDQoSOkMk0MRPYKxjIg",
+            "authors": [
+              "Mohammed Tawfeeq"
+            ]
+          },
+          "link": "https://www.cnn.com/2024/12/26/middleeast/israel-sara-netanyahu-investigation-allegation-intl-latam/index.html",
+          "thumbnail": "https://media.cnn.com/api/v1/images/stellar/prod/2023-08-17t132831z-468224650-rc2pp2ahebfq-rtrmadp-3-israel-politics-judiciary-metro.JPG?c=16x9",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iMkNnNWlSMVpWU1V0UVdHTlBXSEZrVFJDZkF4ampCU2dLTWdzQkVKckZLcWhFaHBwRnlR",
+          "date": "12/26/2024, 11:11 PM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "Netanyahu’s wife accused of harassing witness at corruption trial",
+            "source": {
+              "name": "CBS Chicago",
+              "icon": "https://lh3.googleusercontent.com/-xIvv-h9ClcIGLXUgMnleztQBBM5kngvOdoNh9oB6Mz6izuxmL9YEJObjrTS_qaU2UcAXYvZxA"
+            },
+            "link": "https://www.cbsnews.com/chicago/video/netanyahus-wife-accused-of-harassing-witness-at-corruption-trial/",
+            "thumbnail": "https://assets1.cbsnewsstatic.com/hub/i/r/2024/12/27/391c41fd-5aa1-40b8-af08-f86558c2663f/thumbnail/1200x630/2c1952ef79c8df307fb55377cc485a20/6bbeb729270435118aca66a90a12e364-0-1735309935901.png?v=fa9977353833f46f40b07abcd9d5240b",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iL0NnNTZka0ZYVkhWdmF6SjJabkJpVFJDUkF4ajhCU2dLTWdtRkU0YmsydUpjcFFJ",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lmcTVUNERCSElRSnNlMHdZQWFDZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lmcTVUNERCSElRSnNlMHdZQWFDZ0FQAQ",
+            "date": "12/27/2024, 02:31 PM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "All for His Wife: The Timing of Netanyahu's Latest Attack on the Media Is No Coincidence",
+            "source": {
+              "name": "Haaretz",
+              "icon": "https://lh3.googleusercontent.com/R7MjIbcgUP5cgv_2o4LLjOoBJZmxP9ra7tMRCUUbrLc9thQzKbxZuEuL_DZidSdY8dOVlMuDuQ",
+              "authors": [
+                "Yossi Verter"
+              ]
+            },
+            "link": "https://www.haaretz.com/israel-news/2024-12-27/ty-article/.premium/all-for-his-wife-the-timing-of-netanyahus-latest-attack-on-the-media-is-no-coincidence/00000194-04ae-d7ce-a9bd-9eff82ef0000",
+            "thumbnail": "https://img.haarets.co.il/bs/00000194-0590-d043-a9f5-35d2a6bd0006/85/7d/3cd71ef34989b78b15989a823cb3/biderman-verter.jpg?precrop=1145,1145,x143,y0",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNTNlbDlrZDNkT05ucE1NMUZQVFJDcUJCaXFCQ2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lmcTVUNERCSElRSnNlMHdZQWFDZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lmcTVUNERCSElRSnNlMHdZQWFDZ0FQAQ",
+            "date": "12/27/2024, 04:00 AM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "AG orders probe of Sara Netanyahu for allegedly harassing key witness in PM’s trial",
+            "source": {
+              "name": "The Times of Israel",
+              "icon": "https://lh3.googleusercontent.com/KL7VFUdHpnRzWYFwHNMM0Mui8KZ2POO9h_bhISFR8jJpS5s8hImnur4ZeGoyeAEtfzrWvAkLBg"
+            },
+            "link": "https://www.timesofisrael.com/ag-orders-probe-of-sara-netanyahu-for-allegedly-harassing-key-witness-in-pms-trial/",
+            "thumbnail": "https://static-cdn.toi-media.com/www/uploads/2024/12/F241027CG114-e1735249717333.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNXNiRTVRUW5kNVQyeHFiRU0wVFJDMkF4aTlCU2dLTWdZSmRaREh0UVk",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lmcTVUNERCSElRSnNlMHdZQWFDZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lmcTVUNERCSElRSnNlMHdZQWFDZ0FQAQ",
+            "date": "12/27/2024, 07:07 AM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lmcTVUNERCSElRSnNlMHdZQWFDZ0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lmcTVUNERCSElRSnNlMHdZQWFDZ0FQAQ"
+      },
+      {
+        "position": 23,
+        "highlight": {
+          "title": "Israel lashes out at Vatican after Pope Francis condemns killing of children",
+          "source": {
+            "name": "Middle East Eye",
+            "icon": "https://lh3.googleusercontent.com/drvsYCn3r0GrOWjI-squ-P5o6D-jgyliOk_ri5qQqn-rauufXYELtkQ2K_0g0KIF_Z5D8QiOtnM",
+            "authors": [
+              "Elis Gjevori"
+            ]
+          },
+          "link": "https://www.middleeasteye.net/news/israel-lashes-out-pope-francis-condemning-killing-children",
+          "thumbnail": "https://www.middleeasteye.net/sites/default/files/styles/max_2600x2600/public/images-story/000_36R36NM_0.jpg.jpg?itok=3m47m4a3",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNXhZVmwzTVZobVpVdHFVRVp1VFJDZkF4ampCU2dLTWdB",
+          "date": "12/26/2024, 01:01 PM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "Pope in Christmas Day message calls for talks to end Ukraine-Russia war",
+            "source": {
+              "name": "BBC.com",
+              "icon": "https://lh3.googleusercontent.com/_XS8V0jvDj-pe4NDxsc_8_YEk38hNH30ocGDk7oEwtRZNw-kUUuQouAYLFO0uIPFLX05QCKyoSo",
+              "authors": [
+                "Raffi Berg"
+              ]
+            },
+            "link": "https://www.bbc.com/news/articles/ce8en1jn3n5o",
+            "thumbnail": "https://ichef.bbci.co.uk/news/480/cpsprodpb/688a/live/c18986e0-c2cb-11ef-a0f2-fd81ae5962f4.jpg.webp",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iL0NnNVFaMFZYV1hKc1ZGTnRWR0ZXVFJDb0FSaXNBaWdCTWdtQlFKanJHYW9sU0FJ",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lRX3U3ekRCRUt1Uk1vX0MycV9DZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lRX3U3ekRCRUt1Uk1vX0MycV9DZ0FQAQ",
+            "date": "12/25/2024, 04:15 PM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "Pope opens special 'Holy Door' for Catholic Jubilee at Rome prison",
+            "source": {
+              "name": "Reuters",
+              "icon": "https://lh3.googleusercontent.com/OzNZmYwP-Zl3sTWa8dzzyws9hou0ZihOGJ_-qanon-1iB5KwyqcHOwPxYZj54cGMZwD5qXui",
+              "authors": [
+                "Joshua J. McElwee"
+              ]
+            },
+            "link": "https://www.reuters.com/world/europe/pope-opens-special-holy-door-catholic-jubilee-rome-prison-2024-12-26/",
+            "thumbnail": "https://www.reuters.com/resizer/v2/DBBA6FDJLRJOXP57UC5AGXXAZU.jpg?auth=b694b15a6a6a6c88a47085d5f6c6d0339c7381e146a3cfadf03d5f2549d4f4bb&height=628&width=1200&quality=80&smart=true",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNDJhRFJJYTJRdGEwOU5aMHcwVFJDUUF4ai1CU2dLTWdZMUlJeXlJQVk",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lRX3U3ekRCRUt1Uk1vX0MycV9DZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lRX3U3ekRCRUt1Uk1vX0MycV9DZ0FQAQ",
+            "date": "12/27/2024, 07:46 AM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "Pope Calls for Peace on Christmas as Church Begins Jubilee Year Celebrations",
+            "source": {
+              "name": "The New York Times",
+              "icon": "https://lh3.googleusercontent.com/tDFSwtr61ZReDD_jw6kEPWegHMSqGEHx-ZS_t-e10We-GfWEPVYkn0uLk_Vn8XQHg8wcnhMWmug",
+              "authors": [
+                "Elisabetta Povoledo"
+              ]
+            },
+            "link": "https://www.nytimes.com/2024/12/25/world/europe/pope-francis-christmas-jubilee-peace.html",
+            "thumbnail": "https://static01.nyt.com/images/2024/12/25/multimedia/25pope-lvcq/25pope-lvcq-videoSixteenByNine1050.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNTFTRGc1ZUU5QlEzZG9kVzF2VFJDZkF4amlCU2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lRX3U3ekRCRUt1Uk1vX0MycV9DZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lRX3U3ekRCRUt1Uk1vX0MycV9DZ0FQAQ",
+            "date": "12/25/2024, 12:02 PM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lRX3U3ekRCRUt1Uk1vX0MycV9DZ0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lRX3U3ekRCRUt1Uk1vX0MycV9DZ0FQAQ"
+      },
+      {
+        "position": 24,
+        "highlight": {
+          "title": "The US says it pushed retraction of a famine warning for north Gaza. Aid groups express concern",
+          "source": {
+            "name": "The Associated Press",
+            "icon": "https://lh3.googleusercontent.com/M087pJgRw3PLf4gl-Y7U-tJn6uaN99AUbFIuX7fmMnhq5QeNylJQMq_UeYPPVaEPk-5jL9I3QA",
+            "authors": [
+              "Ellen Knickmeyer"
+            ]
+          },
+          "link": "https://apnews.com/article/gaza-israel-famine-biden-trump-fews-89b4a0d3ab684669ee4456566b406621",
+          "thumbnail": "https://dims.apnews.com/dims4/default/c214200/2147483647/strip/true/crop/8640x5751+0+5/resize/320x213!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Fcd%2F11%2Fe01d58989d4561bd973570751574%2Fdacfd70f28d746d2ae7964266acbe3fb",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNWFaMDVDYWxoVGVVWnNTa1ZpVFJEVkFSakFBaWdLTWdB",
+          "date": "12/27/2024, 02:32 AM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "Post-election, Team Biden finally slams a bogus claim about famine in Gaza",
+            "source": {
+              "name": "New York Post ",
+              "icon": "https://lh3.googleusercontent.com/FBmNEg55AyjS01UGglfHSug5fD4qJyNNZ6QXqwDhQczAmw6zPz5fUoWm9AfOtz7Ty70Gg41A"
+            },
+            "link": "https://nypost.com/2024/12/27/opinion/post-election-over-team-biden-is-slamming-a-bogus-claim-of-gaza-famine/",
+            "thumbnail": "https://nypost.com/wp-content/uploads/sites/2/2024/12/2190852177.jpg?quality=75&strip=all&w=724",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNHRSVmN6ZDB0YU5UTXhORE52VFJES0F4aWRCU2dLTWdB",
+            "type": "Opinion",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lLeVpYNERCRS1iQWtkeDBaaUx5Z0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lLeVpYNERCRS1iQWtkeDBaaUx5Z0FQAQ",
+            "date": "12/27/2024, 11:10 AM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "Retraction of US-backed Gaza famine report draws anger, scrutiny",
+            "source": {
+              "name": "Al Jazeera English",
+              "icon": "https://lh3.googleusercontent.com/l-Ps9rkWuApN8G3MB5uZC_a5G7iKCTITjMdpZFhm2rQf3U2M2Yr_KTYpzpmOPxDiUKgb9yN9ha8"
+            },
+            "link": "https://www.aljazeera.com/news/2024/12/26/retraction-of-us-backed-gaza-famine-report-draws-anger-scrutiny",
+            "thumbnail": "https://www.aljazeera.com/wp-content/uploads/2024/12/2024-12-04T143005Z_1306300330_RC2AIBAVX2Z4_RTRMADP_3_ISREAL-PALESTINIANS-GAZA-FOOD-1735240016.jpg?resize=1920%2C1440",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNWhaakpwYjNVM1gxRjBjRzFsVFJEZ0F4aUFCU2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lLeVpYNERCRS1iQWtkeDBaaUx5Z0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lLeVpYNERCRS1iQWtkeDBaaUx5Z0FQAQ",
+            "date": "12/26/2024, 08:10 PM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "Famine Warning for Northern Gaza Draws U.S. Rebuke and Raises Questions",
+            "source": {
+              "name": "The New York Times",
+              "icon": "https://lh3.googleusercontent.com/tDFSwtr61ZReDD_jw6kEPWegHMSqGEHx-ZS_t-e10We-GfWEPVYkn0uLk_Vn8XQHg8wcnhMWmug",
+              "authors": [
+                "Ephrat Livni"
+              ]
+            },
+            "link": "https://www.nytimes.com/2024/12/25/world/middleeast/northern-gaza-famine-warning-dispute.html",
+            "thumbnail": "https://static01.nyt.com/images/2024/12/25/multimedia/25gaza-famine-kbhv/25gaza-famine-kbhv-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNDRSUzFNV0RkdGMwdzJWSE5IVFJDVEF4allCQ2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lLeVpYNERCRS1iQWtkeDBaaUx5Z0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lLeVpYNERCRS1iQWtkeDBaaUx5Z0FQAQ",
+            "date": "12/25/2024, 07:49 PM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lLeVpYNERCRS1iQWtkeDBaaUx5Z0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lLeVpYNERCRS1iQWtkeDBaaUx5Z0FQAQ"
+      },
+      {
+        "position": 25,
+        "highlight": {
+          "title": "New Syrian regime declares crackdown in coastal region after 14 policemen killed",
+          "source": {
+            "name": "The Times of Israel",
+            "icon": "https://lh3.googleusercontent.com/KL7VFUdHpnRzWYFwHNMM0Mui8KZ2POO9h_bhISFR8jJpS5s8hImnur4ZeGoyeAEtfzrWvAkLBg"
+          },
+          "link": "https://www.timesofisrael.com/new-syrian-regime-declares-crackdown-in-coastal-region-after-14-policemen-killed/",
+          "thumbnail": "https://static-cdn.toi-media.com/www/uploads/2024/12/AFP__20241225__36RG3X8__v1__HighRes__SyriaReligionChristianityOrthodoxGreekChristmas.jpg",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNTJjMmRGYjBSZlVWWnpSRk5sVFJERUF4aW1CU2dLTWdB",
+          "date": "12/26/2024, 02:52 PM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "17 reported killed in Syrian clashes after attempted arrest of former prison officer",
+            "source": {
+              "name": "The Guardian",
+              "icon": "https://lh3.googleusercontent.com/SU8FywVNtcrG-wgjvZ_0D1-3JR_pN9LNSgjULFH74N748KVyEdkF1jdbvP4Lr7_ClbPZxL-iPw",
+              "authors": [
+                "Bethan Mckernan"
+              ]
+            },
+            "link": "https://www.theguardian.com/world/2024/dec/25/syrian-forces-suffer-14-fatalities-in-countryside-clashes",
+            "thumbnail": "https://i.guim.co.uk/img/media/f02e6ea0d644aeb2b3131f9ecfd6725f155d9a92/0_583_5500_3301/master/5500.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=6a0ff618ce9904a9519e1241c23f499c",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNVNZMHB3TW0xS2NGOW9iWGhoVFJDUkF4ajhCU2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2k0OVpYOERCRXlBWDVCRVA3enJ5Z0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2k0OVpYOERCRXlBWDVCRVA3enJ5Z0FQAQ",
+            "date": "12/25/2024, 11:35 PM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "Deadly Ambush, Protests Challenge Syrian Leaders’ New Power",
+            "source": {
+              "name": "The Wall Street Journal",
+              "icon": "https://lh3.googleusercontent.com/-Wo0rkJtT8uQ7BFow-YiRKzVlJNka-TbZM6_e2l3XQwNNqfPe1mR8Rc4_o_qAOJFb32YwQ4I1NM",
+              "authors": [
+                "Omar Abdel-Baqui"
+              ]
+            },
+            "link": "https://www.wsj.com/world/middle-east/deadly-ambush-protests-challenge-syrian-leaders-new-power-8bd3dde0",
+            "thumbnail": "https://images.wsj.net/im-47122414?width=700&height=467",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNXljVTUyYkVGUGVVbFhYMmsyVFJERUF4aW1CU2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2k0OVpYOERCRXlBWDVCRVA3enJ5Z0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2k0OVpYOERCRXlBWDVCRVA3enJ5Z0FQAQ",
+            "date": "12/26/2024, 08:31 PM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "Former Assad forces in Syria clash with members of new government",
+            "source": {
+              "name": "CBS News",
+              "icon": "https://lh3.googleusercontent.com/dXy0k7AMf-wXfnj2AtaLk3rZcPGjClkFvKSAQnjoLp9wa_ggxST_WSGqovh984zY8mf3vDmt"
+            },
+            "link": "https://www.cbsnews.com/video/former-assad-forces-in-syria-clash-with-members-of-new-government/",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2k0OVpYOERCRXlBWDVCRVA3enJ5Z0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2k0OVpYOERCRXlBWDVCRVA3enJ5Z0FQAQ",
+            "date": "12/26/2024, 07:47 PM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2k0OVpYOERCRXlBWDVCRVA3enJ5Z0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2k0OVpYOERCRXlBWDVCRVA3enJ5Z0FQAQ"
+      },
+      {
+        "position": 26,
+        "highlight": {
+          "title": "Slovak PM Fico offered to host Moscow-Kyiv peace talks, Putin claims",
+          "source": {
+            "name": "POLITICO Europe",
+            "icon": "https://lh3.googleusercontent.com/jIzBQZ5BrrRpSdArkVDbVdX9sySejIneiU-gCvjpQ0kheRMnYd1jM4U7YVNQKB_HjyyrnNBuVw",
+            "authors": [
+              "Tom Nicholson"
+            ]
+          },
+          "link": "https://www.politico.eu/article/robert-fico-offered-host-vladimir-putin/",
+          "thumbnail": "https://www.politico.eu/cdn-cgi/image/width=1160,height=773,quality=80,onerror=redirect,format=auto/wp-content/uploads/2024/12/27/GettyImages-2182685764-scaled.jpg",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNTNYMGQyY0dKRGJYaG1iMWxEVFJERUF4aW1CU2dLTWdB",
+          "date": "12/26/2024, 11:50 PM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "Putin says Slovakia could host peace talks with Ukraine",
+            "source": {
+              "name": "Reuters",
+              "icon": "https://lh3.googleusercontent.com/OzNZmYwP-Zl3sTWa8dzzyws9hou0ZihOGJ_-qanon-1iB5KwyqcHOwPxYZj54cGMZwD5qXui",
+              "authors": [
+                "Jan Lopatka",
+                "Felix Light",
+                "Guy Faulconbridge"
+              ]
+            },
+            "link": "https://www.reuters.com/world/europe/putin-says-slovakia-could-host-peace-talks-with-ukraine-2024-12-27/",
+            "thumbnail": "https://www.reuters.com/resizer/v2/AWERHSKUMNOVDGXNPGM2F5TJJM.jpg?auth=5f08ac16e4693a83a7fc40f7e4edc1187b8d8d16107eea7a17f957df5e6aa0c4&width=5713&quality=80",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNDRNVnB6ZDNCTExVMXhNQzFvVFJESEF4aWhCU2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p1OHFqNURCR0JWWWo5cFhadG95Z0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p1OHFqNURCR0JWWWo5cFhadG95Z0FQAQ",
+            "date": "12/27/2024, 10:20 AM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "Russia 'not opposed' to having Slovakia host peace talks, Putin says.",
+            "source": {
+              "name": "Kyiv Independent",
+              "icon": "https://lh3.googleusercontent.com/BlKYalcmm0Wct64ibhVdTrCYQLDsmRnvtCR2XZni-CwT4tGKtSpLH6zV2EVtm97631Niu_VlTg",
+              "authors": [
+                "Dmytro Basmat"
+              ]
+            },
+            "link": "https://kyivindependent.com/slovakia-could-host-peace-ukraine-russia-talks-putin-says/",
+            "thumbnail": "https://assets.kyivindependent.com/content/images/2024/12/fico.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iL0NnNXdPREpWYUdreFUxSlBTbUl0VFJDZkF4amlCU2dLTWdtVklwNklFaXM5YUFJ",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p1OHFqNURCR0JWWWo5cFhadG95Z0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p1OHFqNURCR0JWWWo5cFhadG95Z0FQAQ",
+            "date": "12/26/2024, 09:21 PM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "Zelensky Fires Back at NATO Ally Over Russian Gas Transit",
+            "source": {
+              "name": "Newsweek",
+              "icon": "https://lh3.googleusercontent.com/eLLZm4U3hIKCd3_vry68fnVBy2-w_9ykOTPTNkXghoQbO96GNDa755h0Y1BVIQGjE-bkVovxqk8",
+              "authors": [
+                "Brendan Cole"
+              ]
+            },
+            "link": "https://www.newsweek.com/slovakia-ukraine-zelensky-gas-transit-fico-2005514",
+            "thumbnail": "https://d.newsweek.com/en/full/2550754/ukrainian-president-volodymyr-zelensky.jpg?w=1200&f=920b73c673c2a0a38c33928e5ef3d8fa",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNUtTMlZEV2xSS1ZVUjZVMkZ2VFJERUF4aW1CU2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p1OHFqNURCR0JWWWo5cFhadG95Z0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p1OHFqNURCR0JWWWo5cFhadG95Z0FQAQ",
+            "date": "12/24/2024, 09:28 AM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p1OHFqNURCR0JWWWo5cFhadG95Z0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p1OHFqNURCR0JWWWo5cFhadG95Z0FQAQ"
+      },
+      {
+        "position": 27,
+        "highlight": {
+          "title": "North Korean troops suffering heavy battlefield losses in Russia, Ukrainian intelligence says",
+          "source": {
+            "name": "PBS NewsHour",
+            "icon": "https://lh3.googleusercontent.com/Ls0xTAIv95K4OJ0Y2lLnyjOTs5RKKqk-Y07VFudgceJUDZzFDIC6aMX0dTf0A_QibJS2MOA32qU",
+            "authors": [
+              "Samya Kullab"
+            ]
+          },
+          "link": "https://www.pbs.org/newshour/world/north-korean-troops-suffering-heavy-battlefield-losses-in-russia-ukrainian-intelligence-says",
+          "thumbnail": "https://d3i6fh83elv35t.cloudfront.net/static/2024/12/2024-11-29T222539Z_515290044_RC2YEBAL5A24_RTRMADP_3_NORTHKOREA-RUSSIA-1024x576.jpg",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNVlRMmd5UW1adE1FZ3RhazVqVFJDZkF4ampCU2dLTWdB",
+          "date": "12/26/2024, 08:52 PM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "‘I thought it was fake news’: secrecy around North Koreans fighting in Kursk",
+            "source": {
+              "name": "The Guardian",
+              "icon": "https://lh3.googleusercontent.com/SU8FywVNtcrG-wgjvZ_0D1-3JR_pN9LNSgjULFH74N748KVyEdkF1jdbvP4Lr7_ClbPZxL-iPw",
+              "authors": [
+                "Pjotr Sauer"
+              ]
+            },
+            "link": "https://www.theguardian.com/world/2024/dec/27/i-thought-it-was-fake-news-secrecy-around-north-koreans-fighting-in-kursk",
+            "thumbnail": "https://i.guim.co.uk/img/media/fca852107a99babc97a03e639d350b9421e835a2/119_68_1087_652/master/1087.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=ec3f5dfceccb19ba4923cf3911b12144",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iL0NnNW9OMUJEVjBReFVrZGpNV2RrVFJDUkF4ajhCU2dLTWdteFFZQ1c0Q0ZrS1FJ",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lXMFBYNkRCSE11RXVCX280aEFDZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lXMFBYNkRCSE11RXVCX280aEFDZ0FQAQ",
+            "date": "12/27/2024, 12:01 PM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "Satellite Images Show North Korea Boosting Arms Flow to Russia",
+            "source": {
+              "name": "The Wall Street Journal",
+              "icon": "https://lh3.googleusercontent.com/-Wo0rkJtT8uQ7BFow-YiRKzVlJNka-TbZM6_e2l3XQwNNqfPe1mR8Rc4_o_qAOJFb32YwQ4I1NM",
+              "authors": [
+                "Dasl Yoon",
+                "Matthew Luxmoore"
+              ]
+            },
+            "link": "https://www.wsj.com/world/russia-north-korea-weapons-shipment-676d7f52",
+            "thumbnail": "https://images.wsj.net/im-63312602?width=1280&size=1",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNXdUa1UxWTBGbGNHWXRWR3MzVFJDcUJCaXFCQ2dLTWdZQm9JN3d1QVU",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lXMFBYNkRCSE11RXVCX280aEFDZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lXMFBYNkRCSE11RXVCX280aEFDZ0FQAQ",
+            "date": "12/23/2024, 05:16 AM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "Why Are North Korean Troops in Ukraine Taking Heavy Casualties?",
+            "source": {
+              "name": "The New York Times",
+              "icon": "https://lh3.googleusercontent.com/tDFSwtr61ZReDD_jw6kEPWegHMSqGEHx-ZS_t-e10We-GfWEPVYkn0uLk_Vn8XQHg8wcnhMWmug",
+              "authors": [
+                "Choe Sang-Hun"
+              ]
+            },
+            "link": "https://www.nytimes.com/2024/12/23/world/asia/north-korea-military-russia-what-to-know.html",
+            "thumbnail": "https://static01.nyt.com/images/2024/12/20/multimedia/00nkorea-military-wwk-01-lmzt/00nkorea-military-wwk-01-lmzt-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNDNUVFV3V25WVVkzbzNjWGw2VFJDUUF4allCQ2dLTWdZQlVJd0F1QVU",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lXMFBYNkRCSE11RXVCX280aEFDZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lXMFBYNkRCSE11RXVCX280aEFDZ0FQAQ",
+            "date": "12/23/2024, 10:02 AM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lXMFBYNkRCSE11RXVCX280aEFDZ0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lXMFBYNkRCSE11RXVCX280aEFDZ0FQAQ"
+      },
+      {
+        "position": 28,
+        "highlight": {
+          "title": "Fallen Syrian Dictator’s Wife Said to Be Fighting for Life",
+          "source": {
+            "name": "Yahoo! Voices",
+            "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.yahoo.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+            "authors": [
+              "Hugh Dougherty"
+            ]
+          },
+          "link": "https://www.yahoo.com/news/fallen-syrian-dictator-wife-said-171755708.html",
+          "thumbnail": "https://s.yimg.com/ny/api/res/1.2/S.4n9Qe.yDC5NArTgPlaTw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyNDI7aD04Mjg-/https://media.zenfs.com/en/thedailybeast.com/cfda78347887a4fe21f8747234ced4ec",
+          "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNDNOa3N5YUhabk4zaGtiR3g0VFJERUF4aW1CU2dLTWdB",
+          "date": "12/26/2024, 05:17 PM, +0000 UTC"
+        },
+        "stories": [
+          {
+            "position": 1,
+            "title": "Who Is Asma al-Assad? The Rise and Fall of Syrian Dictator’s Wife Fighting to Live",
+            "source": {
+              "name": "The Daily Beast",
+              "icon": "https://encrypted-tbn0.gstatic.com/faviconV2?url=https://www.thedailybeast.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+              "authors": [
+                "Liam Archacki"
+              ]
+            },
+            "link": "https://www.thedailybeast.com/who-is-asma-al-assad-the-rise-and-fall-of-syrian-dictators-wife-fighting-to-live/",
+            "thumbnail": "https://www.thedailybeast.com/resizer/v2/AKRCPG4QYNEEXPFBSISMX6QV6M.jpg?smart=true&auth=34a674abfe16ee78f5bed0deb321dd54995cacf00e486975d9f9007899af6060&width=3000&height=1687",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNXBXbEJEVG1wUlozQjVlbHB4VFJDZkF4ampCU2dLTWdB",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lQMHV2NURCSF9DeHFUQjZIb1lpZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lQMHV2NURCSF9DeHFUQjZIb1lpZ0FQAQ",
+            "date": "12/27/2024, 08:56 AM, +0000 UTC"
+          },
+          {
+            "position": 2,
+            "title": "Asma al-Assad has not filed for divorce from Bashar al-Assad, says Kremlin",
+            "source": {
+              "name": "BBC.com",
+              "icon": "https://lh3.googleusercontent.com/_XS8V0jvDj-pe4NDxsc_8_YEk38hNH30ocGDk7oEwtRZNw-kUUuQouAYLFO0uIPFLX05QCKyoSo",
+              "authors": [
+                "Ian Aikman"
+              ]
+            },
+            "link": "https://www.bbc.com/news/articles/ce8n6lk97r2o",
+            "thumbnail": "https://ichef.bbci.co.uk/news/480/cpsprodpb/194d/live/e3f0a820-c132-11ef-a0f2-fd81ae5962f4.jpg.webp",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iL0NnNWxZMG81ZUZscGRGbENjblJ6VFJDb0FSaXNBaWdCTWdrQlVwTFZ1Q1hCU0FJ",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lQMHV2NURCSF9DeHFUQjZIb1lpZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lQMHV2NURCSF9DeHFUQjZIb1lpZ0FQAQ",
+            "date": "12/23/2024, 02:22 PM, +0000 UTC"
+          },
+          {
+            "position": 3,
+            "title": "Asma al-Assad given 50/50 chance of survival as leukaemia returns",
+            "source": {
+              "name": "The Telegraph",
+              "icon": "https://lh3.googleusercontent.com/j2SlMa3ZNNfh4j2BbryariOGa9vuLPBcczFcHvCPyYKw4WILAQx1PSUExVHNIu7lGV5-SKmE7A",
+              "authors": [
+                "Ben Farmer"
+              ]
+            },
+            "link": "https://www.telegraph.co.uk/world-news/2024/12/25/asma-assad-becomes-severely-ill-leukaemia-isolated-doctors/",
+            "thumbnail": "https://www.telegraph.co.uk/content/dam/world-news/2024/12/24/TELEMMGLPICT000404747995_17350709175240_trans_NvBQzQNjv4BqpVlberWd9EgFPZtcLiMQf0Rf_Wk3V23H2268P_XkPxc.jpeg?imwidth=680",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNWpOWEIxVUcxRmFqRTVjWEZZVFJDcEF4aW9CU2dLTWdhNWc0aFJPUVU",
+            "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lQMHV2NURCSF9DeHFUQjZIb1lpZ0FQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lQMHV2NURCSF9DeHFUQjZIb1lpZ0FQAQ",
+            "date": "12/25/2024, 10:36 AM, +0000 UTC"
+          }
+        ],
+        "story_token": "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lQMHV2NURCSF9DeHFUQjZIb1lpZ0FQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&story_token=CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lQMHV2NURCSF9DeHFUQjZIb1lpZ0FQAQ"
+      }
+    ],
+    "menu_links": [
+      {
+        "title": "U.S.",
+        "topic_token": "CAAqIggKIhxDQkFTRHdvSkwyMHZNRGxqTjNjd0VnSmxiaWdBUAE",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&topic_token=CAAqIggKIhxDQkFTRHdvSkwyMHZNRGxqTjNjd0VnSmxiaWdBUAE"
+      },
+      {
+        "title": "World",
+        "topic_token": "CAAqJggKIiBDQkFTRWdvSUwyMHZNRGx1YlY4U0FtVnVHZ0pWVXlnQVAB",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&topic_token=CAAqJggKIiBDQkFTRWdvSUwyMHZNRGx1YlY4U0FtVnVHZ0pWVXlnQVAB"
+      },
+      {
+        "title": "Your local news",
+        "topic_token": "CAAqHAgKIhZDQklTQ2pvSWJHOWpZV3hmZGpJb0FBUAE",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&topic_token=CAAqHAgKIhZDQklTQ2pvSWJHOWpZV3hmZGpJb0FBUAE"
+      },
+      {
+        "title": "Business",
+        "topic_token": "CAAqJggKIiBDQkFTRWdvSUwyMHZNRGx6TVdZU0FtVnVHZ0pWVXlnQVAB",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&topic_token=CAAqJggKIiBDQkFTRWdvSUwyMHZNRGx6TVdZU0FtVnVHZ0pWVXlnQVAB"
+      },
+      {
+        "title": "Technology",
+        "topic_token": "CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pWVXlnQVAB",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&topic_token=CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pWVXlnQVAB"
+      },
+      {
+        "title": "Entertainment",
+        "topic_token": "CAAqJggKIiBDQkFTRWdvSUwyMHZNREpxYW5RU0FtVnVHZ0pWVXlnQVAB",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&topic_token=CAAqJggKIiBDQkFTRWdvSUwyMHZNREpxYW5RU0FtVnVHZ0pWVXlnQVAB"
+      },
+      {
+        "title": "Sports",
+        "topic_token": "CAAqJggKIiBDQkFTRWdvSUwyMHZNRFp1ZEdvU0FtVnVHZ0pWVXlnQVAB",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&topic_token=CAAqJggKIiBDQkFTRWdvSUwyMHZNRFp1ZEdvU0FtVnVHZ0pWVXlnQVAB"
+      },
+      {
+        "title": "Science",
+        "topic_token": "CAAqJggKIiBDQkFTRWdvSUwyMHZNRFp0Y1RjU0FtVnVHZ0pWVXlnQVAB",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&topic_token=CAAqJggKIiBDQkFTRWdvSUwyMHZNRFp0Y1RjU0FtVnVHZ0pWVXlnQVAB"
+      },
+      {
+        "title": "Health",
+        "topic_token": "CAAqIQgKIhtDQkFTRGdvSUwyMHZNR3QwTlRFU0FtVnVLQUFQAQ",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&topic_token=CAAqIQgKIhtDQkFTRGdvSUwyMHZNR3QwTlRFU0FtVnVLQUFQAQ"
+      }
+    ],
+    "sub_menu_links": [
+      {
+        "title": "Latest",
+        "section_token": "CAQqKggAKiYICiIgQ0JBU0Vnb0lMMjB2TURsdWJWOFNBbVZ1R2dKVlV5Z0FQAQ",
+        "topic_token": "CAAqJggKIiBDQkFTRWdvSUwyMHZNRGx1YlY4U0FtVnVHZ0pWVXlnQVAB",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&section_token=CAQqKggAKiYICiIgQ0JBU0Vnb0lMMjB2TURsdWJWOFNBbVZ1R2dKVlV5Z0FQAQ&topic_token=CAAqJggKIiBDQkFTRWdvSUwyMHZNRGx1YlY4U0FtVnVHZ0pWVXlnQVAB"
+      }
+    ]
+  }

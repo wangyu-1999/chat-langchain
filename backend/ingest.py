@@ -16,6 +16,11 @@ from langchain_community.vectorstores import Weaviate
 from langchain_core.embeddings import Embeddings
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+import requests
+from datetime import datetime
+from utils.markdown_saver import MarkdownSaver
+import random
+import time
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -130,6 +135,150 @@ def load_api_docs():
     ).load()
 
 
+def get_headers():
+    return {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.5",
+    }
+
+def load_api_news():
+    """Load news from mock API endpoint"""
+    try:
+        response = requests.get("http://localhost:8000/api/mock")
+        data = response.json()
+        
+        news_docs = []
+        for news in data.get("news_results", []):
+            position = news.get("position")
+            
+            if "highlight" in news:
+                main_link = news["highlight"].get("link")
+                main_date = news["highlight"].get("date")
+                stories = news.get("stories", [])
+                
+                success = False
+                try:
+                    news_loader = RecursiveUrlLoader(
+                        url=main_link,
+                        max_depth=1,
+                        extractor=simple_extractor,
+                        prevent_outside=True,
+                        use_async=True,
+                        timeout=20,
+                        check_response_status=True,
+                        headers=get_headers()
+                    )
+                    
+                    docs = news_loader.load()
+                    
+                    # 检查是否成功获取到内容
+                    if docs and len(docs) > 0 and docs[0].page_content.strip():
+                        # 成功获取页面，添加元数据
+                        for doc in docs:
+                            doc.metadata.update({
+                                "source": main_link,
+                                "date": main_date,
+                                "position": position
+                            })
+                        news_docs.extend(docs)
+                        success = True
+                    else:
+                        logger.warning(f"从 {main_link} 获取的内容为空，尝试stories中的链接")
+                    
+                except Exception as e:
+                    logger.warning(f"访问 {main_link} 失败（{str(e)}），尝试stories中的链接")
+                
+                # 如果highlight链接失败或内容为空，依次尝试stories中的链接
+                if not success and stories:
+                    for story in stories:
+                        story_link = story.get("link")
+                        story_date = story.get("date")
+                        
+                        try:
+                            news_loader = RecursiveUrlLoader(
+                                url=story_link,
+                                max_depth=1,
+                                extractor=simple_extractor,
+                                prevent_outside=True,
+                                use_async=True,
+                                timeout=20,
+                                check_response_status=True,
+                                headers=get_headers()
+                            )
+                            
+                            docs = news_loader.load()
+                            
+                            # 检查是否成功获取到内容
+                            if docs and len(docs) > 0 and docs[0].page_content.strip():
+                                # 使用stories的链接成功，但保持原有position
+                                for doc in docs:
+                                    doc.metadata.update({
+                                        "source": story_link,
+                                        "date": story_date,
+                                        "position": position
+                                    })
+                                news_docs.extend(docs)
+                                success = True
+                                break
+                            else:
+                                logger.warning(f"从 {story_link} 获取的内容为空")
+                                continue
+                            
+                        except Exception as e:
+                            logger.warning(f"访问 {story_link} 失败（{str(e)}）")
+                            continue
+                    
+                    if not success:
+                        logger.warning(f"访问 {main_link} 及其所有替代链接均失败，没有更多代替")
+            
+            else:
+                # 没有highlight的情况，使用普通的link和date
+                link = news.get("link")
+                date = news.get("date")
+                
+                if link:
+                    try:
+                        news_loader = RecursiveUrlLoader(
+                            url=link,
+                            max_depth=1,
+                            extractor=simple_extractor,
+                            prevent_outside=True,
+                            use_async=True,
+                            timeout=20,
+                            check_response_status=True,
+                            headers=get_headers()
+                        )
+                        
+                        docs = news_loader.load()
+                        
+                        for doc in docs:
+                            doc.metadata.update({
+                                "source": link,
+                                "date": date,
+                                "position": position
+                            })
+                        news_docs.extend(docs)
+                        
+                    except Exception as e:
+                        logger.error(f"Error loading news from {link}: {e}")
+                        continue
+        
+        logger.info(f"Loaded {len(news_docs)} news documents")
+        
+        # 使用 MarkdownSaver 保存文档
+        if news_docs:
+            markdown_saver = MarkdownSaver()
+            saved_count = markdown_saver.save_docs(news_docs)
+            logger.info(f"Saved {saved_count} documents to markdown files")
+            
+        return news_docs
+        
+    except Exception as e:
+        logger.error(f"Error loading news from mock API: {e}")
+        return []
+
+
 def ingest_docs():
     WEAVIATE_URL = os.environ.get("WEAVIATE_URL", "http://localhost:8080")
     RECORD_MANAGER_DB_URL = os.environ["RECORD_MANAGER_DB_URL"]
@@ -153,17 +302,18 @@ def ingest_docs():
         f"weaviate/{WEAVIATE_DOCS_INDEX_NAME}", db_url=RECORD_MANAGER_DB_URL
     )
     record_manager.create_schema()
-
-    # docs_from_documentation = load_langchain_docs()
-    # logger.info(f"Loaded {len(docs_from_documentation)} docs from documentation")
     docs_from_api = load_api_docs()
     logger.info(f"Loaded {len(docs_from_api)} docs from API")
     docs_from_langsmith = load_langsmith_docs()
     logger.info(f"Loaded {len(docs_from_langsmith)} docs from Langsmith")
+    docs_from_news = load_api_news()
+    logger.info(f"Loaded {len(docs_from_news)} docs from News API")
+
+
+    return
 
     docs_transformed = text_splitter.split_documents(
-        # docs_from_documentation + docs_from_api + docs_from_langsmith
-        docs_from_api + docs_from_langsmith
+        docs_from_api + docs_from_langsmith + docs_from_news
     )
     docs_transformed = [doc for doc in docs_transformed if len(doc.page_content) > 10]
 

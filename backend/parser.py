@@ -4,12 +4,37 @@ from typing import Generator
 from bs4 import BeautifulSoup, Doctype, NavigableString, Tag
 
 
-def langchain_docs_extractor(soup: BeautifulSoup) -> str:
-    # Remove all the tags that are not meaningful for the extraction.
-    SCAPE_TAGS = ["nav", "footer", "aside", "script", "style"]
-    [tag.decompose() for tag in soup.find_all(SCAPE_TAGS)]
+def langchain_docs_extractor(html: str) -> str:
+    """从HTML提取文本内容
+    Args:
+        html: HTML字符串
+    Returns:
+        str: 提取的文本内容
+    """
+    soup = BeautifulSoup(html, 'lxml')
+    
+    # 需要移除的无关标签
+    REMOVE_TAGS = [
+        "script", "style", "noscript", "iframe", "svg", "img", 
+        "audio", "video", "canvas", "form", "input", "button",
+        "select", "textarea", "nav", "footer", "aside", "header",
+        "object", "embed"
+    ]
+    
+    # 移除所有无关标签
+    [tag.decompose() for tag in soup.find_all(REMOVE_TAGS)]
+    
+    # 移除所有不需要的属性
+    for tag in soup.find_all(True):
+        attrs_to_remove = [
+            attr for attr in tag.attrs if attr in [
+                'style', 'src', 'alt', 'title', 'role', 'tabindex'
+            ] or attr.startswith(('aria-', 'on', 'data-'))
+        ]
+        for attr in attrs_to_remove:
+            del tag.attrs[attr]
 
-    def get_text(tag: Tag) -> Generator[str, None, None]:
+    def get_text(tag) -> str:
         for child in tag.children:
             if isinstance(child, Doctype):
                 continue
@@ -19,42 +44,6 @@ def langchain_docs_extractor(soup: BeautifulSoup) -> str:
             elif isinstance(child, Tag):
                 if child.name in ["h1", "h2", "h3", "h4", "h5", "h6"]:
                     yield f"{'#' * int(child.name[1:])} {child.get_text()}\n\n"
-                elif child.name == "a":
-                    yield f"[{child.get_text(strip=False)}]({child.get('href')})"
-                elif child.name == "img":
-                    yield f"![{child.get('alt', '')}]({child.get('src')})"
-                elif child.name in ["strong", "b"]:
-                    yield f"**{child.get_text(strip=False)}**"
-                elif child.name in ["em", "i"]:
-                    yield f"_{child.get_text(strip=False)}_"
-                elif child.name == "br":
-                    yield "\n"
-                elif child.name == "code":
-                    parent = child.find_parent()
-                    if parent is not None and parent.name == "pre":
-                        classes = parent.attrs.get("class", "")
-
-                        language = next(
-                            filter(lambda x: re.match(r"language-\w+", x), classes),
-                            None,
-                        )
-                        if language is None:
-                            language = ""
-                        else:
-                            language = language.split("-")[1]
-
-                        lines: list[str] = []
-                        for span in child.find_all("span", class_="token-line"):
-                            line_content = "".join(
-                                token.get_text() for token in span.find_all("span")
-                            )
-                            lines.append(line_content)
-
-                        code_content = "\n".join(lines)
-                        yield f"```{language}\n{code_content}\n```\n\n"
-                    else:
-                        yield f"`{child.get_text(strip=False)}`"
-
                 elif child.name == "p":
                     yield from get_text(child)
                     yield "\n\n"
@@ -62,47 +51,12 @@ def langchain_docs_extractor(soup: BeautifulSoup) -> str:
                     for li in child.find_all("li", recursive=False):
                         yield "- "
                         yield from get_text(li)
-                        yield "\n\n"
+                        yield "\n"
                 elif child.name == "ol":
                     for i, li in enumerate(child.find_all("li", recursive=False)):
                         yield f"{i + 1}. "
                         yield from get_text(li)
-                        yield "\n\n"
-                elif child.name == "div" and "tabs-container" in child.attrs.get(
-                    "class", [""]
-                ):
-                    tabs = child.find_all("li", {"role": "tab"})
-                    tab_panels = child.find_all("div", {"role": "tabpanel"})
-                    for tab, tab_panel in zip(tabs, tab_panels):
-                        tab_name = tab.get_text(strip=True)
-                        yield f"{tab_name}\n"
-                        yield from get_text(tab_panel)
-                elif child.name == "table":
-                    thead = child.find("thead")
-                    header_exists = isinstance(thead, Tag)
-                    if header_exists:
-                        headers = thead.find_all("th")
-                        if headers:
-                            yield "| "
-                            yield " | ".join(header.get_text() for header in headers)
-                            yield " |\n"
-                            yield "| "
-                            yield " | ".join("----" for _ in headers)
-                            yield " |\n"
-
-                    tbody = child.find("tbody")
-                    tbody_exists = isinstance(tbody, Tag)
-                    if tbody_exists:
-                        for row in tbody.find_all("tr"):
-                            yield "| "
-                            yield " | ".join(
-                                cell.get_text(strip=True) for cell in row.find_all("td")
-                            )
-                            yield " |\n"
-
-                    yield "\n\n"
-                elif child.name in ["button"]:
-                    continue
+                        yield "\n"
                 else:
                     yield from get_text(child)
 
