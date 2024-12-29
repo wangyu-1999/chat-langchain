@@ -1,11 +1,9 @@
 """Main entrypoint for the app."""
-import asyncio
-from typing import Optional, Union
+
 import json
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
 from pathlib import Path
 
 from chain import ChatRequest, answer_chain
@@ -24,16 +22,15 @@ app.add_middleware(
     expose_headers=["*"],
 )
 
+
 @app.post("/api/chat")
 async def chat(request: ChatRequest):
     response = await answer_chain.ainvoke(
-        {
-            "question": request.question,
-            "chat_history": request.chat_history
-        }
+        {"question": request.question, "chat_history": request.chat_history}
     )
     print(response)
     return response
+
 
 @app.get("/api/mock")
 def get_mock():
@@ -41,6 +38,8 @@ def get_mock():
     with open(mock_file, "r", encoding="utf-8") as f:
         return json.load(f)
 
+
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run(app, host="0.0.0.0", port=8080)

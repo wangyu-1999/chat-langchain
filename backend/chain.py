@@ -79,14 +79,13 @@ Standalone Question:"""
 
 WEAVIATE_URL = os.environ.get("WEAVIATE_URL", "http://localhost:8080")
 
+
 class ChatRequest(BaseModel):
     question: str
     chat_history: Optional[List[Dict[str, str]]] = None
     model: str = "zhipu_glm_4"  # 默认使用智谱模型
-    
-    model_config = {
-        "arbitrary_types_allowed": True
-    }
+
+    model_config = {"arbitrary_types_allowed": True}
 
 
 def get_retriever() -> BaseRetriever:
@@ -108,19 +107,14 @@ def create_retriever_chain(
     llm: LanguageModelLike, retriever: BaseRetriever
 ) -> Runnable:
     CONDENSE_QUESTION_PROMPT = PromptTemplate.from_template(REPHRASE_TEMPLATE)
-    condense_question_chain = (
-        CONDENSE_QUESTION_PROMPT | llm | StrOutputParser()
-    )
+    condense_question_chain = CONDENSE_QUESTION_PROMPT | llm | StrOutputParser()
     conversation_chain = condense_question_chain | retriever
     return RunnableBranch(
         (
             RunnableLambda(lambda x: bool(x.get("chat_history"))),
             conversation_chain,
         ),
-        (
-            RunnableLambda(itemgetter("question"))
-            | retriever
-        ),
+        (RunnableLambda(itemgetter("question")) | retriever),
     )
 
 
@@ -148,7 +142,7 @@ def create_chain(llm: LanguageModelLike, retriever: BaseRetriever) -> Runnable:
         llm,
         retriever,
     ).with_config(run_name="FindDocs")
-    
+
     # 添加调试信息来查看检索结果
     def debug_context(x):
         docs = x["docs"]
@@ -158,13 +152,13 @@ def create_chain(llm: LanguageModelLike, retriever: BaseRetriever) -> Runnable:
             print(f"内容: {doc.page_content}")
             print(f"来源: {doc.metadata.get('source', 'unknown')}")
         return format_docs(docs)
-    
+
     context = (
         RunnablePassthrough.assign(docs=retriever_chain)
         .assign(context=debug_context)  # 替换原来的 lambda
         .with_config(run_name="RetrieveDocs")
     )
-    
+
     prompt = ChatPromptTemplate.from_messages(
         [
             ("system", RESPONSE_TEMPLATE),
@@ -172,7 +166,7 @@ def create_chain(llm: LanguageModelLike, retriever: BaseRetriever) -> Runnable:
             ("human", "{question}"),
         ]
     )
-    
+
     # 添加调试信息来查看最终提示
     def debug_prompt(inputs):
         formatted_prompt = prompt.format_messages(**inputs)
@@ -181,11 +175,8 @@ def create_chain(llm: LanguageModelLike, retriever: BaseRetriever) -> Runnable:
             print(f"\n{msg.type}:")
             print(msg.content)
         return formatted_prompt
-    
-    default_response_synthesizer = (
-        RunnableLambda(debug_prompt) 
-        | llm
-    )
+
+    default_response_synthesizer = RunnableLambda(debug_prompt) | llm
 
     response_synthesizer = (
         default_response_synthesizer.configurable_alternatives(
@@ -200,9 +191,10 @@ def create_chain(llm: LanguageModelLike, retriever: BaseRetriever) -> Runnable:
         | response_synthesizer
     )
 
+
 glm_4 = ChatZhipuAI(
     model="glm-4",
-    temperature=0, 
+    temperature=0,
     streaming=True,
     zhipuai_api_key=os.environ.get("ZHIPUAI_API_KEY", "not_provided"),
 )
