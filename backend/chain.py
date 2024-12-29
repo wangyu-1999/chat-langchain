@@ -4,11 +4,12 @@ from operator import itemgetter
 from typing import Dict, List, Optional, Sequence
 
 import weaviate
-from constants import WEAVIATE_DOCS_INDEX_NAME
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+from config import (
+    WEAVIATE_DOCS_INDEX_NAME,
+    RESPONSE_TEMPLATE,
+    REPHRASE_TEMPLATE,
+)
 from ingest import get_embeddings_model
-from langchain_community.chat_models import ChatZhipuAI
 from langchain_community.vectorstores import Weaviate
 from langchain_core.documents import Document
 from langchain_core.language_models import LanguageModelLike
@@ -28,53 +29,11 @@ from langchain_core.runnables import (
     RunnableBranch,
     RunnableLambda,
     RunnablePassthrough,
-    RunnableSequence,
-    chain,
 )
+from llm_service import model_manager
+import logging
 
 load_dotenv()
-
-RESPONSE_TEMPLATE = """\
-You are an expert programmer and problem-solver, tasked with answering any question \
-about Langchain.
-
-Generate a comprehensive and informative answer of 80 words or less for the \
-given question based solely on the provided search results (URL and content). You must \
-only use information from the provided search results. Use an unbiased and \
-journalistic tone. Combine search results together into a coherent answer. Do not \
-repeat text. Cite search results using [${{number}}] notation. Only cite the most \
-relevant results that answer the question accurately. Place these citations at the end \
-of the sentence or paragraph that reference them - do not put them all at the end. If \
-different results refer to different entities within the same name, write separate \
-answers for each entity.
-
-You should use bullet points in your answer for readability. Put citations where they apply
-rather than putting them all at the end.
-
-If there is nothing in the context relevant to the question at hand, just say "Hmm, \
-I'm not sure." Don't try to make up an answer.
-
-Anything between the following `context`  html blocks is retrieved from a knowledge \
-bank, not part of the conversation with the user. 
-
-<context>
-    {context} 
-<context/>
-
-REMEMBER: If there is no relevant information within the context, just say "Hmm, I'm \
-not sure." Don't try to make up an answer. Anything between the preceding 'context' \
-html blocks is retrieved from a knowledge bank, not part of the conversation with the \
-user.\
-"""
-
-REPHRASE_TEMPLATE = """\
-Given the following conversation and a follow up question, rephrase the follow up \
-question to be a standalone question.
-
-Chat History:
-{chat_history}
-Follow Up Input: {question}
-Standalone Question:"""
 
 
 WEAVIATE_URL = os.environ.get("WEAVIATE_URL", "http://localhost:8080")
@@ -83,9 +42,6 @@ WEAVIATE_URL = os.environ.get("WEAVIATE_URL", "http://localhost:8080")
 class ChatRequest(BaseModel):
     question: str
     chat_history: Optional[List[Dict[str, str]]] = None
-    model: str = "zhipu_glm_4"  # 默认使用智谱模型
-
-    model_config = {"arbitrary_types_allowed": True}
 
 
 def get_retriever() -> BaseRetriever:
@@ -98,9 +54,9 @@ def get_retriever() -> BaseRetriever:
         text_key="text",
         embedding=get_embeddings_model(),
         by_text=False,
-        attributes=["source", "title"],
+        attributes=["source", "title", "date", "location", "subject"],
     )
-    return vectorstore.as_retriever(search_kwargs=dict(k=6))
+    return vectorstore.as_retriever(search_kwargs=dict(k=3))
 
 
 def create_retriever_chain(
@@ -108,7 +64,15 @@ def create_retriever_chain(
 ) -> Runnable:
     CONDENSE_QUESTION_PROMPT = PromptTemplate.from_template(REPHRASE_TEMPLATE)
     condense_question_chain = CONDENSE_QUESTION_PROMPT | llm | StrOutputParser()
-    conversation_chain = condense_question_chain | retriever
+
+    # 添加打印步骤
+    def print_and_return(question: str):
+        logging.info("\n=== 重写后的问题 ===\n%s", question)
+        return question
+
+    conversation_chain = (
+        condense_question_chain | RunnableLambda(print_and_return)
+    ) | retriever
     return RunnableBranch(
         (
             RunnableLambda(lambda x: bool(x.get("chat_history"))),
@@ -121,7 +85,7 @@ def create_retriever_chain(
 def format_docs(docs: Sequence[Document]) -> str:
     formatted_docs = []
     for i, doc in enumerate(docs):
-        doc_string = f"<doc id='{i}'>{doc.page_content}</doc>"
+        doc_string = f"<doc id='{i}',source='{doc.metadata.get('source')}',date='{doc.metadata.get('date')}',location='{doc.metadata.get('location')}',subject='{doc.metadata.get('subject')}'>{doc.page_content}</doc>"
         formatted_docs.append(doc_string)
     return "\n".join(formatted_docs)
 
@@ -146,11 +110,11 @@ def create_chain(llm: LanguageModelLike, retriever: BaseRetriever) -> Runnable:
     # 添加调试信息来查看检索结果
     def debug_context(x):
         docs = x["docs"]
-        print("\n=== 向量检索结果 ===")
+        logging.info("\n=== 向量检索结果 ===")
         for i, doc in enumerate(docs):
-            print(f"\n文档 {i+1}:")
-            print(f"内容: {doc.page_content}")
-            print(f"来源: {doc.metadata.get('source', 'unknown')}")
+            logging.info("\n文档 %d:", i + 1)
+            logging.info("内容: %s", doc.page_content)
+            logging.info("来源: %s", doc.metadata.get("source", "unknown"))
         return format_docs(docs)
 
     context = (
@@ -167,13 +131,14 @@ def create_chain(llm: LanguageModelLike, retriever: BaseRetriever) -> Runnable:
         ]
     )
 
-    # 添加调试信息来查看最终提示
+    # 修改 debug_prompt 函数，确保所有必需的参数都被传入
     def debug_prompt(inputs):
+        inputs = {**inputs, "number": 1}
         formatted_prompt = prompt.format_messages(**inputs)
-        print("\n=== 发送给模型的完整提示 ===")
+        logging.info("\n=== 发送给模型的完整提示 ===")
         for msg in formatted_prompt:
-            print(f"\n{msg.type}:")
-            print(msg.content)
+            logging.info("\n%s:", msg.type)
+            logging.info(msg.content)
         return formatted_prompt
 
     default_response_synthesizer = RunnableLambda(debug_prompt) | llm
@@ -192,17 +157,5 @@ def create_chain(llm: LanguageModelLike, retriever: BaseRetriever) -> Runnable:
     )
 
 
-glm_4 = ChatZhipuAI(
-    model="glm-4",
-    temperature=0,
-    streaming=True,
-    zhipuai_api_key=os.environ.get("ZHIPUAI_API_KEY", "not_provided"),
-)
-
-llm = glm_4.configurable_alternatives(
-    ConfigurableField(id="llm"),
-    default_key="zhipu_glm_4",
-).with_fallbacks([glm_4])
-
 retriever = get_retriever()
-answer_chain = create_chain(llm, retriever)
+answer_chain = create_chain(model_manager.langchain_model, retriever)

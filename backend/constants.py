@@ -1,1 +1,0 @@
-WEAVIATE_DOCS_INDEX_NAME = "LangChain_Combined_Docs_BGE_M3"

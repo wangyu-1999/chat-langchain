@@ -6,17 +6,15 @@ import re
 from dotenv import load_dotenv
 
 import weaviate
-from constants import WEAVIATE_DOCS_INDEX_NAME
-from langchain.indexes import SQLRecordManager
-from langchain.indexes import index
+from config import WEAVIATE_DOCS_INDEX_NAME
+from langchain.indexes import SQLRecordManager, index
 from langchain_community.vectorstores import Weaviate
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 import requests
 from embeddings import get_embeddings_model
-import aiohttp
 from langchain.schema import Document
-from parser import strip_html_tags
-from chat_model import ChatModel
+from html_cleaner import strip_html_tags
+from summarizer import ChatModel
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

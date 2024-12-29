@@ -1,7 +1,5 @@
 """Main entrypoint for the app."""
 
-import json
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pathlib import Path
@@ -32,14 +30,7 @@ async def chat(request: ChatRequest):
     return response
 
 
-@app.get("/api/mock")
-def get_mock():
-    mock_file = BASE_DIR / "mock" / "mock.json"
-    with open(mock_file, "r", encoding="utf-8") as f:
-        return json.load(f)
-
-
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app, host="0.0.0.0", port=8080)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
