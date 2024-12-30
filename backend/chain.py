@@ -54,7 +54,7 @@ def get_retriever() -> BaseRetriever:
         text_key="text",
         embedding=get_embeddings_model(),
         by_text=False,
-        attributes=["source", "title", "date", "location", "subject"],
+        attributes=["source", "title_en", "date", "location", "subject"],
     )
     return vectorstore.as_retriever(search_kwargs=dict(k=RETRIEVER_TOP_K))
 

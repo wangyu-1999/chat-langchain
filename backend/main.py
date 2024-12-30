@@ -1,9 +1,10 @@
 """Main entrypoint for the app."""
 
-from fastapi import FastAPI
+from fastapi import FastAPI, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from pathlib import Path
 from datetime import datetime
+from asyncio import Semaphore
 
 from chain import ChatRequest, answer_chain
 from ingest import ingest_docs
@@ -20,6 +21,12 @@ ingest_status = {
     "end_time": None,
 }
 
+# 创建信号量实例，限制最大并发数为3
+chat_semaphore = Semaphore(3)
+
+# 添加摄入任务的信号量
+ingest_semaphore = Semaphore(1)  # 限制只能同时运行一个摄入任务
+
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
@@ -33,34 +40,49 @@ app.add_middleware(
 
 @app.post("/api/chat")
 async def chat(request: ChatRequest):
-    response = await answer_chain.ainvoke(
-        {"question": request.question, "chat_history": request.chat_history}
-    )
-    print(response)
-    return response
+    async with chat_semaphore:  # 使用信号量控制并发
+        response = await answer_chain.ainvoke(
+            {"question": request.question, "chat_history": request.chat_history}
+        )
+        print(response)
+        return response
 
 
 @app.post("/api/ingest")
-async def ingest():
+async def ingest(background_tasks: BackgroundTasks):
+    # 如果已经在运行，直接返回状态信息
     if ingest_status["is_running"]:
-        return {"status": "error", "message": "数据摄入任务已在运行中"}
+        return {
+            "status": "running",
+            "message": "数据摄入任务正在执行中",
+            "start_time": ingest_status["start_time"],
+        }
 
+    # 开始新的摄入任务
+    ingest_status["is_running"] = True
+    ingest_status["start_time"] = datetime.now().isoformat()
+    ingest_status["last_error"] = None
+
+    # 将耗时操作放入后台任务
+    background_tasks.add_task(process_ingest)
+
+    return {
+        "status": "accepted",
+        "message": "数据摄入任务已开始",
+        "start_time": ingest_status["start_time"],
+    }
+
+
+async def process_ingest():
+    """后台处理摄入任务"""
     try:
-        ingest_status["is_running"] = True
-        ingest_status["last_error"] = None
-        ingest_status["start_time"] = datetime.now().isoformat()
-
         final_stats = await ingest_docs()
-
         ingest_status["last_stats"] = final_stats
-        ingest_status["end_time"] = datetime.now().isoformat()
-        return {"status": "success", "message": "数据摄入完成", "stats": final_stats}
-
     except Exception as e:
         ingest_status["last_error"] = str(e)
-        return {"status": "error", "message": str(e)}
     finally:
         ingest_status["is_running"] = False
+        ingest_status["end_time"] = datetime.now().isoformat()
 
 
 @app.get("/api/ingest/status")

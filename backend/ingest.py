@@ -5,6 +5,9 @@ import os
 import re
 from dotenv import load_dotenv
 import aiohttp
+import asyncio
+from functools import partial
+from concurrent.futures import ThreadPoolExecutor
 
 import weaviate
 from config import WEAVIATE_DOCS_INDEX_NAME
@@ -26,25 +29,13 @@ load_dotenv()
 WEAVIATE_URL = os.environ.get("WEAVIATE_URL", "http://localhost:8080")
 chat_model = ChatModel()
 
+# 创建一个线程池执行器
+thread_pool = ThreadPoolExecutor(max_workers=3)
+
 
 async def load_api_news():
-    """Load news from BBC RSS feed API endpoint"""
+    """异步加载新闻数据"""
     try:
-        # 使用全局WEAVIATE_URL
-        client = weaviate.Client(url=WEAVIATE_URL)
-
-        # 使用 aiohttp 替代 requests 进行异步请求
-        async with aiohttp.ClientSession() as session:
-            async with session.get(
-                "https://march42-rsshub.hf.space/bbc?format=json",
-                headers={
-                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0",
-                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-                    "Accept-Language": "en-US,en;q=0.5",
-                },
-            ) as response:
-                data = await response.json()
-
         stats = {
             "skipped_urls": [],
             "processed_urls": [],
@@ -52,53 +43,23 @@ async def load_api_news():
             "failed_summary_urls": [],
         }
 
-        news_docs = []
-        for news in data.get("items", []):
-            url = news.get("url", "")
-            if not url.startswith("https://www.bbc.com/news/articles/"):
-                continue
+        async with aiohttp.ClientSession() as session:
+            # 异步获取新闻数据
+            async with session.get(
+                "https://march42-rsshub.hf.space/bbc?format=json"
+            ) as response:
+                data = await response.json()
 
-            # 检查 URL 是否已存在
-            query = (
-                client.query.get(WEAVIATE_DOCS_INDEX_NAME, ["source"])
-                .with_where(
-                    {"path": ["source"], "operator": "Equal", "valueString": url}
-                )
-                .with_limit(1)
-                .do()
-            )
+            news_docs = []
+            # 使用 asyncio.gather 并发处理新闻
+            tasks = []
+            for news in data.get("items", []):
+                if news.get("url", "").startswith("https://www.bbc.com/news/articles/"):
+                    tasks.append(process_news_item(news, stats))
 
-            if query["data"]["Get"][WEAVIATE_DOCS_INDEX_NAME]:
-                stats["skipped_urls"].append(url)
-                continue
+            results = await asyncio.gather(*tasks)
+            news_docs = [doc for doc in results if doc is not None]
 
-            content = strip_html_tags(news.get("content_html", "").strip())
-            date = news.get("date_published")
-
-            if content:
-                res = chat_model.chat(content)
-
-                if res.get("english_summary", "") != "":
-                    doc = Document(
-                        page_content=res.get("english_summary", ""),
-                        metadata={
-                            "source": url,
-                            "date": date,
-                            "title_cn": res.get("title_cn", ""),
-                            "title_en": res.get("title_en", ""),
-                            "subject": res.get("subject", ""),
-                            "location": res.get("location", ""),
-                            "chinese_summary": res.get("summary", ""),
-                        },
-                    )
-                    news_docs.append(doc)
-                    stats["processed_urls"].append(url)
-                else:
-                    stats["failed_summary_urls"].append(url)
-            else:
-                stats["empty_content_urls"].append(url)
-
-        logger.info(f"已加载 {len(news_docs)} 条新闻")
         return news_docs, stats
 
     except Exception as e:
@@ -106,46 +67,114 @@ async def load_api_news():
         return [], {}
 
 
+async def process_news_item(news, stats):
+    """处理单个新闻项"""
+    url = news.get("url", "")
+
+    # 将 Weaviate 查询移到线程池
+    client = weaviate.Client(url=WEAVIATE_URL)
+    query_future = asyncio.get_event_loop().run_in_executor(
+        thread_pool,
+        lambda: client.query.get(WEAVIATE_DOCS_INDEX_NAME, ["source"])
+        .with_where({"path": ["source"], "operator": "Equal", "valueString": url})
+        .with_limit(1)
+        .do(),
+    )
+    query = await query_future
+
+    if query["data"]["Get"][WEAVIATE_DOCS_INDEX_NAME]:
+        stats["skipped_urls"].append(url)
+        return None
+
+    content = strip_html_tags(news.get("content_html", "").strip())
+    date = news.get("date_published")
+
+    if not content:
+        stats["empty_content_urls"].append(url)
+        return None
+
+    # 使用线程池处理 chat_model 调用
+    chat_future = asyncio.get_event_loop().run_in_executor(
+        thread_pool, chat_model.chat, content
+    )
+    res = await chat_future
+
+    if res.get("english_summary", "") != "":
+        doc = Document(
+            page_content=res.get("english_summary", ""),
+            metadata={
+                "source": url,
+                "date": date,
+                "title_cn": res.get("title_cn", ""),
+                "title_en": res.get("title_en", ""),
+                "subject": res.get("subject", ""),
+                "location": res.get("location", ""),
+                "chinese_summary": res.get("summary", ""),
+            },
+        )
+        stats["processed_urls"].append(url)
+        return doc
+    else:
+        stats["failed_summary_urls"].append(url)
+        return None
+
+
 async def ingest_docs():
     """处理文档摄入的异步函数"""
     try:
-        # 确保schema存在
-        create_schema_if_not_exists()
-
-        # 在子进程中初始化模型
-        embedding = get_embeddings_model()
-
-        text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=4000, chunk_overlap=200
+        # 1. 将同步的 Weaviate 客户端初始化移到线程池
+        client_future = asyncio.get_event_loop().run_in_executor(
+            thread_pool, lambda: weaviate.Client(url=WEAVIATE_URL)
         )
+        client = await client_future
 
-        client = weaviate.Client(url=WEAVIATE_URL)
+        # 2. 将同步的 embeddings 模型初始化移到线程池
+        embedding_future = asyncio.get_event_loop().run_in_executor(
+            thread_pool, get_embeddings_model
+        )
+        embedding = await embedding_future
+
+        # 3. 异步加载新闻
+        docs_from_news, load_stats = await load_api_news()
+
+        if not docs_from_news:
+            return {
+                "load_stats": {
+                    "total_skipped": 0,
+                    "total_processed": 0,
+                    "total_empty": 0,
+                    "total_failed_summary": 0,
+                }
+            }
+
+        # 4. 将文本分割移到线程池
+        text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=1000,
+            chunk_overlap=200,
+        )
+        split_docs_future = asyncio.get_event_loop().run_in_executor(
+            thread_pool, text_splitter.split_documents, docs_from_news
+        )
+        docs_transformed = await split_docs_future
+
+        # 5. 将 Weaviate 添加文档操作移到线程池
         vectorstore = Weaviate(
             client=client,
             index_name=WEAVIATE_DOCS_INDEX_NAME,
             text_key="text",
             embedding=embedding,
             by_text=False,
-            attributes=[
-                "source",
-                "date",
-                "title_cn",
-                "title_en",
-                "subject",
-                "location",
-                "chinese_summary",
-            ],
+            attributes=["source", "title_en", "date", "location", "subject"],
         )
 
-        docs_from_news, load_stats = await load_api_news()
-        logger.info(f"Loaded {len(docs_from_news)} docs from News API")
-
-        docs_transformed = text_splitter.split_documents(docs_from_news)
-        docs_transformed = [
-            doc for doc in docs_transformed if len(doc.page_content) > 10
-        ]
-
-        await vectorstore.aadd_documents(docs_transformed)
+        # 批量处理文档，每批50个
+        batch_size = 50
+        for i in range(0, len(docs_transformed), batch_size):
+            batch = docs_transformed[i : i + batch_size]
+            add_docs_future = asyncio.get_event_loop().run_in_executor(
+                thread_pool, partial(vectorstore.add_documents, batch)
+            )
+            await add_docs_future
 
         return {
             "load_stats": {
@@ -160,10 +189,7 @@ async def ingest_docs():
 
     except Exception as e:
         logger.error(f"Ingest error: {str(e)}")
-        return {
-            "error": str(e),
-            "load_stats": load_stats if "load_stats" in locals() else None,
-        }
+        return {"error": str(e)}
 
 
 if __name__ == "__main__":
