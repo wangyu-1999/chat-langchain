@@ -11,72 +11,75 @@ load_dotenv()
 WEAVIATE_URL = os.environ.get("WEAVIATE_URL", "http://localhost:8080")
 
 
-def create_schema_if_not_exists():
-    client = weaviate.Client(url=WEAVIATE_URL)
-
-    # 检查schema是否已存在
+def create_schema_if_not_exists(client):
     try:
-        schema = client.schema.get(WEAVIATE_DOCS_INDEX_NAME)
-        if schema:
-            logger.info(f"Schema '{WEAVIATE_DOCS_INDEX_NAME}' already exists")
-            return False
-    except Exception:
-        # schema不存在，创建新的
-        schema = {
-            "classes": [
-                {
-                    "class": WEAVIATE_DOCS_INDEX_NAME,
-                    "description": "A collection of news articles with their summaries and metadata",
-                    "vectorizer": "none",  # 使用外部向量化器(BGE-M3)
-                    "properties": [
-                        {
-                            "name": "text",
-                            "dataType": ["text"],
-                            "description": "The main content (English summary) of the article",
-                        },
-                        {
-                            "name": "source",
-                            "dataType": ["string"],
-                            "description": "The source URL of the article",
-                        },
-                        {
-                            "name": "date",
-                            "dataType": ["string"],
-                            "description": "Publication date of the article",
-                        },
-                        {
-                            "name": "title_cn",
-                            "dataType": ["string"],
-                            "description": "Chinese title of the article",
-                        },
-                        {
-                            "name": "title_en",
-                            "dataType": ["string"],
-                            "description": "English title of the article",
-                        },
-                        {
-                            "name": "subject",
-                            "dataType": ["string"],
-                            "description": "Main subject or entity of the article",
-                        },
-                        {
-                            "name": "location",
-                            "dataType": ["string"],
-                            "description": "Location mentioned in the article",
-                        },
-                        {
-                            "name": "chinese_summary",
-                            "dataType": ["text"],
-                            "description": "Chinese summary of the article",
-                        },
-                    ],
-                }
-            ]
-        }
-
-        # 创建schema
-        client.schema.create(schema)
-        logger.info(
-            f"Schema for class '{WEAVIATE_DOCS_INDEX_NAME}' created successfully!"
+        # 检查schema是否已存在
+        schema = client.schema.get()
+        existing_classes = (
+            [c["class"] for c in schema["classes"]] if schema.get("classes") else []
         )
-        return True
+
+        if WEAVIATE_DOCS_INDEX_NAME not in existing_classes:
+            # 定义schema
+            class_obj = {
+                "class": WEAVIATE_DOCS_INDEX_NAME,
+                "description": "News documents collection",
+                "properties": [
+                    {
+                        "name": "page_content",
+                        "dataType": ["text"],
+                        "description": "The main content of the document",
+                    },
+                    {
+                        "name": "source",
+                        "dataType": ["string"],
+                        "description": "Source URL of the document",
+                    },
+                    {
+                        "name": "source_name",
+                        "dataType": ["string"],
+                        "description": "Name of the news source",
+                    },
+                    {
+                        "name": "date",
+                        "dataType": ["string"],
+                        "description": "Publication date",
+                    },
+                    {
+                        "name": "title_cn",
+                        "dataType": ["string"],
+                        "description": "Chinese title",
+                        "moduleConfig": {"text2vec-openai": {"skip": True}},
+                    },
+                    {
+                        "name": "title_en",
+                        "dataType": ["string"],
+                        "description": "English title",
+                    },
+                    {
+                        "name": "subject",
+                        "dataType": ["string"],
+                        "description": "News subject in English",
+                    },
+                    {
+                        "name": "location",
+                        "dataType": ["string"],
+                        "description": "Related location in English",
+                    },
+                    {
+                        "name": "chinese_summary",  # 对应config中的summary
+                        "dataType": ["text"],
+                        "description": "Summary in Chinese",
+                        "moduleConfig": {"text2vec-openai": {"skip": True}},
+                    },
+                ],
+            }
+
+            client.schema.create_class(class_obj)
+            logger.info(f"已创建schema: {WEAVIATE_DOCS_INDEX_NAME}")
+        else:
+            logger.info(f"Schema {WEAVIATE_DOCS_INDEX_NAME} 已存在")
+
+    except Exception as e:
+        logger.error(f"创建schema时出错: {str(e)}")
+        raise
