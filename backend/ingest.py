@@ -4,6 +4,7 @@ import logging
 import os
 import re
 from dotenv import load_dotenv
+import aiohttp
 
 import weaviate
 from config import WEAVIATE_DOCS_INDEX_NAME
@@ -26,21 +27,30 @@ WEAVIATE_URL = os.environ.get("WEAVIATE_URL", "http://localhost:8080")
 chat_model = ChatModel()
 
 
-def load_api_news():
+async def load_api_news():
     """Load news from BBC RSS feed API endpoint"""
     try:
         # 使用全局WEAVIATE_URL
         client = weaviate.Client(url=WEAVIATE_URL)
 
-        response = requests.get(
-            "https://march42-rsshub.hf.space/bbc?format=json",
-            headers={
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0",
-                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-                "Accept-Language": "en-US,en;q=0.5",
-            },
-        )
-        data = response.json()
+        # 使用 aiohttp 替代 requests 进行异步请求
+        async with aiohttp.ClientSession() as session:
+            async with session.get(
+                "https://march42-rsshub.hf.space/bbc?format=json",
+                headers={
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0",
+                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                    "Accept-Language": "en-US,en;q=0.5",
+                },
+            ) as response:
+                data = await response.json()
+
+        stats = {
+            "skipped_urls": [],
+            "processed_urls": [],
+            "empty_content_urls": [],
+            "failed_summary_urls": [],
+        }
 
         news_docs = []
         for news in data.get("items", []):
@@ -58,8 +68,8 @@ def load_api_news():
                 .do()
             )
 
-            # 如果已存在该URL，跳过处理
             if query["data"]["Get"][WEAVIATE_DOCS_INDEX_NAME]:
+                stats["skipped_urls"].append(url)
                 continue
 
             content = strip_html_tags(news.get("content_html", "").strip())
@@ -82,20 +92,21 @@ def load_api_news():
                         },
                     )
                     news_docs.append(doc)
+                    stats["processed_urls"].append(url)
                 else:
-                    logger.warning(f"Chat模型返回的english_summary为空: {url}")
+                    stats["failed_summary_urls"].append(url)
             else:
-                logger.warning(f"新闻 {news.get('title')} 内容为空")
+                stats["empty_content_urls"].append(url)
 
         logger.info(f"已加载 {len(news_docs)} 条新闻")
-        return news_docs
+        return news_docs, stats
 
     except Exception as e:
         logger.error(f"从BBC RSS获取新闻失败: {e}")
-        return []
+        return [], {}
 
 
-def ingest_docs():
+async def ingest_docs():
     # 删除重复的WEAVIATE_URL定义，直接使用全局常量
     RECORD_MANAGER_DB_URL = os.environ["RECORD_MANAGER_DB_URL"]
 
@@ -126,24 +137,37 @@ def ingest_docs():
         f"weaviate/{WEAVIATE_DOCS_INDEX_NAME}", db_url=RECORD_MANAGER_DB_URL
     )
     record_manager.create_schema()
-    docs_from_news = load_api_news()
+    docs_from_news, load_stats = await load_api_news()
     logger.info(f"Loaded {len(docs_from_news)} docs from News API")
 
     docs_transformed = text_splitter.split_documents(docs_from_news)
     docs_transformed = [doc for doc in docs_transformed if len(doc.page_content) > 10]
 
-    indexing_stats = index(
-        docs_transformed,
-        record_manager,
-        vectorstore,
-        cleanup="full",
-        source_id_key="source",
-        force_update=(os.environ.get("FORCE_UPDATE") or "false").lower() == "true",
-    )
+    try:
+        indexing_stats = await index(
+            docs_transformed,
+            record_manager,
+            vectorstore,
+            cleanup="incremental",
+            source_id_key="source",
+            force_update=(os.environ.get("FORCE_UPDATE") or "false").lower() == "true",
+        )
 
-    logger.info(f"Indexing stats: {indexing_stats}")
-    num_vecs = client.query.aggregate(WEAVIATE_DOCS_INDEX_NAME).with_meta_count().do()
-    logger.info(f"LangChain now has this many vectors: {num_vecs}")
+        final_stats = {
+            "load_stats": {
+                "total_skipped": len(load_stats["skipped_urls"]),
+                "total_processed": len(load_stats["processed_urls"]),
+                "total_empty": len(load_stats["empty_content_urls"]),
+                "total_failed_summary": len(load_stats["failed_summary_urls"]),
+                "details": load_stats,
+            },
+            "index_stats": indexing_stats,
+        }
+
+        return final_stats
+
+    except Exception as e:
+        return {"error": str(e), "load_stats": load_stats}
 
 
 if __name__ == "__main__":
