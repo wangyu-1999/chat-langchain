@@ -8,7 +8,6 @@ import aiohttp
 
 import weaviate
 from config import WEAVIATE_DOCS_INDEX_NAME
-from langchain.indexes import SQLRecordManager, index
 from langchain_community.vectorstores import Weaviate
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 import requests
@@ -16,6 +15,7 @@ from embeddings import get_embeddings_model
 from langchain.schema import Document
 from html_cleaner import strip_html_tags
 from summarizer import ChatModel
+from create_schema import create_schema_if_not_exists
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -107,53 +107,47 @@ async def load_api_news():
 
 
 async def ingest_docs():
-    # 删除重复的WEAVIATE_URL定义，直接使用全局常量
-    RECORD_MANAGER_DB_URL = os.environ["RECORD_MANAGER_DB_URL"]
-
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=4000, chunk_overlap=200)
-    embedding = get_embeddings_model()
-
-    client = weaviate.Client(
-        url=WEAVIATE_URL,
-    )
-    vectorstore = Weaviate(
-        client=client,
-        index_name=WEAVIATE_DOCS_INDEX_NAME,
-        text_key="text",
-        embedding=embedding,
-        by_text=False,
-        attributes=[
-            "source",
-            "date",
-            "title_cn",
-            "title_en",
-            "subject",
-            "location",
-            "chinese_summary",
-        ],
-    )
-
-    record_manager = SQLRecordManager(
-        f"weaviate/{WEAVIATE_DOCS_INDEX_NAME}", db_url=RECORD_MANAGER_DB_URL
-    )
-    record_manager.create_schema()
-    docs_from_news, load_stats = await load_api_news()
-    logger.info(f"Loaded {len(docs_from_news)} docs from News API")
-
-    docs_transformed = text_splitter.split_documents(docs_from_news)
-    docs_transformed = [doc for doc in docs_transformed if len(doc.page_content) > 10]
-
+    """处理文档摄入的异步函数"""
     try:
-        indexing_stats = await index(
-            docs_transformed,
-            record_manager,
-            vectorstore,
-            cleanup="incremental",
-            source_id_key="source",
-            force_update=(os.environ.get("FORCE_UPDATE") or "false").lower() == "true",
+        # 确保schema存在
+        create_schema_if_not_exists()
+
+        # 在子进程中初始化模型
+        embedding = get_embeddings_model()
+
+        text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=4000, chunk_overlap=200
         )
 
-        final_stats = {
+        client = weaviate.Client(url=WEAVIATE_URL)
+        vectorstore = Weaviate(
+            client=client,
+            index_name=WEAVIATE_DOCS_INDEX_NAME,
+            text_key="text",
+            embedding=embedding,
+            by_text=False,
+            attributes=[
+                "source",
+                "date",
+                "title_cn",
+                "title_en",
+                "subject",
+                "location",
+                "chinese_summary",
+            ],
+        )
+
+        docs_from_news, load_stats = await load_api_news()
+        logger.info(f"Loaded {len(docs_from_news)} docs from News API")
+
+        docs_transformed = text_splitter.split_documents(docs_from_news)
+        docs_transformed = [
+            doc for doc in docs_transformed if len(doc.page_content) > 10
+        ]
+
+        await vectorstore.aadd_documents(docs_transformed)
+
+        return {
             "load_stats": {
                 "total_skipped": len(load_stats["skipped_urls"]),
                 "total_processed": len(load_stats["processed_urls"]),
@@ -161,13 +155,15 @@ async def ingest_docs():
                 "total_failed_summary": len(load_stats["failed_summary_urls"]),
                 "details": load_stats,
             },
-            "index_stats": indexing_stats,
+            "index_stats": {"num_added": len(docs_transformed)},
         }
 
-        return final_stats
-
     except Exception as e:
-        return {"error": str(e), "load_stats": load_stats}
+        logger.error(f"Ingest error: {str(e)}")
+        return {
+            "error": str(e),
+            "load_stats": load_stats if "load_stats" in locals() else None,
+        }
 
 
 if __name__ == "__main__":
