@@ -7,7 +7,7 @@ import aiohttp
 import asyncio
 from functools import partial
 from concurrent.futures import ThreadPoolExecutor
-from typing import Dict
+from typing import Dict, Sequence
 
 import weaviate
 from config import WEAVIATE_DOCS_INDEX_NAME
@@ -19,9 +19,16 @@ from langchain.schema import Document
 from summarizer import ChatModel
 from create_schema import create_schema_if_not_exists
 from news_sources.bbc_processor import BBCNewsProcessor
+from storage.azure_table import AzureTableStorage
+from langchain_core.runnables import (
+    Runnable,
+    RunnablePassthrough,
+)
+from langchain_core.language_models import LanguageModelLike
+from langchain_core.retrievers import BaseRetriever
+from retriever_chain import create_retriever_chain
 
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("backend")
 
 load_dotenv()
 
@@ -38,17 +45,22 @@ def process_news_item(content: str, metadata: Dict, chat_model: ChatModel) -> Do
     """处理单个新闻内容"""
     res = chat_model.chat(content)
 
-    if isinstance(res, dict) and res.get("english_summary"):  # 添加类型检查
+    if isinstance(res, dict) and res.get("english_summary"):
+        # 创建完整的元数据字典
+        full_metadata = {
+            "source": metadata["source"],
+            "source_name": metadata["source_name"],
+            "date": metadata["date"],
+            "title_cn": res.get("title_cn", ""),
+            "title_en": res.get("title_en", ""),
+            "subject": res.get("subject", ""),
+            "location": res.get("location", ""),
+            "chinese_summary": res.get("chinese_summary", ""),
+        }
+
         return Document(
             page_content=res["english_summary"],
-            metadata={
-                **metadata,
-                "title_cn": res.get("title_cn", ""),
-                "title_en": res.get("title_en", ""),
-                "subject": res.get("subject", ""),
-                "location": res.get("location", ""),
-                "chinese_summary": res.get("summary", ""),
-            },
+            metadata=full_metadata,  # 保存完整元数据
         )
     return None
 
@@ -161,6 +173,8 @@ async def ingest_docs():
 
         # 处理新闻内容
         all_docs = []
+        azure_storage = AzureTableStorage()
+
         for item in all_raw_items:
             source_name = item["source_name"]
 
@@ -183,7 +197,27 @@ async def ingest_docs():
             )
 
             if doc:
-                all_docs.append(doc)
+                # 使用同步方式存储到 Azure Table
+                azure_storage.store_document(
+                    item["source"],
+                    {
+                        "title_cn": doc.metadata["title_cn"],
+                        "title_en": doc.metadata["title_en"],
+                        "subject": doc.metadata["subject"],
+                        "location": doc.metadata["location"],
+                        "chinese_summary": doc.metadata["chinese_summary"],
+                        "english_summary": doc.page_content,
+                        "source_name": doc.metadata["source_name"],
+                        "date": doc.metadata["date"],
+                    },
+                )
+
+                # 只保存 source 和用于生成向量的文本到 Weaviate
+                weaviate_doc = Document(
+                    page_content=doc.page_content,
+                    metadata={"source": doc.metadata["source"]},
+                )
+                all_docs.append(weaviate_doc)
                 stats_by_source[source_name]["processed"] += 1
                 stats_by_source[source_name]["details"]["processed_urls"].append(
                     item["source"]
@@ -211,13 +245,19 @@ async def ingest_docs():
             text_key="text",
             embedding=embedding,
             by_text=False,
-            attributes=["source", "title_en", "date", "location", "subject"],
+            attributes=["source"],
         )
 
         # 批量处理文档，每批50个
         batch_size = 50
         for i in range(0, len(docs_transformed), batch_size):
             batch = docs_transformed[i : i + batch_size]
+            # 确保每个文档只包含必要的信息
+            for doc in batch:
+                # 使用 english_summary (page_content) 作为向量生成的文本
+                doc.metadata = {"source": doc.metadata["source"]}
+                # page_content 已经是 english_summary，不需要修改
+
             add_docs_future = asyncio.get_event_loop().run_in_executor(
                 thread_pool, partial(vectorstore.add_documents, batch)
             )

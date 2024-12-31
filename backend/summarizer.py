@@ -4,7 +4,7 @@ from llm_service import model_manager
 import json
 import logging
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("backend")
 
 
 class ChatModel:

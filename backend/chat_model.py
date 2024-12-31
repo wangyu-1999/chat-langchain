@@ -3,7 +3,7 @@ from llm_service import model_manager
 import json
 import logging
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("backend")
 
 
 class ChatModel:
@@ -45,7 +45,7 @@ class ChatModel:
                     "title_en": "",
                     "subject": "",
                     "location": "",
-                    "summary": "",
+                    "chinese_summary": "",
                     "english_summary": "",
                 }
         except Exception as e:
@@ -56,6 +56,6 @@ class ChatModel:
                 "title_en": "",
                 "subject": "",
                 "location": "",
-                "summary": "",
+                "chinese_summary": "",
                 "english_summary": "",
             }

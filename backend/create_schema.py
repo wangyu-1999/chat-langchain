@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from config import WEAVIATE_DOCS_INDEX_NAME
 import logging
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("backend")
 
 load_dotenv()
 
@@ -26,52 +26,10 @@ def create_schema_if_not_exists(client):
                 "description": "News documents collection",
                 "properties": [
                     {
-                        "name": "page_content",
-                        "dataType": ["text"],
-                        "description": "The main content of the document",
-                    },
-                    {
                         "name": "source",
                         "dataType": ["string"],
                         "description": "Source URL of the document",
-                    },
-                    {
-                        "name": "source_name",
-                        "dataType": ["string"],
-                        "description": "Name of the news source",
-                    },
-                    {
-                        "name": "date",
-                        "dataType": ["string"],
-                        "description": "Publication date",
-                    },
-                    {
-                        "name": "title_cn",
-                        "dataType": ["string"],
-                        "description": "Chinese title",
-                        "moduleConfig": {"text2vec-openai": {"skip": True}},
-                    },
-                    {
-                        "name": "title_en",
-                        "dataType": ["string"],
-                        "description": "English title",
-                    },
-                    {
-                        "name": "subject",
-                        "dataType": ["string"],
-                        "description": "News subject in English",
-                    },
-                    {
-                        "name": "location",
-                        "dataType": ["string"],
-                        "description": "Related location in English",
-                    },
-                    {
-                        "name": "chinese_summary",  # 对应config中的summary
-                        "dataType": ["text"],
-                        "description": "Summary in Chinese",
-                        "moduleConfig": {"text2vec-openai": {"skip": True}},
-                    },
+                    }
                 ],
             }
 

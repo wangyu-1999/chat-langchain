@@ -32,6 +32,8 @@ from langchain_core.runnables import (
     RunnablePassthrough,
 )
 from llm_service import model_manager
+from storage.azure_table import AzureTableStorage
+from retriever_chain import create_retriever_chain
 
 load_dotenv()
 
@@ -54,32 +56,22 @@ def get_retriever() -> BaseRetriever:
         text_key="text",
         embedding=get_embeddings_model(),
         by_text=False,
-        attributes=["source", "title_en", "date", "location", "subject"],
+        attributes=["source"],
     )
     return vectorstore.as_retriever(search_kwargs=dict(k=RETRIEVER_TOP_K))
 
 
-def create_retriever_chain(
-    llm: LanguageModelLike, retriever: BaseRetriever
-) -> Runnable:
-    CONDENSE_QUESTION_PROMPT = PromptTemplate.from_template(REPHRASE_TEMPLATE)
-    condense_question_chain = CONDENSE_QUESTION_PROMPT | llm | StrOutputParser()
-
-    conversation_chain = condense_question_chain | retriever
-    return RunnableBranch(
-        (
-            RunnableLambda(lambda x: bool(x.get("chat_history"))),
-            conversation_chain,
-        ),
-        (RunnableLambda(itemgetter("question")) | retriever),
-    )
-
-
 def format_docs(docs: Sequence[Document]) -> str:
+    azure_storage = AzureTableStorage()
     formatted_docs = []
+
     for i, doc in enumerate(docs):
-        doc_string = f"<doc id='{i}',source='{doc.metadata.get('source')}',date='{doc.metadata.get('date')}',location='{doc.metadata.get('location')}',subject='{doc.metadata.get('subject')}'>{doc.page_content}</doc>"
-        formatted_docs.append(doc_string)
+        # 从 Azure Table 获取完整内容，使用同步方式
+        full_content = azure_storage.get_document_sync(doc.metadata["source"])
+        if full_content:
+            doc_string = f"<doc id='{i}',source='{doc.metadata['source']}',date='{full_content['date']}',location='{full_content['location']}',subject='{full_content['subject']}'>{full_content['english_summary']}</doc>"
+            formatted_docs.append(doc_string)
+
     return "\n".join(formatted_docs)
 
 
@@ -100,6 +92,7 @@ def create_chain(llm: LanguageModelLike, retriever: BaseRetriever) -> Runnable:
         retriever,
     ).with_config(run_name="FindDocs")
 
+    # 使用同步的 format_docs
     context = (
         RunnablePassthrough.assign(docs=retriever_chain)
         .assign(context=lambda x: format_docs(x["docs"]))

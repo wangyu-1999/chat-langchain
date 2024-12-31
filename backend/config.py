@@ -24,7 +24,7 @@ PROMPT = """你是一位专业的新闻编辑和翻译，擅长提炼新闻重�
   * 优先使用完整国家名称
   * 必要时可包含城市或地区
 
-- 新闻内容详细总结 (summary):
+- 新闻内容详细总结 (chinese_summary):
   * 8-10句完整的中文句子
   * 按时间顺序描述事件发展
   * 包含具体数据和关键信息
@@ -33,7 +33,7 @@ PROMPT = """你是一位专业的新闻编辑和翻译，擅长提炼新闻重�
   * 使用客观、专业的叙述语气
 
 - 英文翻译 (english_summary):
-  * 将中文summary翻译成地道英文
+  * 将中文chinese_summary翻译成地道英文
   * 保持专业的新闻写作风格
   * 确保翻译准确性和完整性
   * 使用恰当的新闻时态
@@ -44,7 +44,7 @@ PROMPT = """你是一位专业的新闻编辑和翻译，擅长提炼新闻重�
 "title_en": "string in English",
 "subject": "string in English", 
 "location": "string in English",
-"summary": "string in Chinese",
+"chinese_summary": "string in Chinese",
 "english_summary": "string in English"
 }
 

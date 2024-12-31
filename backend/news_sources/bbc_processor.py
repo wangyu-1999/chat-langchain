@@ -6,8 +6,7 @@ import logging
 from bs4 import BeautifulSoup
 import re
 
-
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("backend")
 
 
 def strip_html_tags(html_text: str) -> str:
