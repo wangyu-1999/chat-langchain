@@ -3,6 +3,10 @@ from datetime import datetime
 import os
 from typing import Dict, Optional
 import base64
+import azure.core.exceptions
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class AzureTableStorage:
@@ -72,3 +76,16 @@ class AzureTableStorage:
         except Exception as e:
             print(f"获取文档失败: {str(e)}")
             return None
+
+    def document_exists(self, url: str) -> bool:
+        try:
+            domain = url.split("/")[2]  # 获取域名部分
+            self.table_client.get_entity(
+                partition_key=self._encode_key(domain), row_key=self._encode_key(url)
+            )
+            return True
+        except azure.core.exceptions.ResourceNotFoundError:
+            return False
+        except Exception as e:
+            logger.error(f"检查文档存在时发生错误: {str(e)}")
+            return False

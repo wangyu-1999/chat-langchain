@@ -25,16 +25,21 @@ class ChatModel:
             # 清理响应内容，移除可能的多余字符
             cleaned_content = response_content.strip()
 
-            # 如果响应内容被包裹在 ```json ``` 中，提取其中的 JSON 内容
-            if cleaned_content.startswith("```json"):
-                cleaned_content = cleaned_content.replace("```json", "", 1)
-                if cleaned_content.endswith("```"):
-                    cleaned_content = cleaned_content[:-3]
-                cleaned_content = cleaned_content.strip()
+            # 改进 JSON 提取逻辑
+            if "```json" in cleaned_content:
+                # 找到 json 块的开始和结束
+                start = cleaned_content.find("```json") + 7
+                end = cleaned_content.rfind("```")
+                if end > start:
+                    cleaned_content = cleaned_content[start:end].strip()
 
-            print(cleaned_content)
+            # 移除所有控制字符（包括换行符）
+            cleaned_content = "".join(
+                char for char in cleaned_content if ord(char) >= 32
+            )
 
             try:
+                # 尝试解析 JSON
                 return json.loads(cleaned_content)
             except json.JSONDecodeError as e:
                 logger.error(f"JSON 解析错误: {e}")

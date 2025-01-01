@@ -7,26 +7,18 @@ import aiohttp
 import asyncio
 from functools import partial
 from concurrent.futures import ThreadPoolExecutor
-from typing import Dict, Sequence
+from typing import Dict
 
 import weaviate
 from config import WEAVIATE_DOCS_INDEX_NAME
 from langchain_community.vectorstores import Weaviate
-from langchain_text_splitters import RecursiveCharacterTextSplitter
 import requests
 from embeddings import get_embeddings_model
 from langchain.schema import Document
 from summarizer import ChatModel
 from create_schema import create_schema_if_not_exists
-from news_sources.bbc_processor import BBCNewsProcessor
+from news_sources.news_processor import NewsProcessor, NEWS_SOURCES
 from storage.azure_table import AzureTableStorage
-from langchain_core.runnables import (
-    Runnable,
-    RunnablePassthrough,
-)
-from langchain_core.language_models import LanguageModelLike
-from langchain_core.retrievers import BaseRetriever
-from retriever_chain import create_retriever_chain
 
 logger = logging.getLogger("backend")
 
@@ -41,9 +33,14 @@ thread_pool = ThreadPoolExecutor(max_workers=3)
 chat_model = ChatModel()
 
 
-def process_news_item(content: str, metadata: Dict, chat_model: ChatModel) -> Document:
+async def process_news_item(
+    content: str, metadata: Dict, chat_model: ChatModel
+) -> Document:
     """处理单个新闻内容"""
-    res = chat_model.chat(content)
+    # 将同步的 chat 操作放入线程池中执行
+    res = await asyncio.get_event_loop().run_in_executor(
+        thread_pool, chat_model.chat, content
+    )
 
     if isinstance(res, dict) and res.get("english_summary"):
         # 创建完整的元数据字典
@@ -108,7 +105,6 @@ async def ingest_docs():
             thread_pool, lambda: weaviate.Client(url=WEAVIATE_URL)
         )
 
-        # 添加这一行来创建 schema
         await asyncio.get_event_loop().run_in_executor(
             thread_pool, lambda: create_schema_if_not_exists(client)
         )
@@ -119,14 +115,14 @@ async def ingest_docs():
 
         # 初始化新闻处理器
         news_processors = [
-            BBCNewsProcessor(),
+            NewsProcessor(source_config) for source_config in NEWS_SOURCES
         ]
 
         # 统计信息
         stats_by_source = {}
         all_raw_items = []
 
-        # 首先收集所有新闻源的新闻
+        # 收集所有新闻源的新闻
         for processor in news_processors:
             source_name = processor.source_name
             raw_news_items = await processor.fetch_raw_news()
@@ -144,49 +140,27 @@ async def ingest_docs():
                 },
             }
 
-        # 批量检查所有URL
-        all_urls = [item["source"] for item in all_raw_items]
+        # 使用 Azure Table 检查已存在的 URL
+        azure_storage = AzureTableStorage()
         existing_urls = set()
 
-        # 使用批量查询获取已存在的URL
-        query = {
-            "class": WEAVIATE_DOCS_INDEX_NAME,
-            "where": {
-                "operator": "Or",
-                "operands": [
-                    {"path": ["source"], "operator": "Equal", "valueString": url}
-                    for url in all_urls
-                ],
-            },
-        }
-
-        result = await asyncio.get_event_loop().run_in_executor(
-            thread_pool,
-            lambda: client.query.get(WEAVIATE_DOCS_INDEX_NAME, ["source"])
-            .with_where(query["where"])
-            .do(),
-        )
-
-        if result and "data" in result:
-            entries = result["data"]["Get"][WEAVIATE_DOCS_INDEX_NAME]
-            existing_urls = {entry["source"] for entry in entries}
-
-        # 处理新闻内容
-        all_docs = []
-        azure_storage = AzureTableStorage()
-
+        # 批量检查 URL 是否存在
         for item in all_raw_items:
-            source_name = item["source_name"]
-
-            if item["source"] in existing_urls:
+            if azure_storage.document_exists(item["source"]):
+                existing_urls.add(item["source"])
+                source_name = item["source_name"]
                 stats_by_source[source_name]["skipped"] += 1
                 stats_by_source[source_name]["details"]["skipped_urls"].append(
                     item["source"]
                 )
+
+        for item in all_raw_items:
+            if item["source"] in existing_urls:
                 continue
 
+            source_name = item["source_name"]
             # 处理内容
-            doc = process_news_item(
+            doc = await process_news_item(
                 item["content"],
                 {
                     "source": item["source"],
@@ -197,7 +171,7 @@ async def ingest_docs():
             )
 
             if doc:
-                # 使用同步方式存储到 Azure Table
+                # 存储到 Azure Table
                 azure_storage.store_document(
                     item["source"],
                     {
@@ -212,12 +186,27 @@ async def ingest_docs():
                     },
                 )
 
-                # 只保存 source 和用于生成向量的文本到 Weaviate
+                # 准备 Weaviate 文档
                 weaviate_doc = Document(
                     page_content=doc.page_content,
                     metadata={"source": doc.metadata["source"]},
                 )
-                all_docs.append(weaviate_doc)
+
+                # 立即将单个文档添加到 Weaviate
+                vectorstore = Weaviate(
+                    client=client,
+                    index_name=WEAVIATE_DOCS_INDEX_NAME,
+                    text_key="text",
+                    embedding=embedding,
+                    by_text=False,
+                    attributes=["source"],
+                )
+
+                # 逐条添加文档到 Weaviate
+                await asyncio.get_event_loop().run_in_executor(
+                    thread_pool, partial(vectorstore.add_documents, [weaviate_doc])
+                )
+
                 stats_by_source[source_name]["processed"] += 1
                 stats_by_source[source_name]["details"]["processed_urls"].append(
                     item["source"]
@@ -227,41 +216,6 @@ async def ingest_docs():
                 stats_by_source[source_name]["details"]["failed_summary_urls"].append(
                     item["source"]
                 )
-
-        # 将文本分割移到线程池
-        text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=1000,
-            chunk_overlap=200,
-        )
-        split_docs_future = asyncio.get_event_loop().run_in_executor(
-            thread_pool, text_splitter.split_documents, all_docs
-        )
-        docs_transformed = await split_docs_future
-
-        # 将 Weaviate 添加文档操作移到线程池
-        vectorstore = Weaviate(
-            client=client,
-            index_name=WEAVIATE_DOCS_INDEX_NAME,
-            text_key="text",
-            embedding=embedding,
-            by_text=False,
-            attributes=["source"],
-        )
-
-        # 批量处理文档，每批50个
-        batch_size = 50
-        for i in range(0, len(docs_transformed), batch_size):
-            batch = docs_transformed[i : i + batch_size]
-            # 确保每个文档只包含必要的信息
-            for doc in batch:
-                # 使用 english_summary (page_content) 作为向量生成的文本
-                doc.metadata = {"source": doc.metadata["source"]}
-                # page_content 已经是 english_summary，不需要修改
-
-            add_docs_future = asyncio.get_event_loop().run_in_executor(
-                thread_pool, partial(vectorstore.add_documents, batch)
-            )
-            await add_docs_future
 
         # 计算总体统计信息
         total_stats = {
@@ -274,7 +228,7 @@ async def ingest_docs():
 
         return {
             "load_stats": {"total": total_stats, "by_source": stats_by_source},
-            "index_stats": {"num_added": len(docs_transformed)},
+            "index_stats": {"num_added": total_stats["processed"]},
         }
 
     except Exception as e:

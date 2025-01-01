@@ -6,6 +6,8 @@ from pathlib import Path
 from datetime import datetime
 from asyncio import Semaphore
 import logging
+import asyncio
+from concurrent.futures import ProcessPoolExecutor
 
 # 添加统一的日志配置
 logging.basicConfig(
@@ -34,6 +36,9 @@ chat_semaphore = Semaphore(3)
 
 # 添加摄入任务的信号量
 ingest_semaphore = Semaphore(1)  # 限制只能同时运行一个摄入任务
+
+# 添加ProcessPoolExecutor用于CPU密集型任务
+process_pool = ProcessPoolExecutor(max_workers=1)
 
 app = FastAPI()
 app.add_middleware(
@@ -84,10 +89,12 @@ async def ingest(background_tasks: BackgroundTasks):
 async def process_ingest():
     """后台处理摄入任务"""
     try:
+        # 直接调用 ingest_docs，不使用进程池
         final_stats = await ingest_docs()
         ingest_status["last_stats"] = final_stats
     except Exception as e:
         ingest_status["last_error"] = str(e)
+        logger.error(f"Ingest error: {str(e)}")
     finally:
         ingest_status["is_running"] = False
         ingest_status["end_time"] = datetime.now().isoformat()
