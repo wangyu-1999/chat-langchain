@@ -3,6 +3,7 @@ from config import PROMPT
 from llm_service import model_manager
 import json
 import logging
+import re
 
 logger = logging.getLogger("backend")
 
@@ -13,6 +14,18 @@ class ChatModel:
         self.model = "glm-4-plus"
 
     def chat(self, messages):
+        # 添加输入验证
+        if messages is None or not isinstance(messages, str) or not messages.strip():
+            logger.error(f"收到空消息或无效消息: {messages}")
+            return {
+                "title_cn": "",
+                "title_en": "",
+                "subject": "",
+                "location": "",
+                "summary": "",
+                "english_summary": "",
+            }
+
         try:
             response = self.client.chat.completions.create(
                 model=self.model,
@@ -26,12 +39,17 @@ class ChatModel:
             # 清理响应内容，移除可能的多余字符
             cleaned_content = response_content.strip()
 
-            # 如果响应内容被包裹在 ```json ``` 中，提取其中的 JSON 内容
-            if cleaned_content.startswith("```json"):
-                cleaned_content = cleaned_content.replace("```json", "", 1)
-                if cleaned_content.endswith("```"):
-                    cleaned_content = cleaned_content[:-3]
-                cleaned_content = cleaned_content.strip()
+            # 使用正则表达式匹配被代码块包裹的内容
+            code_block_pattern = r"```(?:json)?\s*([\s\S]*?)```"
+            match = re.search(code_block_pattern, cleaned_content)
+
+            if match:
+                # 如果找到匹配，提取第一个捕获组的内容
+                cleaned_content = match.group(1).strip()
+
+            cleaned_content = "".join(
+                char for char in cleaned_content if ord(char) >= 32
+            )
 
             print(cleaned_content)
 

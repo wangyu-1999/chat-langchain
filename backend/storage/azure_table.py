@@ -12,16 +12,16 @@ logger = logging.getLogger(__name__)
 class AzureTableStorage:
     def __init__(self):
         connection_string = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
-        self.table_name = os.getenv("AZURE_TABLE_NAME", "newsContent")
 
-        table_service_client = TableServiceClient.from_connection_string(
+        # 保存为实例变量，这样其他方法可以访问
+        self.table_service_client = TableServiceClient.from_connection_string(
             connection_string
         )
-        self.table_client = table_service_client.get_table_client(self.table_name)
+        self.table_client = self.table_service_client.get_table_client("newsContent")
 
         # 确保表存在
         try:
-            table_service_client.create_table(self.table_name)
+            self.table_service_client.create_table("newsContent")
         except:
             pass
 
@@ -89,3 +89,27 @@ class AzureTableStorage:
         except Exception as e:
             logger.error(f"检查文档存在时发生错误: {str(e)}")
             return False
+
+    def store_clusters(self, entity):
+        """
+        将所有聚类结果作为一个整体存储到Azure Table
+
+        Args:
+            entity: 包含所有聚类信息的字典，必须包含PartitionKey和RowKey
+        """
+        try:
+            table_client = self.table_service_client.get_table_client("clusters")
+
+            # 确保表存在
+            try:
+                self.table_service_client.create_table("clusters")
+            except Exception as e:
+                logger.warning(f"创建clusters表时出现警告: {str(e)}")
+
+            # 存储实体
+            table_client.upsert_entity(entity)
+            logger.info(f"已保存聚类结果: {entity['RowKey']}")
+
+        except Exception as e:
+            logger.error(f"存储聚类结果时出错: {str(e)}")
+            raise
