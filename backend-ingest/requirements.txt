@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+python-dotenv
+azure-data-tables
+aiohttp
+langchain
+langchain-huggingface
+transformers
+torch
+numpy
+scikit-learn
+pymilvus
+zhipuai 
